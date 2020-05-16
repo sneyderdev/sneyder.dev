@@ -4,67 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sneyder Barreto</title>
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Saira:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- CSS -->
     <link rel="stylesheet" href="dist/css/main.css">
   </head>
   <body>
-    <!-- Header -->
-    <header class="header">
-      <nav class="navbar">
-        <div class="burger-btn">
-          <i></i>
-          <i></i>
-          <i></i>
-        </div>
-        <ul class="menu">
-          <li class="menu__item">
-            <a href="portfolio.html">Portfolio</a>
-            <img src="assets/icons/menu-arrow.svg" alt="Menu Arrow">
-          </li>
-          <li class="menu__item">
-            <a href="about.html">About</a>
-            <img src="assets/icons/menu-arrow.svg" alt="Menu Arrow">
-          </li>
-          <li class="menu__item">
-            <a href="mailto:sneyderbarreto@gmail.com" target="_blank">Contact</a>
-            <img src="assets/icons/menu-arrow.svg" alt="Menu Arrow">
-          </li>
-        </ul>
-        <ul class="social-menu">
-          <li class="social-menu__item">
-            <a href="https://twitter.com/sneyderdev" target="_blank">Twitter</a>
-            <img src="assets/icons/twitter-logo.svg" alt="Twitter Logo">
-          </li>
-          <li class="social-menu__item">
-            <a href="https://github.com/sneyderdev" target="_blank">GitHub</a>
-            <img src="assets/icons/github-logo.svg" alt="GitHub Logo">
-          </li>
-          <li class="social-menu__item">
-            <a href="https://www.linkedin.com/in/sneyderdev" target="_blank">LinkedIn</a>
-            <img src="assets/icons/linkedin-logo.svg" alt="LinkedIn Logo">
-          </li>
-        </ul>
-      </nav>
-    </header>
+    <div class="background"></div>
 
-    <!-- Main Section -->
-    <main class="main-section">
-      <div class="container">
-        <div class="intro">
-          <img src="assets/images/main-picture.png" alt="Sneyder Barreto" class="intro__picture">
-          <h1 class="intro__title">Hi, I'm Sneyder Barreto</h1>
-          <h3 class="intro__description">I like creating things with web technologies.</h3>
-          <div class="intro__cta">
-            <a href="portfolio.html">See the latest projects I've been working on <img src="assets/icons/projects-arrow.svg" alt="Projects Arrow"></a>
+    <div class="grid-container">
+      <!-- Header -->
+      <header class="header">
+        <nav class="navbar">
+          <div class="burger-btn">
+            <i></i>
+            <i></i>
+            <i></i>
+          </div>
+          <div class="menu-container">
+            <ul class="menu">
+              <li class="menu__item">
+                <a href="portfolio.html">Portfolio <img src="assets/icons/menu-arrow.svg" alt="Menu Arrow"></a>
+              </li>
+              <li class="menu__item">
+                <a href="about.html">About <img src="assets/icons/menu-arrow.svg" alt="Menu Arrow"></a>
+              </li>
+              <li class="menu__item">
+                <a href="mailto:sneyderbarreto@gmail.com" target="_blank">Contact <img src="assets/icons/menu-arrow.svg" alt="Menu Arrow"></a>
+              </li>
+            </ul>
+            <ul class="social-menu">
+              <li class="social-menu__item">
+                <a class="twitter" href="https://twitter.com/sneyderdev" target="_blank">Twitter <img src="assets/icons/twitter-logo.svg" alt="Twitter Logo"></a>
+              </li>
+              <li class="social-menu__item">
+                <a class="github" href="https://github.com/sneyderdev" target="_blank">GitHub <img src="assets/icons/github-logo.svg" alt="GitHub Logo"></a>
+              </li>
+              <li class="social-menu__item">
+                <a class="linkedin" href="https://www.linkedin.com/in/sneyderdev" target="_blank">LinkedIn <img src="assets/icons/linkedin-logo.svg" alt="LinkedIn Logo"></a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+
+      <!-- Main Section -->
+      <main class="main-section">
+        <div class="container">
+          <div class="hero">
+            <img src="assets/images/main-picture.png" alt="Sneyder Barreto" class="hero__picture">
+            <h1 class="hero__title">Hi, I'm Sneyder Barreto</h1>
+            <p class="hero__description">I like creating things with web technologies.</p>
+            <div class="hero__cta">
+              <a href="portfolio.html">See the latest projects I've been working on <img src="assets/icons/projects-arrow.svg" alt="Projects Arrow"></a>
+            </div>
           </div>
         </div>
-      </div>
-    </main>
+      </main>
 
-    <!-- Follow Me Section -->
-    <section class="follow">
-      <h4 class="follow__text">You can follow me on <a href="https://twitter.com/sneyderdev" target="_blank">Twitter</a> and <a href="https://github.com/sneyderdev" target="_blank">GitHub</a>. Also, here's my <a href="https://www.linkedin.com/in/sneyderdev" target="_blank">LinkedIn</a> and my <a href="mailto:sneyderbarreto@gmail.com" target="_blank">Email</a>.</h4>
-    </section>
+      <!-- Follow Me Section -->
+      <section class="follow">
+        <div class="container">
+          <p class="follow__text">You can follow me on <a href="https://twitter.com/sneyderdev" target="_blank">Twitter</a> and <a href="https://github.com/sneyderdev" target="_blank">GitHub</a>. Also, here's my <a href="https://www.linkedin.com/in/sneyderdev" target="_blank">LinkedIn</a> and my <a href="mailto:sneyderbarreto@gmail.com" target="_blank">Email</a>.</p>
+        </div>
+      </section>
+    </div>
 
     <!-- JS -->
     <script src="dist/js/main.js"></script>

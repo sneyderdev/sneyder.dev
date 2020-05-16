@@ -1,0 +1,36 @@
+// Main Section - Hero
+
+@use '../base' as *;
+
+.hero {
+  text-align: center;
+
+  &__picture {
+    width: 150px;
+  }
+
+  &__title {
+    margin: 25px 0 30px;
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 40px;
+  }
+
+  &__description {
+    margin: 30px 0;
+    font-size: 18px;
+  }
+
+  &__cta {
+    a {
+      font-size: 14px;
+      text-decoration: none;
+      color: $primary-color;
+    }
+
+    img {
+      margin-left: 5px;
+      vertical-align: middle;
+    }
+  }
+}

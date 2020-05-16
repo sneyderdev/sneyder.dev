@@ -1,0 +1,11 @@
+// Layout
+
+@forward 'header';
+@forward 'hero';
+@forward 'follow';
+
+.grid-container {
+  display: grid;
+  height: 100vh;
+  grid-template-rows: 70px 1fr auto;
+}

@@ -1,0 +1,29 @@
+// Burger Button
+
+@use '../base' as *;
+
+.burger-btn {
+  display: flex;
+  width: 50px;
+  height: 20px;
+  margin-left: auto;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  i {
+    display: inline-block;
+    height: 3px;
+    width: 100%;
+    background: $light-color;
+    box-shadow: 0 0 10px $primary-color;
+
+    &:nth-child(2) {
+      width: 37.5px;
+    }
+
+    &:last-child {
+      width: 25px;
+    }
+  }
+}

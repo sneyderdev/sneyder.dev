@@ -1,0 +1,76 @@
+// Header
+
+@use '../base' as *;
+
+.navbar {
+  padding: 25px;
+}
+
+.menu-container {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  background: scale-color($dark-color, $alpha: -40%);
+  backdrop-filter: blur(50px);
+
+  ul {
+    padding: 0;
+    list-style-type: none;
+    overflow: auto;
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+
+    img {
+      margin-left: 10px;
+    }
+  }
+}
+
+.menu {
+  font-size: 24px;
+  font-weight: 600;
+
+  &__item {
+    margin: 50px 0;
+  }
+
+  a {
+    color: $light-color;
+  }
+}
+
+.social-menu {
+  font-size: 18px;
+  font-weight: 600;
+
+  &__item {
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .twitter {
+    color: $twitter-color;
+  }
+
+  .github {
+    color: $light-color;
+  }
+
+  .linkedin {
+    color: $linkedin-color;
+  }
+}

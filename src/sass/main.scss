@@ -1,1 +1,10 @@
 // Main CSS
+
+// Base
+@use 'base/reset';
+
+// Components
+@use 'components';
+
+// Layout
+@use 'layout';
