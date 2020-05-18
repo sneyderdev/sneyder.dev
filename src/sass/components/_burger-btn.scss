@@ -35,10 +35,7 @@
   }
 
   &--active {
-    position: fixed;
-    right: 25px;
-    top: 10px;
-    z-index: 1;
+    z-index: 10;
 
     i {
       background: $primary-color;
@@ -57,7 +54,7 @@
         width: 50px;
         bottom: 22px;
         left: 0;
-        z-index: 2;
+        z-index: 20;
         box-shadow: 0 0 10px $primary-color, 0 0 4px $dark-color;
         transform: rotateZ(45deg);
       }

@@ -13,6 +13,10 @@ body {
   background: $dark-color;
 }
 
+.overflow--hidden {
+  overflow-y: hidden;
+}
+
 .background {
   position: fixed;
   top: 0;
