@@ -3,7 +3,7 @@
 @use '../base' as *;
 
 .navbar {
-  padding: 25px;
+  padding: 10px 25px;
 }
 
 .menu-container {
@@ -23,7 +23,7 @@
   ul {
     padding: 0;
     list-style-type: none;
-    overflow: auto;
+    // overflow: auto;
   }
 
   a {
@@ -73,4 +73,8 @@
   .linkedin {
     color: $linkedin-color;
   }
+}
+
+.menu--active {
+  display: flex;
 }

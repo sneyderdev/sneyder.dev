@@ -3,27 +3,64 @@
 @use '../base' as *;
 
 .burger-btn {
-  display: flex;
   width: 50px;
-  height: 20px;
+  height: 50px;
   margin-left: auto;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
+  position: relative;
 
   i {
     display: inline-block;
+    width: 50px;
     height: 3px;
-    width: 100%;
+    position: absolute;
     background: $light-color;
     box-shadow: 0 0 10px $primary-color;
+    transition: all .5s;
+
+    &:first-child {
+      top: 15px;
+    }
 
     &:nth-child(2) {
       width: 37.5px;
+      top: 23.5px;
+      left: 6.25px;
     }
 
     &:last-child {
       width: 25px;
+      bottom: 15px;
+      left: 12.5px;
+    }
+  }
+
+  &--active {
+    position: fixed;
+    right: 25px;
+    top: 10px;
+    z-index: 1;
+
+    i {
+      background: $primary-color;
+
+      &:first-child {
+        top: 25px;
+        transform: rotateZ(-45deg);
+      }
+
+      &:nth-child(2) {
+        opacity: 0;
+        transform: translateX(100px);
+      }
+
+      &:last-child {
+        width: 50px;
+        bottom: 22px;
+        left: 0;
+        z-index: 2;
+        box-shadow: 0 0 10px $primary-color, 0 0 4px $dark-color;
+        transform: rotateZ(45deg);
+      }
     }
   }
 }
