@@ -30,3 +30,9 @@ body {
 .container {
   padding: 0 20px;
 }
+
+.grid {
+  display: grid;
+  height: 100vh;
+  grid-template-rows: 70px 1fr auto;
+}
