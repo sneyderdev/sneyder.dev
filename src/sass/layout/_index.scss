@@ -1,11 +1,10 @@
 // Layout
 
-@forward 'header';
+@forward 'grid';
+@forward 'navbar';
 @forward 'hero';
 @forward 'footer';
 
-.grid-container {
-  display: grid;
-  height: 100vh;
-  grid-template-rows: 70px 1fr auto;
-}
+// Responsive
+@forward 'tablet';
+@forward 'desktop';

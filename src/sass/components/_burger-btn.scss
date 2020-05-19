@@ -1,6 +1,6 @@
 // Burger Button
 
-@use '../base' as *;
+@use '../base/utilities' as *;
 
 .burger-btn {
   width: 50px;
@@ -10,7 +10,7 @@
 
   i {
     display: inline-block;
-    width: 50px;
+    width: 100%;
     height: 3px;
     position: absolute;
     background: $light-color;
@@ -35,7 +35,6 @@
   }
 
   &--active {
-    z-index: 10;
 
     i {
       background: $primary-color;
@@ -51,10 +50,9 @@
       }
 
       &:last-child {
-        width: 50px;
+        width: 100%;
         bottom: 22px;
         left: 0;
-        z-index: 20;
         box-shadow: 0 0 10px $primary-color, 0 0 4px $dark-color;
         transform: rotateZ(45deg);
       }

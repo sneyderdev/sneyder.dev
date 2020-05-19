@@ -1,0 +1,101 @@
+// Responsive - Desktop > 1024px
+
+@use '../base/utilities' as *;
+
+@media screen and (min-width: 1024px) {
+  // Grid System
+  .grid {
+    max-width: 1900px;
+    margin: 0 auto;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    grid-template-columns: [margin1-start] 100px [margin1-end margin2-start] 100px [margin2-end main-start] minmax(auto, 850px) [main-end margin3-start] 100px [margin3-end margin4-start] 100px [margin4-end];
+    justify-content: center;
+  }
+
+  .borders {
+    display: block;
+    grid-area: 1 / margin2-start / -1 / margin3-end;
+    border-left: 1px solid scale-color($primary-color, $alpha: -80%);
+    border-right: 1px solid scale-color($primary-color, $alpha: -80%);
+  }
+
+  // Navbar
+  .navbar {
+    display: flex;
+    height: auto;
+    padding: 0;
+    justify-content: center;
+    grid-area: 1 / margin3-start / 1 / margin4-end;
+  }
+
+  .burger-btn {
+    width: 60px;
+    height: 60px;
+    position: fixed;
+    top: 25px;
+
+    i {
+      width: 100%;
+
+      &:first-child {
+        top: 20px;
+      }
+
+      &:nth-child(2) {
+        width: 45px;
+        top: 28.5px;
+        left: 7.5px;
+      }
+
+      &:last-child {
+        width: 30px;
+        bottom: 20px;
+        left: 15px;
+      }
+    }
+
+    &--active {
+      i {
+        &:first-child {
+          top: 30px;
+        }
+
+        &:last-child {
+          width: 100%;
+          bottom: 27px;
+          left: 0;
+        }
+      }
+    }
+  }
+
+  .menu-container {
+    padding-right: 70px;
+    top: 95px;
+    right: unset;
+  }
+
+  // Main Section - Hero
+  .main-section {
+    padding: 25px 0 0;
+    grid-area: 2 / margin2-start / 2 / margin3-end;
+  }
+
+  .hero {
+    font-size: 22px;
+
+    &__picture {
+      width: 250px;
+    }
+  }
+
+  // Footer - Follow
+  .footer {
+    grid-area: 3 / main-start / 3 / main-end;
+    font-size: 22px;
+  }
+}

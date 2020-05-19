@@ -1,0 +1,20 @@
+// Responsive - Tablet > 600px
+
+@use '../base/utilities' as *;
+
+@media screen and (min-width: 600px) {
+  // Main Section - Hero
+  .hero {
+    font-size: 19px;
+
+    &__picture {
+      width: 200px;
+    }
+  }
+
+  // Footer - Follow
+  .footer {
+    font-size: 19px;
+  }
+}
+
