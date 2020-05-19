@@ -1,11 +1,10 @@
 // Main Section - Hero
 
-@use '../base' as *;
+@use '../base/utilities' as *;
 
 .main-section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  padding: 0 20px;
+  align-self: center;
 }
 
 .hero {
@@ -17,19 +16,19 @@
 
   &__title {
     margin: 25px 0 10px;
-    font-size: 36px;
+    font-size: 2.25em;
     font-weight: 500;
     line-height: 40px;
   }
 
   &__description {
     margin: 0 0 30px;
-    font-size: 18px;
+    font-size: 1.12em;
   }
 
   &__cta {
     a {
-      font-size: 14px;
+      font-size: 0.9em;
       text-decoration: none;
       color: $primary-color;
     }

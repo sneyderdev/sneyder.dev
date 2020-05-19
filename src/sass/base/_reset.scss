@@ -1,6 +1,6 @@
 // Reset
 
-@use '../base' as *;
+@use '../base/utilities' as *;
 
 * {
   box-sizing: border-box;
@@ -11,28 +11,4 @@ body {
   font-family: $primary-font;
   color: $light-color;
   background: $dark-color;
-}
-
-.overflow--hidden {
-  overflow-y: hidden;
-}
-
-.background {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: -1;
-  background: linear-gradient(to bottom, scale-color($primary-color, $alpha: -50%), transparent);
-}
-
-.container {
-  padding: 0 20px;
-}
-
-.grid {
-  display: grid;
-  height: 100vh;
-  grid-template-rows: 70px 1fr auto;
 }

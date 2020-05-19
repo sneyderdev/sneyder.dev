@@ -1,12 +1,15 @@
 // Follow Section
 
-@use '../base' as *;
+@use '../base/utilities' as *;
 
-.follow {
-  margin: 40px 0 20px;
-  font-size: 14px;
+.footer {
+  padding: 40px 20px;
   text-align: center;
   color: scale-color($light-color, $alpha: -40%);
+
+  &__text {
+    font-size: 0.9em;
+  }
 
   a {
     font-weight: 600;
