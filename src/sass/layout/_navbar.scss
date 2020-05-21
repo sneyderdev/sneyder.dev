@@ -7,11 +7,13 @@
   padding: 10px 25px;
   z-index: 20;
   overflow-x: hidden;
+  user-select: none;
 }
 
 .menu-container {
   display: none;
   padding-right: 25px;
+  text-align: right;
   position: fixed;
   right: 10px;
   top: 70px;
@@ -22,14 +24,15 @@
     margin: 0;
     padding: 0;
     list-style-type: none;
-    overflow: auto;
   }
 
   a {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: flex-end;
     text-decoration: none;
+    transform: translateY(200%);
+    will-change: transform;
 
     img {
       margin-left: 10px;
@@ -43,6 +46,7 @@
 
   &__item {
     margin: 0 0 15px;
+    overflow: hidden;
   }
 
   a {
@@ -56,6 +60,7 @@
 
   &__item {
     margin: 0 0 15px;
+    overflow: hidden;
 
   }
 

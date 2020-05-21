@@ -8,7 +8,12 @@
   color: scale-color($light-color, $alpha: -40%);
 
   &__text {
-    font-size: 0.9em;
+
+    p {
+      margin: 0;
+      font-size: 0.9em;
+      transform: translateY(200%);
+    }
   }
 
   a {
