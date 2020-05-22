@@ -9,6 +9,13 @@ $linkedin-color: #0077B5;
 
 // Font
 $primary-font: 'Saira', sans-serif;
+$xl-size: 2.5em;
+$l-size: 1.5em;
+$m-size: 1.125em;
+$n-size: 1em;
+$s-size: 0.9em;
+$xs-size: 0.75em;
+$xxs-size: 0.6em;
 
 // Classes
 .background {
@@ -43,4 +50,11 @@ $primary-font: 'Saira', sans-serif;
 
 .borders {
   display: none;
+}
+
+.container {
+  width: 100%;
+  max-width: 850px;
+  padding: 0 20px;
+  margin: 0 auto;
 }

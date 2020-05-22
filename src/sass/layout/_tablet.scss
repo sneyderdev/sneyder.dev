@@ -2,19 +2,86 @@
 
 @use '../base/utilities' as *;
 
+@media screen and (min-width: 400px) {
+  .project {
+    height: 295px;
+
+    .main-screen {
+      height: 270px;
+    }
+
+    &__options {
+      height: 270px;
+    }
+
+    &:hover &__options {
+      transform: translateY(-270px);
+    }
+  }
+}
+
 @media screen and (min-width: 600px) {
-  // Main Section - Hero
+  .pinned-message {
+    font-size: 18px;
+  }
+
+  .header {
+    font-size: 18px;
+  }
+
+  .project {
+    font-size: 18px;
+  }
+
+  .footer {
+    font-size: 17px;
+  }
+
+  // Index
   .hero {
-    font-size: 19px;
+    font-size: 18px;
 
     &__picture {
       width: 200px;
     }
   }
 
-  // Footer - Follow
-  .footer {
-    font-size: 19px;
+  .index-footer {
+    font-size: 18px;
   }
 }
 
+@media screen and (min-width: 850px) {
+  .projects {
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: space-between;
+  }
+
+  .footer {
+
+    .menu {
+      display: flex;
+
+      &__item {
+        margin: 0 20px 0 0;
+
+        &:last-child {
+          margin: 0;
+        }
+      }
+    }
+
+    .social-menu {
+      display: flex;
+      justify-content: flex-end;
+
+      &__item {
+        margin: 0 0 0 20px;
+
+        &:first-child {
+          margin: 0;
+        }
+      }
+    }
+  }
+}

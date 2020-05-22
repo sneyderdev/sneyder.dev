@@ -20,12 +20,6 @@
   bottom: 0;
   overflow-y: auto;
 
-  ul {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-  }
-
   a {
     display: inline-flex;
     align-items: center;
@@ -41,7 +35,7 @@
 }
 
 .menu {
-  font-size: 1.5em;
+  font-size: $l-size;
   font-weight: 600;
 
   &__item {
@@ -55,7 +49,7 @@
 }
 
 .social-menu {
-  font-size: 1.12em;
+  font-size: $m-size;
   font-weight: 600;
 
   &__item {

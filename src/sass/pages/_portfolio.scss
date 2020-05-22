@@ -1,0 +1,19 @@
+// Specific portfolio's styles
+
+@use '../base/utilities' as *;
+
+.pinned-message {
+  margin-bottom: 50px;
+  text-align: center;
+
+  p {
+    margin: 0;
+    font-size: $n-size;
+  }
+}
+
+.projects {
+  display: grid;
+  gap: 20px;
+  justify-content: center;
+}
