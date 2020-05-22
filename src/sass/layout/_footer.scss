@@ -1,28 +1,59 @@
-// Follow Section
+// Footer
 
 @use '../base/utilities' as *;
 
 .footer {
-  padding: 40px 20px;
-  text-align: center;
-  color: scale-color($light-color, $alpha: -40%);
+  padding: 50px 0 20px;
 
-  &__text {
+  &__options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: space-between;
+    column-gap: 50px;
 
-    p {
-      margin: 0;
-      font-size: 0.9em;
-      transform: translateY(200%);
+    a {
+      display: inline-flex;
+      align-items: center;
     }
   }
 
-  a {
-    font-weight: 600;
-    color: $light-color;
-    text-decoration-color: scale-color($light-color, $alpha: -60%);
+  .menu {
+    font-size: $s-size;
 
-    &:hover {
-      text-decoration-color: $light-color;
+    &__item:last-child {
+      margin-bottom: 0;
     }
+  }
+
+  .social-menu {
+    text-align: right;
+    font-size: $s-size;
+
+    &__item:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__copyright {
+    display: grid;
+    text-align: center;
+    margin-top: 40px;
+    color: scale-color($light-color, $alpha: -40%);
+
+    .made-with {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: $xs-size;
+    }
+
+    .copyright {
+      font-size: $xxs-size;
+    }
+  }
+
+  img {
+    width: 10px;
+    margin-left: 5px;
   }
 }

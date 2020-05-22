@@ -1,0 +1,81 @@
+// Specific index's styles
+
+@use '../base/utilities' as *;
+
+// Main Section - Hero
+.index-main-section {
+  align-self: center;
+}
+
+.hero {
+  text-align: center;
+
+  &__picture {
+    width: 150px;
+  }
+
+  &__title {
+    margin: 25px 0 10px;
+
+    h1 {
+      margin: 0;
+      font-size: $xl-size;
+      font-weight: 500;
+      line-height: 1.2em;
+      transform: translateY(200%);
+    }
+  }
+
+  &__description {
+    margin: 0 0 30px;
+
+    p {
+      margin: 0;
+      font-size: $m-size;
+      transform: translateY(200%);
+    }
+  }
+
+  &__cta {
+
+    a {
+      display: inline-block;
+      font-size: $s-size;
+      text-decoration: none;
+      color: $primary-color;
+      transform: translateY(200%);
+    }
+
+    img {
+      margin-left: 5px;
+      vertical-align: middle;
+    }
+  }
+}
+
+// Footer - Follow
+.index-footer {
+  padding: 40px 0;
+  text-align: center;
+  color: scale-color($light-color, $alpha: -40%);
+
+  &__text {
+
+    p {
+      margin: 0;
+      font-size: $s-size;
+      transform: translateY(200%);
+    }
+  }
+
+  a {
+    font-weight: 600;
+    color: $light-color;
+    text-decoration: underline;
+    text-decoration-color: scale-color($light-color, $alpha: -60%);
+
+    &:hover {
+      text-decoration-color: $light-color;
+    }
+  }
+}

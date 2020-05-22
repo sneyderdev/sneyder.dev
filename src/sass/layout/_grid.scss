@@ -1,7 +1,14 @@
 // Grid System
 
-.grid {
+.index-grid {
   display: grid;
   height: 100vh;
   grid-template-rows: auto 1fr auto;
+}
+
+.grid {
+  display: grid;
+  width: 100%;
+  min-height: 100vh;
+  grid-auto-rows: max-content;
 }
