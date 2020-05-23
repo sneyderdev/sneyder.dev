@@ -38,14 +38,18 @@
     display: grid;
     margin-top: 40px;
     text-align: center;
+    overflow-y: hidden;
     color: scale-color($light-color, $alpha: -40%);
 
     .made-with {
       font-size: $xs-size;
+      transform: translateY(200%);
       @include setFlex(justify-content);
     }
 
     .copyright {
+      display: inline-block;
+      transform: translateY(200%);
       font-size: $xxs-size;
     }
   }

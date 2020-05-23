@@ -25,7 +25,6 @@
     align-items: center;
     justify-content: flex-end;
     text-decoration: none;
-    transform: translateY(200%);
     will-change: transform;
 
     img {
@@ -43,6 +42,7 @@
   }
 
   a {
+    transform: translateY(200%);
     color: $light-color;
   }
 }
@@ -64,6 +64,10 @@
 
   .linkedin {
     color: $linkedin-color;
+  }
+
+  a {
+    transform: translateY(200%);
   }
 }
 

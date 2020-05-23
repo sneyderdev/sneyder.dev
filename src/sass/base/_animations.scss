@@ -3,7 +3,7 @@
 @use './utilities' as *;
 
 .fadeIn {
-  animation: fadeIn 800ms ease-in;
+  animation: fadeIn 800ms ease-in forwards;
 }
 
 @keyframes fadeIn {

@@ -7,11 +7,13 @@
 
   &__title {
     margin: 25px 0 40px;
+    overflow-y: hidden;
 
     h1 {
       margin: 0;
       line-height: 1.2em;
       text-shadow: 0 0 10px $primary-color;
+      transform: translateY(200%);
       @include setFont($xl-size, 500);
     }
   }
