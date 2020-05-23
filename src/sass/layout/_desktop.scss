@@ -3,18 +3,6 @@
 @use '../base/utilities' as *;
 
 @media screen and (min-width: 1024px) {
-  .index-grid {
-    max-width: 1900px;
-    margin: 0 auto;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    grid-template-columns: [margin1-start] 100px [margin1-end margin2-start] 100px [margin2-end main-start] minmax(auto, 850px) [main-end margin3-start] 100px [margin3-end margin4-start] 100px [margin4-end];
-    justify-content: center;
-  }
-
   .grid {
     max-width: 1900px;
     margin: 0 auto;
@@ -30,14 +18,9 @@
   .borders {
     display: block;
     grid-column: margin2-start / margin3-end;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: -10;
     border-left: 1px solid scale-color($primary-color, $alpha: -80%);
     border-right: 1px solid scale-color($primary-color, $alpha: -80%);
+    @include setPosition(absolute, -10);
   }
 
   .navbar {
@@ -99,15 +82,15 @@
 
   .header {
     grid-area: auto / margin2-start / auto / margin3-end;
-    border-bottom: 1px solid scale-color($primary-color, $alpha: -80%);
     font-size: 20px;
+    border-bottom: 1px solid scale-color($primary-color, $alpha: -80%);
 
     &__title {
       margin: 40px 0;
     }
   }
 
-  .pinned {
+  .pinned, .main-section, .footer {
     grid-area: auto / main-start / auto / main-end;
 
     &-message {
@@ -148,6 +131,11 @@
   }
 
   // Index
+  .index-grid {
+    @extend .grid;
+    @include setPosition(fixed);
+  }
+
   .index-main-section {
     padding: 25px 0 0;
     grid-area: 2 / main-start / 3 / main-end;

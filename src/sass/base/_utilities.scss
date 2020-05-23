@@ -17,27 +17,28 @@ $s-size: 0.9em;
 $xs-size: 0.75em;
 $xxs-size: 0.6em;
 
-// Classes
-.background {
-  position: fixed;
+@mixin setPosition($position, $index: null) {
+  position: $position;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: -1;
+  @if $index != null {
+    z-index: $index;
+  }
+}
+
+// Classes
+.background {
   background: linear-gradient(to bottom, scale-color($primary-color, $alpha: -50%), transparent);
+  @include setPosition(fixed, -100);
 }
 
 .blur {
   display: none;
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 10;
-  background: scale-color($dark-color, $alpha: -40%);
   backdrop-filter: blur(20px);
+  background: scale-color($dark-color, $alpha: -40%);
+  @include setPosition(fixed, 10);
 }
 
 .blur--active {
