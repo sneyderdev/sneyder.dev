@@ -16,10 +16,6 @@
   }
 }
 
-@mixin slideUp($duration) {
-  animation: slideUp #{$duration}ms cubic-bezier(0.04, 0.86, 1, 0.99) forwards;
-}
-
 .slideUpFaster {
   @include slideUp(300);
 }

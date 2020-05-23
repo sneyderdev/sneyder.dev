@@ -19,10 +19,9 @@
 
     h1 {
       margin: 0;
-      font-weight: 500;
       line-height: 1.2em;
       transform: translateY(200%);
-      font-size: $xl-size;
+      @include setFont($xl-size, 500);
     }
   }
 

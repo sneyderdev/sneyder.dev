@@ -10,10 +10,9 @@
 
     h1 {
       margin: 0;
-      font-size: $xl-size;
-      font-weight: 500;
       line-height: 1.2em;
       text-shadow: 0 0 10px $primary-color;
+      @include setFont($xl-size, 500);
     }
   }
 }

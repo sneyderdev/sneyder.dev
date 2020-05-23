@@ -1,4 +1,4 @@
-// Responsive - Tablet > 600px
+// Responsive - Mobile(L) > 400px / Tablet > 600px
 
 @use '../base/utilities' as *;
 
@@ -6,11 +6,7 @@
   .project {
     height: 295px;
 
-    .main-screen {
-      height: 270px;
-    }
-
-    &__options {
+    .main-screen, &__options {
       height: 270px;
     }
 
@@ -21,15 +17,7 @@
 }
 
 @media screen and (min-width: 600px) {
-  .pinned-message {
-    font-size: 18px;
-  }
-
-  .header {
-    font-size: 18px;
-  }
-
-  .project {
+  .header, .pinned-message, .project, .hero, .index-footer {
     font-size: 18px;
   }
 
@@ -37,17 +25,11 @@
     font-size: 17px;
   }
 
-  // Index
   .hero {
-    font-size: 18px;
 
     &__picture {
       width: 200px;
     }
-  }
-
-  .index-footer {
-    font-size: 18px;
   }
 }
 

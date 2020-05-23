@@ -36,15 +36,13 @@
 
   &__copyright {
     display: grid;
-    text-align: center;
     margin-top: 40px;
+    text-align: center;
     color: scale-color($light-color, $alpha: -40%);
 
     .made-with {
-      display: flex;
-      align-items: center;
-      justify-content: center;
       font-size: $xs-size;
+      @include setFlex(justify-content);
     }
 
     .copyright {

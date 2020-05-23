@@ -35,8 +35,7 @@
 }
 
 .menu {
-  font-size: $l-size;
-  font-weight: 600;
+  @include setFont($l-size, 600);
 
   &__item {
     margin: 0 0 15px;
@@ -49,13 +48,10 @@
 }
 
 .social-menu {
-  font-size: $m-size;
-  font-weight: 600;
+  @include setFont($m-size, 600);
 
   &__item {
-    margin: 0 0 15px;
-    overflow: hidden;
-
+    @extend .menu__item;
   }
 
   .twitter {
