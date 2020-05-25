@@ -66,7 +66,7 @@ $xxs-size: 0.6em;
   display: none;
   backdrop-filter: blur(20px);
   background: scale-color($dark-color, $alpha: -40%);
-  @include setPosition(fixed, 10);
+  @include setPosition(fixed, 20);
 
   &--active {
     display: block;

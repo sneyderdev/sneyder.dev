@@ -26,11 +26,32 @@
   }
 
   .navbar {
-    display: flex;
+    display: grid;
     height: auto;
     padding: 0;
-    grid-area: 1 / margin3-start / 1 / margin4-end;
+    grid-area: auto / margin1-start / auto / margin4-end;
+    grid-template-columns: [margin1-start] 100px [margin1-end margin2-start] 100px [margin2-end main-start] minmax(auto, 850px) [main-end margin3-start] 100px [margin3-end margin4-start] 100px [margin4-end];
+
+    &__btn {
+      display: flex;
+      justify-content: center;
+      grid-area: auto / margin3-start / auto /  margin4-end;
+    }
+
+    &__menu {
+      grid-area: auto / margin3-start / auto / margin4-end;
+    }
+  }
+
+  .logo {
+    display: flex;
     justify-content: center;
+    grid-area: auto / margin1-start / auto / margin2-end;
+
+    &__text {
+      position: fixed;
+      top: 55px;
+    }
   }
 
   .burger-btn {

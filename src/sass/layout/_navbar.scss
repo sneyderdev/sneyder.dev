@@ -3,21 +3,40 @@
 @use '../base/utilities' as *;
 
 .navbar {
+  display: flex;
   height: 70px;
   padding: 10px 25px;
-  z-index: 20;
+  align-items: center;
+  justify-content: space-between;
   overflow-x: hidden;
   user-select: none;
+
+  &__btn {
+    order: 3;
+  }
+
+  &__menu {
+    display: none;
+  }
+}
+
+.logo {
+
+  &__text {
+    z-index: 10;
+    text-shadow: 0 0 10px $primary-color;
+    @include setFont($m-size, 600, $light-color);
+  }
 }
 
 .menu-container {
-  display: none;
   padding-right: 25px;
-  text-align: right;
   position: fixed;
   right: 10px;
   top: 70px;
   bottom: 0;
+  z-index: 30;
+  text-align: right;
   overflow-y: auto;
 
   a {
