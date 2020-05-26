@@ -16,7 +16,7 @@
     position: absolute;
     transition: all 500ms;
     background: $light-color;
-    box-shadow: 0 0 10px $primary-color;
+    box-shadow: 0 0 2px $primary-color;
 
     &:first-child {
       top: 15px;
@@ -43,6 +43,7 @@
       &:first-child {
         top: 25px;
         transform: rotateZ(-45deg);
+        box-shadow: none;
       }
 
       &:nth-child(2) {
@@ -55,7 +56,7 @@
         bottom: 22px;
         left: 0;
         transform: rotateZ(45deg);
-        box-shadow: 0 0 10px $primary-color, 0 0 4px $dark-color;
+        box-shadow: 0 0 2px $dark-color;
       }
     }
   }

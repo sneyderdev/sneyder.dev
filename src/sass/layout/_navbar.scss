@@ -24,7 +24,7 @@
 
   &__text {
     z-index: 10;
-    text-shadow: 0 0 10px $primary-color;
+    text-shadow: 0 0 2px $primary-color;
     @include setFont($m-size, 600, $light-color);
   }
 }

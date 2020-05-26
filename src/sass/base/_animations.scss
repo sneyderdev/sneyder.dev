@@ -34,7 +34,7 @@
 }
 
 // Animations - Delay
-@for $i from 1 through 6 {
+@for $i from 1 through 8 {
   .delay-#{$i} {
     animation-delay: #{$i}00ms;
   }

@@ -112,19 +112,29 @@
     }
   }
 
+  .about-header {
+    grid-area: auto / main-start / auto / main-end;
+    border: none;
+
+    &__title {
+      padding: 0;
+    }
+  }
+
   .pinned, .main-section, .footer {
     grid-area: auto / main-start / auto / main-end;
   }
 
-  .header, .pinned-message, .project__options, .hero, .index-footer {
+  .header, .pinned-message, .project__options, .hero, .index-footer, .about-me {
     font-size: 20px;
   }
 
-  .pinned {
+  .pinned-message {
+    margin: 30px 0 50px;
+  }
 
-    &-message {
-      margin: 30px 0 50px;
-    }
+  .about-pinned-message {
+    margin: 10px 0 50px;
   }
 
   .footer {

@@ -59,7 +59,7 @@ $xxs-size: 0.6em;
 
 .background {
   background: linear-gradient(to bottom, scale-color($primary-color, $alpha: -50%), transparent);
-  @include setPosition(fixed, -100);
+  @include setPosition(absolute, -100);
 }
 
 .blur {
