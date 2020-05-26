@@ -1,4 +1,4 @@
-// SASS Utilities
+// Utilities
 
 // Colors
 $light-color: #FFF;
@@ -17,44 +17,62 @@ $s-size: 0.9em;
 $xs-size: 0.75em;
 $xxs-size: 0.6em;
 
+// Mixins
+@mixin setPosition($position, $index: null) {
+  position: $position;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  @if $index != null {
+    z-index: $index;
+  }
+}
+
+@mixin slideUp($duration) {
+  animation: slideUp #{$duration}ms cubic-bezier(0.04, 0.86, 1, 0.99) forwards;
+}
+
+@mixin setFont($size, $weight, $color: null) {
+  font-size: $size;
+  font-weight: $weight;
+  @if $color != null {
+    color: $color;
+  }
+}
+
+@mixin setFlex($property: null, $value: center) {
+  display: flex;
+  align-items: center;
+  @if $property != null {
+    #{$property}: $value;
+  }
+}
+
 // Classes
-.background {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: -1;
-  background: linear-gradient(to bottom, scale-color($primary-color, $alpha: -50%), transparent);
-}
-
-.blur {
-  display: none;
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 10;
-  background: scale-color($dark-color, $alpha: -40%);
-  backdrop-filter: blur(20px);
-}
-
-.blur--active {
-  display: block;
-}
-
-.overflow--hidden {
-  overflow: hidden;
-}
-
-.borders {
-  display: none;
-}
-
 .container {
   width: 100%;
   max-width: 850px;
   padding: 0 20px;
   margin: 0 auto;
+}
+
+.background {
+  background: linear-gradient(to bottom, scale-color($primary-color, $alpha: -50%), transparent);
+  @include setPosition(absolute, -100);
+}
+
+.blur {
+  display: none;
+  backdrop-filter: blur(20px);
+  background: scale-color($dark-color, $alpha: -40%);
+  @include setPosition(fixed, 20);
+
+  &--active {
+    display: block;
+  }
+}
+
+.overflow--hidden {
+  overflow: hidden;
 }

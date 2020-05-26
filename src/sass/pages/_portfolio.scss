@@ -5,10 +5,12 @@
 .pinned-message {
   margin-bottom: 50px;
   text-align: center;
+  overflow-y: hidden;
 
   p {
     margin: 0;
     font-size: $n-size;
+    transform: translateY(200%);
   }
 }
 
@@ -16,4 +18,5 @@
   display: grid;
   gap: 20px;
   justify-content: center;
+  opacity: 0;
 }

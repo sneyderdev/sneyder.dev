@@ -1,10 +1,10 @@
 // Layout
 
-@forward 'grid';
-@forward 'navbar';
-@forward 'header';
-@forward 'footer';
+@use 'grid';
+@use 'navbar';
+@use 'header';
+@use 'footer';
 
 // Responsive
-@forward 'tablet';
-@forward 'desktop';
+@use 'tablet';
+@use 'desktop';

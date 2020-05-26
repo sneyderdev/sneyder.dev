@@ -1,0 +1,27 @@
+// Specific about styles
+
+@use '../base/utilities' as *;
+
+.about-header__title {
+  padding: 0 20px;
+  text-align: left;
+
+  h3 {
+    margin: 0;
+    line-height: 1.2em;
+    text-shadow: 0 0 2px $primary-color;
+    transform: translateY(200%);
+    @include setFont($l-size, 500);
+  }
+}
+
+.about-pinned-message {
+  text-align: left;
+}
+
+.about-me {
+  display: grid;
+  grid-auto-rows: max-content;
+  gap: 40px;
+  opacity: 0;
+}

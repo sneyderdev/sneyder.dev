@@ -1,4 +1,5 @@
 // Components
 
-@forward 'burger-btn';
-@forward 'project';
+@use 'burger-btn';
+@use 'project';
+@use 'article';

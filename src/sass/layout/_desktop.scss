@@ -3,18 +3,6 @@
 @use '../base/utilities' as *;
 
 @media screen and (min-width: 1024px) {
-  .index-grid {
-    max-width: 1900px;
-    margin: 0 auto;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    grid-template-columns: [margin1-start] 100px [margin1-end margin2-start] 100px [margin2-end main-start] minmax(auto, 850px) [main-end margin3-start] 100px [margin3-end margin4-start] 100px [margin4-end];
-    justify-content: center;
-  }
-
   .grid {
     max-width: 1900px;
     margin: 0 auto;
@@ -23,29 +11,47 @@
     justify-content: center;
   }
 
+  .grid-boundaries {
+    display: block;
+    grid-column: margin2-start / margin3-end;
+    border: {
+      left: 1px solid scale-color($primary-color, $alpha: -80%);
+      right: 1px solid scale-color($primary-color, $alpha: -80%);
+    }
+    @include setPosition(absolute, -10);
+  }
+
   .container {
     padding: 0;
   }
 
-  .borders {
-    display: block;
-    grid-column: margin2-start / margin3-end;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: -10;
-    border-left: 1px solid scale-color($primary-color, $alpha: -80%);
-    border-right: 1px solid scale-color($primary-color, $alpha: -80%);
-  }
-
   .navbar {
-    display: flex;
+    display: grid;
     height: auto;
     padding: 0;
+    grid-area: auto / margin1-start / auto / margin4-end;
+    grid-template-columns: [margin1-start] 100px [margin1-end margin2-start] 100px [margin2-end main-start] minmax(auto, 850px) [main-end margin3-start] 100px [margin3-end margin4-start] 100px [margin4-end];
+
+    &__btn {
+      display: flex;
+      justify-content: center;
+      grid-area: auto / margin3-start / auto /  margin4-end;
+    }
+
+    &__menu {
+      grid-area: auto / margin3-start / auto / margin4-end;
+    }
+  }
+
+  .logo {
+    display: flex;
     justify-content: center;
-    grid-area: 1 / margin3-start / 1 / margin4-end;
+    grid-area: auto / margin1-start / auto / margin2-end;
+
+    &__text {
+      position: fixed;
+      top: 55px;
+    }
   }
 
   .burger-btn {
@@ -100,24 +106,38 @@
   .header {
     grid-area: auto / margin2-start / auto / margin3-end;
     border-bottom: 1px solid scale-color($primary-color, $alpha: -80%);
-    font-size: 20px;
 
     &__title {
       margin: 40px 0;
     }
   }
 
-  .pinned {
+  .about-header {
     grid-area: auto / main-start / auto / main-end;
+    border: none;
 
-    &-message {
-      margin: 30px 0 50px;
-      font-size: 20px;
+    &__title {
+      padding: 0;
     }
   }
 
-  .footer {
+  .pinned, .main-section, .footer {
     grid-area: auto / main-start / auto / main-end;
+  }
+
+  .header, .pinned-message, .project__options, .hero, .index-footer, .about-me {
+    font-size: 20px;
+  }
+
+  .pinned-message {
+    margin: 30px 0 50px;
+  }
+
+  .about-pinned-message {
+    margin: 10px 0 50px;
+  }
+
+  .footer {
     font-size: 18px;
 
     img {
@@ -125,14 +145,9 @@
     }
   }
 
-  .main-section {
-    grid-area: auto / main-start / auto / main-end;
-  }
-
   .project {
 
     &__options {
-      font-size: 20px;
 
       img {
         width: 20px;
@@ -147,14 +162,17 @@
     }
   }
 
-  // Index
+  .index-grid {
+    @extend .grid;
+    @include setPosition(fixed);
+  }
+
   .index-main-section {
     padding: 25px 0 0;
     grid-area: 2 / main-start / 3 / main-end;
   }
 
   .hero {
-    font-size: 20px;
 
     &__picture {
       width: 250px;
@@ -163,6 +181,5 @@
 
   .index-footer {
     grid-area: 3 / main-start / -1 / main-end;
-    font-size: 20px;
   }
 }

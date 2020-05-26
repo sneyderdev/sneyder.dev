@@ -1,5 +1,4 @@
 // Base
 
-@forward 'utilities';
-@forward 'animations';
-@forward 'reset';
+@use 'reset';
+@use 'animations';
