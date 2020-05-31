@@ -3,7 +3,6 @@
 @use '../base/utilities' as *;
 
 .about-header__title {
-  padding: 0 20px;
   text-align: left;
 
   h3 {
@@ -15,11 +14,7 @@
   }
 }
 
-.about-pinned-message {
-  text-align: left;
-}
-
-.about-me {
+.about-me, .project-info {
   display: grid;
   grid-auto-rows: max-content;
   gap: 40px;

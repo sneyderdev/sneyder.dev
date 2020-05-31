@@ -17,7 +17,22 @@
 }
 
 @media screen and (min-width: 600px) {
-  .header, .pinned-message, .project, .hero, .index-footer, .about-me {
+  .project-options {
+    grid-template-columns: repeat(2, 250px);
+  }
+
+  .slideshow__screen {
+    height: 395px;
+    max-width: unset;
+
+    .main-screen {
+      height: 380px;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .header, .pinned-message, .project, .hero, .index-footer, .about-me, .project-options, .project-info {
     font-size: 18px;
   }
 
@@ -29,6 +44,18 @@
 
     &__picture {
       width: 200px;
+    }
+  }
+
+  .slideshow__screen {
+    height: 495px;
+
+    .main-screen {
+      height: 470px;
+    }
+
+    .arrow {
+      width: 25px;
     }
   }
 }
@@ -64,6 +91,23 @@
           margin: 0;
         }
       }
+    }
+  }
+
+  .slideshow {
+    grid-template-columns: unset;
+    justify-content: unset;
+
+    &__screen {
+      height: 560px;
+
+      .main-screen {
+        height: 545px;
+      }
+    }
+
+    &__control {
+      padding: 0 20px;
     }
   }
 }

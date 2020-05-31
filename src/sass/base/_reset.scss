@@ -2,8 +2,13 @@
 
 @use '../base/utilities' as *;
 
+::selection {
+  background: darken($primary-color, 10%);
+}
+
 * {
   box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -21,4 +26,9 @@ ul {
 
 a {
   text-decoration: none;
+}
+
+button {
+  border: none;
+  outline: none;
 }
