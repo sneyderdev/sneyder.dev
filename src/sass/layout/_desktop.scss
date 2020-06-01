@@ -13,12 +13,6 @@
 
   .grid-boundaries {
     display: block;
-    grid-column: margin2-start / margin3-end;
-    border: {
-      left: 1px solid scale-color($primary-color, $alpha: -80%);
-      right: 1px solid scale-color($primary-color, $alpha: -80%);
-    }
-    @include setPosition(absolute, -10);
   }
 
   .container {
@@ -41,6 +35,13 @@
     &__menu {
       grid-area: auto / margin3-start / auto / margin4-end;
     }
+
+    .arrow {
+      width: 35px;
+      position: fixed;
+      top: 55px;
+      z-index: 10;
+    }
   }
 
   .logo {
@@ -51,6 +52,7 @@
     &__text {
       position: fixed;
       top: 55px;
+      z-index: 10;
     }
   }
 
@@ -118,6 +120,7 @@
 
     &__title {
       padding: 0;
+      margin: 40px 0 10px;
     }
   }
 
@@ -125,12 +128,12 @@
     grid-area: auto / main-start / auto / main-end;
   }
 
-  .header, .pinned-message, .project__options, .hero, .index-footer, .about-me {
+  .header, .pinned-message, .project__options, .hero, .index-footer, .about-me, .project-options, .project-info {
     font-size: 20px;
   }
 
   .pinned-message {
-    margin: 30px 0 50px;
+    margin: 30px 0 40px;
   }
 
   .about-pinned-message {
@@ -143,11 +146,31 @@
     img {
       width: 12px;
     }
+
+    .social-menu__icon {
+      width: 12px;
+      height: 12px;
+      column-gap: 12px;
+
+      img {
+        transform: translateX(-24px);
+      }
+    }
   }
 
   .project {
 
     &__options {
+
+      .options__github {
+        width: 20px;
+        height: 20px;
+        column-gap: 20px;
+
+        img {
+          transform: translateX(-40px);
+        }
+      }
 
       img {
         width: 20px;
@@ -181,5 +204,38 @@
 
   .index-footer {
     grid-area: 3 / main-start / -1 / main-end;
+  }
+
+  .slideshow__screen {
+    height: 395px;
+    max-width: unset;
+
+    .main-screen {
+      height: 370px;
+    }
+
+    .arrow {
+      width: 25px;
+    }
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .slideshow__screen {
+    height: 495px;
+
+    .main-screen {
+      height: 470px;
+    }
+  }
+}
+
+@media screen and (min-width: 1240px) {
+  .slideshow__screen {
+    height: 560px;
+
+    .main-screen {
+      height: 545px;
+    }
   }
 }

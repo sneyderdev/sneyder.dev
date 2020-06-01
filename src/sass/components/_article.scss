@@ -10,6 +10,7 @@
 
   &__title {
     margin: 0;
+    font-weight: 600;
     color: $light-color;
   }
 
@@ -44,5 +45,16 @@
     grid-template-columns: 15px 1fr;
     align-items: center;
     gap: 20px;
+  }
+}
+
+.link-list {
+
+  img {
+    margin-left: 0;
+  }
+
+  span {
+    margin-left: 20px;
   }
 }

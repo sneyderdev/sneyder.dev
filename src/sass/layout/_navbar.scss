@@ -23,8 +23,6 @@
 .logo {
 
   &__text {
-    z-index: 10;
-    text-shadow: 0 0 2px $primary-color;
     @include setFont($m-size, 600, $light-color);
   }
 }
@@ -46,10 +44,10 @@
     text-decoration: none;
     transform: translateY(200%);
     will-change: transform;
+  }
 
-    img {
-      margin-left: 10px;
-    }
+  img {
+    transition: all 200ms;
   }
 }
 
@@ -63,6 +61,15 @@
 
   a {
     color: $light-color;
+
+    img {
+      margin-left: 10px;
+      opacity: .5;
+    }
+
+    &:hover img {
+      opacity: 1;
+    }
   }
 }
 
@@ -83,6 +90,31 @@
 
   .linkedin {
     color: $linkedin-color;
+  }
+
+  span, &__icon {
+    overflow: hidden;
+  }
+
+  &__icon {
+    display: grid;
+    width: 15px;
+    height: 15px;
+    margin-left: 10px;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 15px;
+
+    img {
+      transform: translateX(-30px);
+    }
+  }
+
+  a:hover img {
+    transform: translateX(0);
+  }
+
+  a:hover {
+    color: $light-color;
   }
 }
 

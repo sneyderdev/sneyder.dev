@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About - Sneyder Barreto</title>
+    <title>sneyder.dev - Sneyder Barreto</title>
     <link rel="shortcut icon" href="assets/icons/sneyderdev.ico" type="image/x-icon">
     <!-- Font -->
     <link href="https://fonts.googleapis.com/css2?family=Saira:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -20,7 +20,7 @@
       <!-- Navbar -->
       <nav class="navbar">
         <div class="logo">
-          <a href="index.html" class="logo__text">sneyder.dev</a>
+          <a href="portfolio.html" class="arrow" id="arrow"></a>
         </div>
         <div class="navbar__btn">
           <div class="burger-btn" id="burger-btn">
@@ -76,43 +76,67 @@
       </nav>
 
       <!-- Header -->
-      <header class="header about-header">
-        <div class="container">
-          <div class="header__title about-header__title">
-            <div class="overflow--hidden">
-              <h3 class="slideUp">About</h3>
-            </div>
-            <div class="overflow--hidden">
-              <h1 class="slideUp delay-2">Sneyder Barreto</h1>
-            </div>
-          </div>
+      <header class="header">
+        <div class="header__title">
+          <h1 class="slideUp">sneyder.dev</h1>
         </div>
       </header>
 
       <div class="container pinned">
         <div class="pinned-message">
-          <p class="pinned-message__text slideUp delay-4">📌 Hey there, I’m Sneyder!<br>
-            First of all, thanks for visiting my personal website.</p>
+          <p class="pinned-message__text slideUp delay-2">📌 My personal website.</p>
         </div>
       </div>
 
       <!-- Main Section -->
       <main class="main-section">
         <div class="container">
-          <section class="about-me fadeIn delay-8">
+          <div class="project-options fadeIn delay-6">
+            <a href="https://github.com/sneyderdev/sneyder.dev" target="_blank" class="button">Code <img src="assets/icons/github-logo.svg" alt="GitHub Logo"></a>
+            <a href="https://sneyder.dev/" target="_blank" class="button">Live Preview <img src="assets/icons/menu-arrow.svg" alt="Preview arrow"></a>
+          </div>
+          <section class="projects slideshow fadeIn delay-6">
+            <div class="project slideshow__screen">
+              <div class="screen-bar">
+                <span class="screen-bar__options">
+                  <svg width="10" height="10">
+                    <circle cx="5" cy="5" r="5" fill="#FF5F57"></circle>
+                  </svg>
+                  <svg width="10" height="10">
+                    <circle cx="5" cy="5" r="5" fill="#FFBD2E"></circle>
+                  </svg>
+                  <svg width="10" height="10">
+                    <circle cx="5" cy="5" r="5" fill="#28CA41"></circle>
+                  </svg>
+                </span>
+                <h4 class="screen-bar__title">sneyder.dev</h4>
+              </div>
+              <div class="main-screen">
+                <img src="assets/images/sneyder-dev-1.png" alt="sneyder.dev" class="slideshow__image fadeIn duration-2">
+                <img src="assets/images/sneyder-dev-2.png" alt="sneyder.dev" class="slideshow__image fadeIn duration-2">
+                <img src="assets/images/sneyder-dev-3.png" alt="sneyder.dev" class="slideshow__image fadeIn duration-2">
+                <button class="slideshow__control prev" id="prev">
+                  <i class="arrow"></i>
+                </button>
+                <button class="slideshow__control next" id="next">
+                  <i class="arrow"></i>
+                </button>
+              </div>
+            </div>
+            <div class="bullets">
+              <span class="bullet active"></span>
+              <span class="bullet"></span>
+              <span class="bullet"></span>
+            </div>
+          </section>
+          <section class="project-info fadeIn delay-6">
             <article class="article">
-              <h2 class="article__title">Who Am I?</h2>
-              <p class="article__text">I’m a developer from Colombia who is mainly interested in web technologies, specially in frontend development.<br>
-                Developing my skills as a self-taught person with books and online platforms (like <a href="https://platzi.com/@sneyderdev" target="_blank" class="article__link">Platzi <img src="https://static.platzi.com/static/images/logos/platzi_favicon.png" alt="Platzi"></a>).<br>
-                My curiosity makes me able to quickly learn new tools and technologies  when needed.<br><br>
-                I enjoy sharing my knowledge and helping others when possible.<br>
-                I’m still a newbie in coding, but I believe that experience drives learning and I’m just getting started this journey.<br><br>
-                Last but not least, I like simplicity.
-              </p>
+              <h2 class="article__title">About</h2>
+              <p class="article__text">This project is my personal website. The main goal was having a place to showcase my work and where people might know me better.</p>
+              <p class="article__text">The project is still on development. I'll be adding some features like a blog section and more projects as soon as I learn more advanced technologies.</p>
             </article>
             <article class="article">
-              <h2 class="article__title">My stack?</h2>
-              <p class="article__text">I’m focused on:</p>
+              <h2 class="article__title">Technologies</h2>
               <ul class="list">
                 <li class="list__item">
                   <img src="assets/icons/html5-logo.svg" alt="HTML5">
@@ -135,12 +159,6 @@
                   <span>Git</span>
                 </li>
               </ul>
-            </article>
-            <article class="article">
-              <h2 class="article__title">Wanna talk?</h2>
-              <p class="article__text">If you wanna get in touch or talk about a project, feel free to contact me via email at <a href="mailto:sneyderbarreto@gmail.com" target="_blank" class="article__link">sneyderbarreto@gmail.com</a>.<br>
-                You can also send me a DM on social media.
-              </p>
             </article>
           </section>
         </div>
@@ -201,5 +219,6 @@
 
     <!-- JS -->
     <script src="dist/js/main.js"></script>
+    <script src="dist/js/slideShow.js"></script>
   </body>
 </html>

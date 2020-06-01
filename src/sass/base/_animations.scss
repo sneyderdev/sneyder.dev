@@ -16,12 +16,8 @@
   }
 }
 
-.slideUpFaster {
-  @include slideUp(300);
-}
-
 .slideUp {
-  @include slideUp(800);
+  animation: slideUp 800ms cubic-bezier(0.04, 0.86, 1, 0.99) forwards;
 }
 
 @keyframes slideUp {
@@ -33,9 +29,13 @@
   }
 }
 
-// Animations - Delay
+// Animations - Delay - Duration
 @for $i from 1 through 8 {
   .delay-#{$i} {
     animation-delay: #{$i}00ms;
+  }
+
+  .duration-#{$i} {
+    animation-duration: #{$i}00ms;
   }
 }

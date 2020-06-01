@@ -43,11 +43,18 @@
       transform: translateY(200%);
       font-size: $s-size;
       color: $primary-color;
-    }
 
-    img {
-      margin-left: 5px;
-      vertical-align: middle;
+      img {
+        margin-left: 5px;
+        vertical-align: middle;
+        opacity: .5;
+        transition: all 200ms;
+      }
+
+      &:hover img {
+        margin-left: 8px;
+        opacity: 1;
+      }
     }
   }
 }
