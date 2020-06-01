@@ -8,6 +8,7 @@
   margin-left: auto;
   position: relative;
   z-index: 30;
+  cursor: pointer;
 
   i {
     display: inline-block;
@@ -16,7 +17,6 @@
     position: absolute;
     transition: all 500ms;
     background: $light-color;
-    box-shadow: 0 0 2px $primary-color;
 
     &:first-child {
       top: 15px;
@@ -34,6 +34,14 @@
       left: 12.5px;
     }
   }
+
+  // &:hover i:first-child {
+  //   top: 12px;
+  // }
+
+  // &:hover i:last-child {
+  //   bottom: 12px;
+  // }
 
   &--active {
 

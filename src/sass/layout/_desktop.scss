@@ -13,12 +13,6 @@
 
   .grid-boundaries {
     display: block;
-    grid-column: margin2-start / margin3-end;
-    border: {
-      left: 1px solid scale-color($primary-color, $alpha: -80%);
-      right: 1px solid scale-color($primary-color, $alpha: -80%);
-    }
-    @include setPosition(absolute, -10);
   }
 
   .container {
@@ -151,11 +145,31 @@
     img {
       width: 12px;
     }
+
+    .social-menu__icon {
+      width: 12px;
+      height: 12px;
+      column-gap: 12px;
+
+      img {
+        transform: translateX(-24px);
+      }
+    }
   }
 
   .project {
 
     &__options {
+
+      .options__github {
+        width: 20px;
+        height: 20px;
+        column-gap: 20px;
+
+        img {
+          transform: translateX(-40px);
+        }
+      }
 
       img {
         width: 20px;

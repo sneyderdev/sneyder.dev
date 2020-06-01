@@ -57,10 +57,6 @@
         @include setFont($n-size, 600, $light-color);
         @include setFlex;
 
-        img {
-          margin-left: 10px;
-        }
-
         &:last-child {
           margin: 30px 0 0;
           @include setFont($s-size, 400, $primary-color);
@@ -69,7 +65,47 @@
             width: 12px;
             margin-left: 5px;
           }
+
+          &:hover img {
+            opacity: 1;
+            margin-left: 8px;
+          }
         }
+
+        &:hover .options__github img {
+          transform: translateX(0);
+        }
+
+        &:hover .options__icon {
+          opacity: 1;
+          margin-left: 13px;
+        }
+      }
+
+      span, &__github {
+        overflow: hidden;
+      }
+
+      &__github {
+        display: grid;
+        width: 15px;
+        height: 15px;
+        margin-left: 10px;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 15px;
+
+        img {
+          opacity: 1;
+          margin-left: 0;
+          transform: translateX(-30px);
+          transition: all 200ms;
+        }
+      }
+
+      &__icon {
+        opacity: .5;
+        margin-left: 10px;
+        transition: all 200ms;
       }
     }
   }

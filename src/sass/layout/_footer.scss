@@ -24,6 +24,10 @@
     &__item:last-child {
       margin-bottom: 0;
     }
+
+    img {
+      margin-left: 5px;
+    }
   }
 
   .social-menu {
@@ -32,6 +36,17 @@
 
     &__item:last-child {
       margin-bottom: 0;
+    }
+
+    &__icon {
+      width: 10px;
+      height: 10px;
+      margin-left: 5px;
+      column-gap: 10px;
+
+      img {
+        transform: translateX(-20px);
+      }
     }
   }
 
@@ -46,6 +61,10 @@
       font-size: $xs-size;
       transform: translateY(200%);
       @include setFlex(justify-content);
+
+      img {
+        margin-left: 5px;
+      }
     }
 
     .copyright {
@@ -56,6 +75,6 @@
 
   img {
     width: 10px;
-    margin-left: 5px;
+    transition: all 200ms;
   }
 }
