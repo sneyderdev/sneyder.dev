@@ -3,6 +3,22 @@
 @use '../base/utilities' as *;
 
 @media screen and (min-width: 1024px) {
+  ::-webkit-scrollbar {
+    width: .4em;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: $dark-color;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: scale-color($light-color, $alpha: -60%);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: $light-color;
+  }
+
   .grid {
     max-width: 1900px;
     margin: 0 auto;
