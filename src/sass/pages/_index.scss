@@ -47,12 +47,11 @@
       img {
         margin-left: 5px;
         vertical-align: middle;
-        opacity: .5;
+        opacity: .4;
         transition: all 200ms;
       }
 
       &:hover img {
-        margin-left: 8px;
         opacity: 1;
       }
     }

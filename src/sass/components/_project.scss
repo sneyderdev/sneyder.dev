@@ -65,11 +65,6 @@
             width: 12px;
             margin-left: 5px;
           }
-
-          &:hover img {
-            opacity: 1;
-            margin-left: 8px;
-          }
         }
 
         &:hover .options__github img {
@@ -78,7 +73,6 @@
 
         &:hover .options__icon {
           opacity: 1;
-          margin-left: 13px;
         }
       }
 
