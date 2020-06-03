@@ -29,11 +29,27 @@
     img {
       width: 15px;
       height: 15px;
-      margin-left: 3px;
+      transition: all 200ms;
     }
 
     &:hover {
       text-decoration-color: $light-color;
+    }
+
+    &:hover img {
+      transform: translateX(0);
+    }
+
+    & .social-menu__icon {
+      margin-left: 5px;
+    }
+
+    & > img {
+      opacity: .4;
+    }
+
+    &:hover > img {
+      opacity: 1;
     }
   }
 }
@@ -56,5 +72,9 @@
 
   span {
     margin-left: 20px;
+  }
+
+  & .social-menu__icon {
+    margin-left: 0;
   }
 }
