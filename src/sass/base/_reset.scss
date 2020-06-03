@@ -7,22 +7,6 @@
   color: $light-color;
 }
 
-::-webkit-scrollbar {
-  width: .4em;
-}
-
-::-webkit-scrollbar-track {
-  background: $dark-color;
-}
-
-::-webkit-scrollbar-thumb {
-  background: scale-color($light-color, $alpha: -60%);
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: $light-color;
-}
-
 * {
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
