@@ -3,7 +3,24 @@
 @use '../base/utilities' as *;
 
 ::selection {
-  background: darken($primary-color, 10%);
+  background: scale-color($primary-color, $alpha: -60%);
+  color: $light-color;
+}
+
+::-webkit-scrollbar {
+  width: .4em;
+}
+
+::-webkit-scrollbar-track {
+  background: $dark-color;
+}
+
+::-webkit-scrollbar-thumb {
+  background: scale-color($light-color, $alpha: -60%);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: $light-color;
 }
 
 * {
@@ -31,4 +48,8 @@ a {
 button {
   border: none;
   outline: none;
+}
+
+img {
+  user-select: none;
 }
