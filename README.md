@@ -2,7 +2,8 @@
 📌 My personal website.
 
 ## Preview
-![sneyder.dev](https://github.com/sneyderdev/sneyder.dev/blob/master/assets/images/sneyder-dev.gif?raw=true)
+![sneyder.dev](https://raw.githubusercontent.com/sneyderdev/sneyder.dev/master/assets/gifs/sneyder-dev.gif)
+![Portfolio - sneyder.dev](https://raw.githubusercontent.com/sneyderdev/sneyder.dev/master/assets/gifs/sneyder-dev2.gif)
 
 ## About
 This project is **my personal website**. The main goal was having a place to showcase my work and where people might know me better.
