@@ -72,3 +72,25 @@ $xxs-size: 0.6em;
 .overflow--hidden {
   overflow: hidden;
 }
+
+.sleep-screen {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  font-weight: 500;
+  opacity: 0;
+  backdrop-filter: blur(20px);
+  background: scale-color($dark-color, $alpha: -40%);
+  @include setPosition(fixed, -10);
+
+  &__text {
+    display: inline-block;
+    transform: translateY(200%);
+    font-size: $xl-size;
+  }
+
+  &--active {
+    animation: sleepScreen 2400ms forwards;
+    z-index: 30;
+  }
+}
