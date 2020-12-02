@@ -29,6 +29,24 @@
   }
 }
 
+@keyframes sleepScreen {
+  0% {
+    opacity: 0;
+  }
+
+  40% {
+    opacity: 1;
+  }
+
+  60% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
 // Animations - Delay - Duration
 @for $i from 1 through 8 {
   .delay-#{$i} {
