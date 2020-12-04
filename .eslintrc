@@ -9,6 +9,7 @@
       }
     ],
     "react/jsx-one-expression-per-line": 0,
+    "react/jsx-props-no-spreading": 0,
     "react/prop-types": 0,
     "import/imports-first": ["error", "absolute-first"],
     "import/newline-after-import": "error",

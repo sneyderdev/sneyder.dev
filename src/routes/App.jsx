@@ -1,19 +1,17 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import * as Container from '../containers';
-import Layout from '../components/Layout';
+import { BrowserRouter as Router, Switch } from 'react-router-dom';
+import { Home, Portfolio, About, NotFound } from '../containers';
+import RouteWrapper from './RouteWrapper';
 
 const App = () => {
   return (
     <Router>
-      <Layout>
-        <Switch>
-          <Route exact path='/' component={Container.Home} />
-          <Route exact path='/portfolio' component={Container.Portfolio} />
-          <Route exact path='/about' component={Container.About} />
-          <Route component={Container.NotFound} />
-        </Switch>
-      </Layout>
+      <Switch>
+        <RouteWrapper exact path='/' component={Home} />
+        <RouteWrapper exact path='/portfolio' component={Portfolio} hasFooter />
+        <RouteWrapper exact path='/about' component={About} hasFooter />
+        <RouteWrapper component={NotFound} hasFooter />
+      </Switch>
     </Router>
   );
 };
