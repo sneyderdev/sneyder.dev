@@ -2,10 +2,10 @@ import React from 'react';
 import Header from './Header';
 import Footer from './Footer';
 
-const Layout = ({ children, hasFooter }) => {
+const Layout = ({ children, hasFooter, hasArrow }) => {
   return (
     <div>
-      <Header />
+      <Header hasArrow={hasArrow} />
       {children}
       {hasFooter && <Footer />}
     </div>

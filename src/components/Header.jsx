@@ -1,12 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Header = () => {
+const Header = ({ hasArrow }) => {
   return (
     <header>
       <nav className='navbar'>
         <div className='logo'>
-          <Link to='/'>sneyder.dev</Link>
+          {hasArrow ? (
+            <Link to='/portfolio'>Arrow</Link>
+          ) : (
+            <Link to='/'>sneyder.dev</Link>
+          )}
         </div>
         <div className='navbar__btn'>
           <div className='burger-btn fadeIn' id='burger-btn'>

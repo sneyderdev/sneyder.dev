@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Project = ({ project }) => {
   return (
@@ -37,14 +38,14 @@ const Project = ({ project }) => {
               className='options__icon'
             />
           </a>
-          <a href='sneyder-dev.html'>
+          <Link to={`/portfolio/${project.name}`}>
             Learn more...{' '}
             <img
               src='assets/icons/projects-arrow.svg'
               alt='Learn more arrow'
               className='options__icon'
             />
-          </a>
+          </Link>
         </div>
       </div>
     </div>
