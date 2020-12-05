@@ -1,13 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
     <header>
       <nav className='navbar'>
         <div className='logo'>
-          <a href='https://sneyder.dev' className='logo__text fadeIn'>
-            sneyder.dev
-          </a>
+          <Link to='/'>sneyder.dev</Link>
         </div>
         <div className='navbar__btn'>
           <div className='burger-btn fadeIn' id='burger-btn'>
@@ -20,16 +19,16 @@ const Header = () => {
           <div className='menu-container'>
             <ul className='menu'>
               <li className='menu__item'>
-                <a href='portfolio.html' className='slideUp duration-3'>
+                <Link to='/portfolio'>
                   Portfolio{' '}
                   <img src='assets/icons/menu-arrow.svg' alt='Menu Arrow' />
-                </a>
+                </Link>
               </li>
               <li className='menu__item'>
-                <a href='about.html' className='slideUp delay-1 duration-3'>
+                <Link to='/about'>
                   About{' '}
                   <img src='assets/icons/menu-arrow.svg' alt='Menu Arrow' />
-                </a>
+                </Link>
               </li>
               <li className='menu__item'>
                 <a
