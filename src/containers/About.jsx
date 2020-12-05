@@ -2,6 +2,12 @@ import React from 'react';
 import PinnedMessage from '../components/PinnedMessage';
 import initialState from '../../initialState';
 
+import htmlLogo from '../assets/icons/html-logo.svg';
+import cssLogo from '../assets/icons/css-logo.svg';
+import javascriptLogo from '../assets/icons/js-logo.svg';
+import sassLogo from '../assets/icons/sass-logo.svg';
+import gitLogo from '../assets/icons/git-logo.svg';
+
 const About = () => {
   return (
     <>
@@ -66,23 +72,23 @@ const About = () => {
               <p className='article__text'>I’m focused on:</p>
               <ul className='list'>
                 <li className='list__item'>
-                  <img src='assets/icons/html5-logo.svg' alt='HTML5' />
+                  <img src={htmlLogo} alt='HTML5' />
                   <span>HTML</span>
                 </li>
                 <li className='list__item'>
-                  <img src='assets/icons/css-logo.svg' alt='CSS3' />
+                  <img src={cssLogo} alt='CSS3' />
                   <span>CSS</span>
                 </li>
                 <li className='list__item'>
-                  <img src='assets/icons/js-logo.svg' alt='JavaScript' />
+                  <img src={javascriptLogo} alt='JavaScript' />
                   <span>JavaScript</span>
                 </li>
                 <li className='list__item'>
-                  <img src='assets/icons/sass-brand.svg' alt='Sass' />
+                  <img src={sassLogo} alt='Sass' />
                   <span>Sass</span>
                 </li>
                 <li className='list__item'>
-                  <img src='assets/icons/git-logo.svg' alt='Git' />
+                  <img src={gitLogo} alt='Git' />
                   <span>Git</span>
                 </li>
               </ul>

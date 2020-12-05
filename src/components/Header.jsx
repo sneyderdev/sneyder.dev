@@ -1,6 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import arrowIcon from '../assets/icons/arrow.svg';
+import linkIcon from '../assets/icons/link.svg';
+import twitterLogo from '../assets/icons/twitter-logo.svg';
+import githubLogo from '../assets/icons/github-logo.svg';
+import linkedinLogo from '../assets/icons/linkedin-logo.svg';
+
 const Header = ({ hasArrow }) => {
   return (
     <header>
@@ -24,14 +30,12 @@ const Header = ({ hasArrow }) => {
             <ul className='menu'>
               <li className='menu__item'>
                 <Link to='/portfolio'>
-                  Portfolio{' '}
-                  <img src='assets/icons/menu-arrow.svg' alt='Menu Arrow' />
+                  Portfolio <img src={arrowIcon} alt='Menu Arrow' />
                 </Link>
               </li>
               <li className='menu__item'>
                 <Link to='/about'>
-                  About{' '}
-                  <img src='assets/icons/menu-arrow.svg' alt='Menu Arrow' />
+                  About <img src={arrowIcon} alt='Menu Arrow' />
                 </Link>
               </li>
               <li className='menu__item'>
@@ -41,8 +45,7 @@ const Header = ({ hasArrow }) => {
                   rel='noreferrer'
                   className='slideUp delay-2 duration-3'
                 >
-                  Contact{' '}
-                  <img src='assets/icons/menu-arrow.svg' alt='Menu Arrow' />
+                  Contact <img src={arrowIcon} alt='Menu Arrow' />
                 </a>
               </li>
             </ul>
@@ -56,11 +59,8 @@ const Header = ({ hasArrow }) => {
                 >
                   <span>Twitter</span>
                   <div className='social-menu__icon'>
-                    <img src='assets/icons/link.svg' alt='Link' />
-                    <img
-                      src='assets/icons/twitter-logo.svg'
-                      alt='Twitter Logo'
-                    />
+                    <img src={linkIcon} alt='Link' />
+                    <img src={twitterLogo} alt='Twitter Logo' />
                   </div>
                 </a>
               </li>
@@ -73,8 +73,8 @@ const Header = ({ hasArrow }) => {
                 >
                   <span>GitHub</span>
                   <div className='social-menu__icon'>
-                    <img src='assets/icons/link.svg' alt='Link' />
-                    <img src='assets/icons/github-logo.svg' alt='GitHub Logo' />
+                    <img src={linkIcon} alt='Link' />
+                    <img src={githubLogo} alt='GitHub Logo' />
                   </div>
                 </a>
               </li>
@@ -87,11 +87,8 @@ const Header = ({ hasArrow }) => {
                 >
                   <span>LinkedIn</span>
                   <div className='social-menu__icon'>
-                    <img src='assets/icons/link.svg' alt='Link' />
-                    <img
-                      src='assets/icons/linkedin-logo.svg'
-                      alt='LinkedIn Logo'
-                    />
+                    <img src={linkIcon} alt='Link' />
+                    <img src={linkedinLogo} alt='LinkedIn Logo' />
                   </div>
                 </a>
               </li>

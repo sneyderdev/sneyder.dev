@@ -1,6 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import arrowIcon from '../assets/icons/arrow.svg';
+import purpleArrowIcon from '../assets/icons/purple-arrow.svg';
+import linkIcon from '../assets/icons/link.svg';
+import githubLogo from '../assets/icons/github-logo.svg';
+
 const Project = ({ project }) => {
   return (
     <div className='project'>
@@ -26,14 +31,14 @@ const Project = ({ project }) => {
           <a href={project.codeURL} target='_blank' rel='noreferrer'>
             <span>Code</span>
             <div className='options__github'>
-              <img src='assets/icons/link.svg' alt='Link' />
-              <img src='assets/icons/github-logo.svg' alt='GitHub Logo' />
+              <img src={linkIcon} alt='Link' />
+              <img src={githubLogo} alt='GitHub Logo' />
             </div>
           </a>
           <a href={project.previewURL} target='_blank' rel='noreferrer'>
             Live Preview
             <img
-              src='assets/icons/menu-arrow.svg'
+              src={arrowIcon}
               alt='Preview arrow'
               className='options__icon'
             />
@@ -41,7 +46,7 @@ const Project = ({ project }) => {
           <Link to={`/portfolio/${project.name}`}>
             Learn more...{' '}
             <img
-              src='assets/icons/projects-arrow.svg'
+              src={purpleArrowIcon}
               alt='Learn more arrow'
               className='options__icon'
             />

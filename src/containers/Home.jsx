@@ -1,5 +1,8 @@
 import React from 'react';
 
+import mainPicture from '../assets/images/main-picture.png';
+import purpleArrowIcon from '../assets/icons/purple-arrow.svg';
+
 const Home = () => {
   return (
     <>
@@ -10,7 +13,7 @@ const Home = () => {
         <div className='container'>
           <div className='hero'>
             <img
-              src='assets/images/main-picture.png'
+              src={mainPicture}
               alt='Sneyder Barreto'
               className='hero__picture fadeIn'
             />
@@ -25,10 +28,7 @@ const Home = () => {
             <div className='hero__cta overflow--hidden'>
               <a className='slideUp delay-4' href='portfolio.html'>
                 See the latest projects I&apos;ve been working on{' '}
-                <img
-                  src='assets/icons/projects-arrow.svg'
-                  alt='Projects Arrow'
-                />
+                <img src={purpleArrowIcon} alt='Projects Arrow' />
               </a>
             </div>
           </div>
