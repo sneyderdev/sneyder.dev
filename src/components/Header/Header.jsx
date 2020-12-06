@@ -1,44 +1,65 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import arrowIcon from '../assets/icons/arrow.svg';
-import linkIcon from '../assets/icons/link.svg';
-import twitterLogo from '../assets/icons/twitter-logo.svg';
-import githubLogo from '../assets/icons/github-logo.svg';
-import linkedinLogo from '../assets/icons/linkedin-logo.svg';
+import arrowIcon from '../../assets/icons/arrow.svg';
+import linkIcon from '../../assets/icons/link.svg';
+import twitterLogo from '../../assets/icons/twitter-logo.svg';
+import githubLogo from '../../assets/icons/github-logo.svg';
+import linkedinLogo from '../../assets/icons/linkedin-logo.svg';
+
+import {
+  Navbar,
+  LogoText,
+  BurgerButton,
+  MenuContainer,
+  Menu,
+  MenuItem,
+  SocialMenu,
+  SocialMenuItem,
+  SocialMenuIcon,
+} from './Header.styles';
 
 const Header = ({ hasArrow }) => {
   return (
     <header>
-      <nav className='navbar'>
+      <Navbar>
         <div className='logo'>
           {hasArrow ? (
             <Link to='/portfolio'>Arrow</Link>
           ) : (
-            <Link to='/'>sneyder.dev</Link>
+            <LogoText to='/'>sneyder.dev</LogoText>
           )}
         </div>
-        <div className='navbar__btn'>
-          <div className='burger-btn fadeIn' id='burger-btn'>
+        <div
+          css={`
+            order: 3;
+          `}
+        >
+          <BurgerButton id='burger-btn'>
             <i />
             <i />
             <i />
-          </div>
+          </BurgerButton>
         </div>
-        <div className='navbar__menu' id='menu'>
-          <div className='menu-container'>
-            <ul className='menu'>
-              <li className='menu__item'>
+        <div
+          css={`
+            display: none;
+          `}
+          id='menu'
+        >
+          <MenuContainer>
+            <Menu>
+              <MenuItem>
                 <Link to='/portfolio'>
                   Portfolio <img src={arrowIcon} alt='Menu Arrow' />
                 </Link>
-              </li>
-              <li className='menu__item'>
+              </MenuItem>
+              <MenuItem>
                 <Link to='/about'>
                   About <img src={arrowIcon} alt='Menu Arrow' />
                 </Link>
-              </li>
-              <li className='menu__item'>
+              </MenuItem>
+              <MenuItem>
                 <a
                   href='mailto:hello@sneyder.dev'
                   target='_blank'
@@ -47,24 +68,26 @@ const Header = ({ hasArrow }) => {
                 >
                   Contact <img src={arrowIcon} alt='Menu Arrow' />
                 </a>
-              </li>
-            </ul>
-            <ul className='social-menu'>
-              <li className='social-menu__item'>
+              </MenuItem>
+            </Menu>
+            <SocialMenu>
+              <SocialMenuItem>
                 <a
-                  className='twitter slideUp delay-3 duration-3'
+                  css={`
+                    color: ${(props) => props.theme.colors.twitter};
+                  `}
                   href='https://twitter.com/sneyderdev'
                   target='_blank'
                   rel='noreferrer'
                 >
                   <span>Twitter</span>
-                  <div className='social-menu__icon'>
+                  <SocialMenuIcon>
                     <img src={linkIcon} alt='Link' />
                     <img src={twitterLogo} alt='Twitter Logo' />
-                  </div>
+                  </SocialMenuIcon>
                 </a>
-              </li>
-              <li className='social-menu__item'>
+              </SocialMenuItem>
+              <SocialMenuItem>
                 <a
                   className='github slideUp delay-4 duration-3'
                   href='https://github.com/sneyderdev'
@@ -72,30 +95,33 @@ const Header = ({ hasArrow }) => {
                   rel='noreferrer'
                 >
                   <span>GitHub</span>
-                  <div className='social-menu__icon'>
+                  <SocialMenuIcon>
                     <img src={linkIcon} alt='Link' />
                     <img src={githubLogo} alt='GitHub Logo' />
-                  </div>
+                  </SocialMenuIcon>
                 </a>
-              </li>
-              <li className='social-menu__item'>
+              </SocialMenuItem>
+              <SocialMenuItem>
                 <a
+                  css={`
+                    color: ${(props) => props.theme.colors.linkedin};
+                  `}
                   className='linkedin slideUp delay-5 duration-3'
                   href='https://www.linkedin.com/in/sneyderdev'
                   target='_blank'
                   rel='noreferrer'
                 >
                   <span>LinkedIn</span>
-                  <div className='social-menu__icon'>
+                  <SocialMenuIcon>
                     <img src={linkIcon} alt='Link' />
                     <img src={linkedinLogo} alt='LinkedIn Logo' />
-                  </div>
+                  </SocialMenuIcon>
                 </a>
-              </li>
-            </ul>
-          </div>
+              </SocialMenuItem>
+            </SocialMenu>
+          </MenuContainer>
         </div>
-      </nav>
+      </Navbar>
     </header>
   );
 };
