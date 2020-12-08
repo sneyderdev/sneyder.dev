@@ -8,16 +8,13 @@ import githubLogo from '../../assets/icons/github-logo.svg';
 import linkedinLogo from '../../assets/icons/linkedin-logo.svg';
 
 import {
-  Navbar,
-  LogoText,
-  BurgerButton,
-  MenuContainer,
   Menu,
   MenuItem,
   SocialMenu,
   SocialMenuItem,
   SocialMenuIcon,
-} from './Header.styles';
+} from '../../shared';
+import { Navbar, LogoText, BurgerButton, MenuContainer } from './Header.styles';
 
 const Header = ({ hasArrow }) => {
   return (
@@ -73,9 +70,6 @@ const Header = ({ hasArrow }) => {
             <SocialMenu>
               <SocialMenuItem>
                 <a
-                  css={`
-                    color: ${(props) => props.theme.colors.twitter};
-                  `}
                   href='https://twitter.com/sneyderdev'
                   target='_blank'
                   rel='noreferrer'
@@ -103,9 +97,6 @@ const Header = ({ hasArrow }) => {
               </SocialMenuItem>
               <SocialMenuItem>
                 <a
-                  css={`
-                    color: ${(props) => props.theme.colors.linkedin};
-                  `}
                   className='linkedin slideUp delay-5 duration-3'
                   href='https://www.linkedin.com/in/sneyderdev'
                   target='_blank'

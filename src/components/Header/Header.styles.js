@@ -50,7 +50,7 @@ export const BurgerButton = styled.div`
     }
   }
 
-  .active {
+  &.active {
     i {
       background: ${(props) => props.theme.colors.primary};
 
@@ -91,65 +91,10 @@ export const MenuContainer = styled.div`
     align-items: center;
     justify-content: flex-end;
     text-decoration: none;
-    transform: translateY(200%);
-    will-change: transform;
+    ${'' /* transform: translateY(200%); */}
   }
 
   img {
     transition: all 200ms;
   }
 `;
-
-export const Menu = styled.ul`
-  ${(props) => setFont(props.theme.sizes.l, 600)}
-
-  a {
-    color: ${(props) => props.theme.colors.white};
-
-    img {
-      margin-left: 10px;
-      opacity: 0.4;
-    }
-
-    &:hover img {
-      opacity: 1;
-    }
-  }
-`;
-
-export const MenuItem = styled.li`
-  margin: 0 0 15px;
-  overflow: hidden;
-`;
-
-export const SocialMenuIcon = styled.div`
-  display: grid;
-  width: 15px;
-  height: 15px;
-  margin-left: 10px;
-  grid-template-columns: repeat(2, 1fr);
-  column-gap: 15px;
-
-  img {
-    transform: translateX(-30px);
-  }
-`;
-
-export const SocialMenu = styled.ul`
-  ${(props) => setFont(props.theme.sizes.m, 600)}
-
-  span, ${SocialMenuIcon} {
-    overflow: hidden;
-  }
-
-  a:hover img {
-    transform: translateX(0);
-  }
-
-  a:hover {
-    transition: color 200ms;
-    color: ${(props) => props.theme.colors.white};
-  }
-`;
-
-export const SocialMenuItem = styled(MenuItem)``;

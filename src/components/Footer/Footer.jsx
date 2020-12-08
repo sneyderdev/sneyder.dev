@@ -1,30 +1,39 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import arrowIcon from '../assets/icons/arrow.svg';
-import linkIcon from '../assets/icons/link.svg';
-import twitterLogo from '../assets/icons/twitter-logo.svg';
-import githubLogo from '../assets/icons/github-logo.svg';
-import linkedinLogo from '../assets/icons/linkedin-logo.svg';
-import heartIcon from '../assets/icons/heart.svg';
+import arrowIcon from '../../assets/icons/arrow.svg';
+import linkIcon from '../../assets/icons/link.svg';
+import twitterLogo from '../../assets/icons/twitter-logo.svg';
+import githubLogo from '../../assets/icons/github-logo.svg';
+import linkedinLogo from '../../assets/icons/linkedin-logo.svg';
+import heartIcon from '../../assets/icons/heart.svg';
+
+import {
+  Menu,
+  MenuItem,
+  SocialMenu,
+  SocialMenuItem,
+  SocialMenuIcon,
+} from '../../shared';
+import { StyledFooter, FooterOptions, FooterCopyright } from './Footer.styles';
 
 const Footer = () => {
   return (
-    <footer className='footer'>
+    <StyledFooter>
       <div className='container'>
-        <div className='footer__options'>
-          <ul className='menu'>
-            <li className='menu__item'>
+        <FooterOptions>
+          <Menu>
+            <MenuItem>
               <Link to='/portfolio'>
                 Portfolio <img src={arrowIcon} alt='Menu Arrow' />
               </Link>
-            </li>
-            <li className='menu__item'>
+            </MenuItem>
+            <MenuItem>
               <Link to='/about'>
                 About <img src={arrowIcon} alt='Menu Arrow' />
               </Link>
-            </li>
-            <li className='menu__item'>
+            </MenuItem>
+            <MenuItem>
               <a
                 href='mailto:hello@sneyder.dev'
                 target='_blank'
@@ -33,10 +42,10 @@ const Footer = () => {
               >
                 Contact <img src={arrowIcon} alt='Menu Arrow' />
               </a>
-            </li>
-          </ul>
-          <ul className='social-menu'>
-            <li className='social-menu__item'>
+            </MenuItem>
+          </Menu>
+          <SocialMenu>
+            <SocialMenuItem>
               <a
                 className='twitter slideUp delay-6'
                 href='https://twitter.com/sneyderdev'
@@ -44,13 +53,13 @@ const Footer = () => {
                 rel='noreferrer'
               >
                 <span>Twitter</span>
-                <div className='social-menu__icon'>
+                <SocialMenuIcon>
                   <img src={linkIcon} alt='Link' />
                   <img src={twitterLogo} alt='Twitter Logo' />
-                </div>
+                </SocialMenuIcon>
               </a>
-            </li>
-            <li className='social-menu__item'>
+            </SocialMenuItem>
+            <SocialMenuItem>
               <a
                 className='github slideUp delay-6'
                 href='https://github.com/sneyderdev'
@@ -58,13 +67,13 @@ const Footer = () => {
                 rel='noreferrer'
               >
                 <span>GitHub</span>
-                <div className='social-menu__icon'>
+                <SocialMenuIcon>
                   <img src={linkIcon} alt='Link' />
                   <img src={githubLogo} alt='GitHub Logo' />
-                </div>
+                </SocialMenuIcon>
               </a>
-            </li>
-            <li className='social-menu__item'>
+            </SocialMenuItem>
+            <SocialMenuItem>
               <a
                 className='linkedin slideUp delay-6'
                 href='https://www.linkedin.com/in/sneyderdev'
@@ -72,24 +81,24 @@ const Footer = () => {
                 rel='noreferrer'
               >
                 <span>LinkedIn</span>
-                <div className='social-menu__icon'>
+                <SocialMenuIcon>
                   <img src={linkIcon} alt='Link' />
                   <img src={linkedinLogo} alt='LinkedIn Logo' />
-                </div>
+                </SocialMenuIcon>
               </a>
-            </li>
-          </ul>
-        </div>
-        <div className='footer__copyright'>
+            </SocialMenuItem>
+          </SocialMenu>
+        </FooterOptions>
+        <FooterCopyright>
           <span className='made-with slideUp delay-6'>
             Made with <img src={heartIcon} alt='heart' />
           </span>
           <span className='copyright slideUp delay-6'>
             © 2020 Sneyder Barreto.
           </span>
-        </div>
+        </FooterCopyright>
       </div>
-    </footer>
+    </StyledFooter>
   );
 };
 
