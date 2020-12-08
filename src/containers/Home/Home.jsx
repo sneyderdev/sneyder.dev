@@ -1,7 +1,16 @@
 import React from 'react';
 
-import mainPicture from '../assets/images/main-picture.png';
-import purpleArrowIcon from '../assets/icons/purple-arrow.svg';
+import mainPicture from '../../assets/images/main-picture.png';
+import purpleArrowIcon from '../../assets/icons/purple-arrow.svg';
+
+import {
+  MainSection,
+  Hero,
+  HeroTitle,
+  HeroDescription,
+  HeroLink,
+  StyledFooter,
+} from './Home.styles';
 
 const Home = () => {
   return (
@@ -9,33 +18,33 @@ const Home = () => {
       <div className='blur' id='blur' />
       <div className='grid-boundaries' />
 
-      <main className='index-main-section'>
+      <MainSection className='index-main-section'>
         <div className='container'>
-          <div className='hero'>
+          <Hero className='hero'>
             <img
               src={mainPicture}
               alt='Sneyder Barreto'
               className='hero__picture fadeIn'
             />
-            <div className='hero__title overflow--hidden'>
+            <HeroTitle className='hero__title overflow--hidden'>
               <h1 className='slideUp'>Hi, I&apos;m Sneyder Barreto</h1>
-            </div>
-            <div className='hero__description overflow--hidden'>
+            </HeroTitle>
+            <HeroDescription className='hero__description overflow--hidden'>
               <p className='slideUp delay-2'>
                 I like creating things with web technologies.
               </p>
-            </div>
+            </HeroDescription>
             <div className='hero__cta overflow--hidden'>
-              <a className='slideUp delay-4' href='portfolio.html'>
+              <HeroLink className='slideUp delay-4' to='/portfolio'>
                 See the latest projects I&apos;ve been working on{' '}
                 <img src={purpleArrowIcon} alt='Projects Arrow' />
-              </a>
+              </HeroLink>
             </div>
-          </div>
+          </Hero>
         </div>
-      </main>
+      </MainSection>
 
-      <footer className='index-footer'>
+      <StyledFooter className='index-footer'>
         <div className='container'>
           <div className='index-footer__text overflow--hidden'>
             <p className='slideUp delay-6'>
@@ -75,7 +84,7 @@ const Home = () => {
             </p>
           </div>
         </div>
-      </footer>
+      </StyledFooter>
     </>
   );
 };
