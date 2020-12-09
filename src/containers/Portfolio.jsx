@@ -1,7 +1,7 @@
 import React from 'react';
 import initialState from '../../initialState';
 import PinnedMessage from '../components/PinnedMessage';
-import Projects from '../components/Projects';
+import { Projects } from '../components';
 
 const Portfolio = () => {
   return (
