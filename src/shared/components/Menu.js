@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import setFont from '../utils/setFont';
+import setFont from '../mixins/setFont';
 
 export const Menu = styled.ul`
   ${(props) => setFont(props.theme.sizes.l, 600)}

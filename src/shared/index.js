@@ -1,9 +1,9 @@
 export { default as theme } from './theme';
 export { default as GlobalStyle } from './GlobalStyle';
 
-export { default as setPosition } from './utils/setPosition';
-export { default as setFont } from './utils/setFont';
-export { default as setFlex } from './utils/setFlex';
+export { default as setPosition } from './mixins/setPosition';
+export { default as setFont } from './mixins/setFont';
+export { default as setFlex } from './mixins/setFlex';
 
 export { Menu, MenuItem } from './components/Menu';
 export {

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import setFont from '../utils/setFont';
+import setFont from '../mixins/setFont';
 import { MenuItem } from './Menu';
 
 export const SocialMenu = styled.ul`
