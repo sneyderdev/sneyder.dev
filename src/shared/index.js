@@ -1,5 +1,6 @@
 export { default as theme } from './theme';
 export { default as GlobalStyle } from './GlobalStyle';
+export { default as Background } from './utils';
 
 export { default as setPosition } from './mixins/setPosition';
 export { default as setFont } from './mixins/setFont';

@@ -15,9 +15,6 @@ import {
 const Home = () => {
   return (
     <>
-      <div className='blur' id='blur' />
-      <div className='grid-boundaries' />
-
       <MainSection className='index-main-section'>
         <div className='container'>
           <Hero className='hero'>

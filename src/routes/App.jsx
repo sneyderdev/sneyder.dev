@@ -4,12 +4,13 @@ import { ThemeProvider } from 'styled-components';
 
 import RouteWrapper from './RouteWrapper';
 import { Home, Portfolio, ProjectInfo, About, NotFound } from '../containers';
-import { GlobalStyle, theme } from '../shared';
+import { theme, GlobalStyle, Background } from '../shared';
 
 const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
+      <Background />
       <Router>
         <Switch>
           <RouteWrapper exact path='/' component={Home} />
