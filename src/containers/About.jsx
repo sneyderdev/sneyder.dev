@@ -2,11 +2,14 @@ import React from 'react';
 import PinnedMessage from '../components/PinnedMessage';
 import initialState from '../../initialState';
 
+import linkIcon from '../assets/icons/link.svg';
 import htmlLogo from '../assets/icons/html-logo.svg';
 import cssLogo from '../assets/icons/css-logo.svg';
 import javascriptLogo from '../assets/icons/js-logo.svg';
 import sassLogo from '../assets/icons/sass-logo.svg';
 import gitLogo from '../assets/icons/git-logo.svg';
+
+import { ArticleContainer, Article, SocialMenuIcon, ListItem } from '../shared';
 
 const About = () => {
   return (
@@ -28,15 +31,15 @@ const About = () => {
 
       <main className='main-section'>
         <div className='container'>
-          <section className='about-me fadeIn delay-8'>
-            <article className='article'>
+          <ArticleContainer className='about-me fadeIn delay-8'>
+            <Article className='article'>
               <h2 className='article__title'>Who Am I?</h2>
               <p className='article__text'>
                 I’m a developer from Colombia who is mainly interested in web
                 technologies, specially in frontend development.
                 <br />
                 Developing my skills as a self-taught person with books and
-                online platforms (like
+                online platforms (like{' '}
                 <a
                   className='article__link'
                   href='https://platzi.com/@sneyderdev'
@@ -44,56 +47,54 @@ const About = () => {
                   rel='noreferrer'
                 >
                   <span>Platzi</span>
-                  <span className='social-menu__icon'>
-                    <img src='assets/icons/link.svg' alt='Link' />
+                  <SocialMenuIcon className='social-menu__icon'>
+                    <img src={linkIcon} alt='Link' />
                     <img
                       src='https://static.platzi.com/static/images/logos/platzi_favicon.png'
                       alt='GitHub Logo'
                     />
-                  </span>
+                  </SocialMenuIcon>
                 </a>
                 ).
                 <br />
                 My curiosity makes me able to quickly learn new tools and
                 technologies when needed.
-                <br />
-                <br />
+              </p>
+              <p>
                 I enjoy sharing my knowledge and helping others when possible.
                 <br />
                 I’m still a newbie in coding, but I believe that experience
                 drives learning and I’m just getting started this journey.
-                <br />
-                <br />
-                Last but not least, I like simplicity.
               </p>
-            </article>
-            <article className='article'>
+              <p>Last but not least, I like simplicity.</p>
+            </Article>
+            <Article className='article'>
               <h2 className='article__title'>My stack?</h2>
               <p className='article__text'>I’m focused on:</p>
               <ul className='list'>
-                <li className='list__item'>
+                <ListItem className='list__item'>
                   <img src={htmlLogo} alt='HTML5' />
                   <span>HTML</span>
-                </li>
-                <li className='list__item'>
+                </ListItem>
+                <ListItem className='list__item'>
                   <img src={cssLogo} alt='CSS3' />
                   <span>CSS</span>
-                </li>
-                <li className='list__item'>
+                </ListItem>
+                <ListItem className='list__item'>
                   <img src={javascriptLogo} alt='JavaScript' />
                   <span>JavaScript</span>
-                </li>
-                <li className='list__item'>
+                </ListItem>
+                <ListItem className='list__item'>
                   <img src={sassLogo} alt='Sass' />
                   <span>Sass</span>
-                </li>
-                <li className='list__item'>
+                </ListItem>
+                <ListItem className='list__item'>
                   <img src={gitLogo} alt='Git' />
                   <span>Git</span>
-                </li>
+                </ListItem>
               </ul>
-            </article>
-            <article className='article'>
+            </Article>
+            <Article className='article'>
               <h2 className='article__title'>Wanna talk?</h2>
               <p className='article__text'>
                 If you wanna get in touch or talk about a project, feel free to
@@ -109,8 +110,8 @@ const About = () => {
                 .<br />
                 You can also send me a DM on social media.
               </p>
-            </article>
-          </section>
+            </Article>
+          </ArticleContainer>
         </div>
       </main>
     </>
