@@ -14,13 +14,14 @@ import {
   SocialMenu,
   SocialMenuItem,
   SocialMenuIcon,
+  Container,
 } from '../../shared';
 import { StyledFooter, FooterOptions, FooterCopyright } from './Footer.styles';
 
 const Footer = () => {
   return (
     <StyledFooter>
-      <div className='container'>
+      <Container className='container'>
         <FooterOptions>
           <Menu>
             <MenuItem>
@@ -97,7 +98,7 @@ const Footer = () => {
             © 2020 Sneyder Barreto.
           </span>
         </FooterCopyright>
-      </div>
+      </Container>
     </StyledFooter>
   );
 };

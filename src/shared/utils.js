@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 import setPosition from './mixins/setPosition';
 
-const Background = styled.div`
+export const Background = styled.div`
   background: linear-gradient(
     to bottom,
     ${({ theme }) => theme.colors.secondary},
@@ -11,4 +11,9 @@ const Background = styled.div`
   ${setPosition('absolute', -100)};
 `;
 
-export default Background;
+export const Container = styled.div`
+  width: 100%;
+  max-width: 850px;
+  padding: 0 20px;
+  margin: 0 auto;
+`;

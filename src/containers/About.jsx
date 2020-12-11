@@ -9,13 +9,19 @@ import javascriptLogo from '../assets/icons/js-logo.svg';
 import sassLogo from '../assets/icons/sass-logo.svg';
 import gitLogo from '../assets/icons/git-logo.svg';
 
-import { ArticleContainer, Article, SocialMenuIcon, ListItem } from '../shared';
+import {
+  ArticleContainer,
+  Article,
+  SocialMenuIcon,
+  ListItem,
+  Container,
+} from '../shared';
 
 const About = () => {
   return (
     <>
       <section className='header about-header'>
-        <div className='container'>
+        <Container className='container'>
           <div className='header__title about-header__title'>
             <div className='overflow--hidden'>
               <h3 className='slideUp'>About</h3>
@@ -24,13 +30,13 @@ const About = () => {
               <h1 className='slideUp delay-2'>Sneyder Barreto</h1>
             </div>
           </div>
-        </div>
+        </Container>
       </section>
 
       <PinnedMessage message={initialState.pinnedMessages.about} />
 
       <main className='main-section'>
-        <div className='container'>
+        <Container className='container'>
           <ArticleContainer className='about-me fadeIn delay-8'>
             <Article className='article'>
               <h2 className='article__title'>Who Am I?</h2>
@@ -112,7 +118,7 @@ const About = () => {
               </p>
             </Article>
           </ArticleContainer>
-        </div>
+        </Container>
       </main>
     </>
   );

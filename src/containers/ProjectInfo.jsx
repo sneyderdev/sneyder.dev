@@ -1,5 +1,8 @@
 import React from 'react';
+
 import PinnedMessage from '../components/PinnedMessage';
+
+import { Container } from '../shared';
 
 const ProjectInfo = () => {
   return (
@@ -12,7 +15,7 @@ const ProjectInfo = () => {
       <PinnedMessage message='Project description' />
 
       <main className='main-section'>
-        <div className='container'>
+        <Container className='container'>
           <div className='project-options fadeIn delay-6'>
             <a href='/' target='_blank' rel='noreferrer' className='button'>
               Code <img src='assets/icons/github-logo.svg' alt='GitHub Logo' />
@@ -108,7 +111,7 @@ const ProjectInfo = () => {
               </ul>
             </article>
           </section>
-        </div>
+        </Container>
       </main>
     </>
   );

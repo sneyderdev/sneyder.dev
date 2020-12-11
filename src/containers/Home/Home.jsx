@@ -3,6 +3,7 @@ import React from 'react';
 import mainPicture from '../../assets/images/main-picture.png';
 import purpleArrowIcon from '../../assets/icons/purple-arrow.svg';
 
+import { Container } from '../../shared';
 import {
   MainSection,
   Hero,
@@ -16,7 +17,7 @@ const Home = () => {
   return (
     <>
       <MainSection className='index-main-section'>
-        <div className='container'>
+        <Container className='container'>
           <Hero className='hero'>
             <img
               src={mainPicture}
@@ -38,11 +39,11 @@ const Home = () => {
               </HeroLink>
             </div>
           </Hero>
-        </div>
+        </Container>
       </MainSection>
 
       <StyledFooter className='index-footer'>
-        <div className='container'>
+        <Container className='container'>
           <div className='index-footer__text overflow--hidden'>
             <p className='slideUp delay-6'>
               You can follow me on{' '}
@@ -80,7 +81,7 @@ const Home = () => {
               .
             </p>
           </div>
-        </div>
+        </Container>
       </StyledFooter>
     </>
   );
