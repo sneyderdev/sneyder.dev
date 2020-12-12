@@ -2,16 +2,16 @@ import React from 'react';
 
 import PinnedMessage from '../components/PinnedMessage';
 
-import { Container } from '../shared';
+import { Container, TitleContainer, Title } from '../shared';
 
 const ProjectInfo = () => {
   return (
     <>
-      <section className='header'>
-        <div className='header__title'>
+      <TitleContainer className='header'>
+        <Title className='header__title'>
           <h1 className='slideUp'>Project name</h1>
-        </div>
-      </section>
+        </Title>
+      </TitleContainer>
       <PinnedMessage message='Project description' />
 
       <main className='main-section'>

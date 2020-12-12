@@ -14,3 +14,4 @@ export {
 } from './components/SocialMenu';
 export { ArticleContainer, Article } from './components/Article';
 export { default as ListItem } from './components/ListItem';
+export { TitleContainer, Title } from './components/Title';
