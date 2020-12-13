@@ -17,4 +17,12 @@ export const Title = styled.div`
     ${'' /* transform: translateY(200%); */}
     ${setFont(({ theme }) => theme.sizes.xl, 500)};
   }
+
+  h3 {
+    margin: 0;
+    line-height: 1.2em;
+    text-shadow: 0 0 2px ${({ theme }) => theme.colors.primary};
+    ${'' /* transform: translateY(200%); */}
+    ${setFont(({ theme }) => theme.sizes.l, 500)};
+  }
 `;

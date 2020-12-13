@@ -15,6 +15,7 @@ import {
   SocialMenuIcon,
   ListItem,
   Container,
+  Title,
 } from '../shared';
 
 const About = () => {
@@ -22,14 +23,14 @@ const About = () => {
     <>
       <section className='header about-header'>
         <Container className='container'>
-          <div className='header__title about-header__title'>
+          <Title className='header__title about-header__title'>
             <div className='overflow--hidden'>
               <h3 className='slideUp'>About</h3>
             </div>
             <div className='overflow--hidden'>
               <h1 className='slideUp delay-2'>Sneyder Barreto</h1>
             </div>
-          </div>
+          </Title>
         </Container>
       </section>
 
