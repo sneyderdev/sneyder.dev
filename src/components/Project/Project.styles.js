@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
-import { setFont, setFlex } from '../../shared';
+import setFlex from '../../shared/mixins/setFlex';
+import setFont from '../../shared/mixins/setFont';
 
 const ProjectOptions = styled.div`
   width: 100%;
