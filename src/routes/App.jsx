@@ -16,7 +16,7 @@ const App = () => {
           <RouteWrapper exact path='/' component={Home} />
           <RouteWrapper
             exact
-            path='/portfolio/:name'
+            path='/portfolio/:projectName'
             component={ProjectInfo}
             hasFooter
             hasArrow

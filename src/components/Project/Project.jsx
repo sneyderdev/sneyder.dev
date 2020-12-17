@@ -6,16 +6,16 @@ import purpleArrowIcon from '../../assets/icons/purple-arrow.svg';
 import linkIcon from '../../assets/icons/link.svg';
 import githubLogo from '../../assets/icons/github-logo.svg';
 
-import {
-  ProjectContainer,
-  WindowBar,
-  WindowScreen,
-  ProjectOptions,
-} from './Project.styles';
+import { WindowContainer, WindowBar, WindowScreen } from '../../shared';
+import ProjectOptions from './Project.styles';
 
 const Project = ({ project }) => {
+  const projectURL = `/portfolio/${project.name
+    .replace(/(\.|\s)/, '-')
+    .toLowerCase()}`;
+
   return (
-    <ProjectContainer className='project'>
+    <WindowContainer className='project'>
       <WindowBar className='screen-bar'>
         <div className='screen-bar__options'>
           <svg width='10' height='10'>
@@ -31,7 +31,7 @@ const Project = ({ project }) => {
         <h4 className='screen-bar__title'>{project.name}</h4>
       </WindowBar>
       <WindowScreen className='main-screen'>
-        <img src={project.image} alt={project.name} />
+        <img src={project.images[0].src} alt={project.name} />
       </WindowScreen>
       <ProjectOptions className='project__options'>
         <div className='options'>
@@ -50,7 +50,7 @@ const Project = ({ project }) => {
               className='options__icon'
             />
           </a>
-          <Link to={`/portfolio/${project.name}`}>
+          <Link to={projectURL}>
             Learn more...{' '}
             <img
               src={purpleArrowIcon}
@@ -60,7 +60,7 @@ const Project = ({ project }) => {
           </Link>
         </div>
       </ProjectOptions>
-    </ProjectContainer>
+    </WindowContainer>
   );
 };
 

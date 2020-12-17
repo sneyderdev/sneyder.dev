@@ -15,6 +15,7 @@ import {
   SocialMenuIcon,
 } from '../../shared';
 import { Navbar, LogoText, BurgerButton, MenuContainer } from './Header.styles';
+import { ArrowBack } from '../../containers/ProjectInfo/ProjectInfo.styles';
 
 const Header = ({ hasArrow }) => {
   return (
@@ -22,7 +23,7 @@ const Header = ({ hasArrow }) => {
       <Navbar>
         <div className='logo'>
           {hasArrow ? (
-            <Link to='/portfolio'>Arrow</Link>
+            <ArrowBack to='/portfolio' />
           ) : (
             <LogoText to='/'>sneyder.dev</LogoText>
           )}
