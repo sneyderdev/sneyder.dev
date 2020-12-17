@@ -53,5 +53,6 @@ module.exports = {
     contentBase: path.join(__dirname, 'dist'),
     compress: true,
     historyApiFallback: true,
+    host: '0.0.0.0',
   },
 };
