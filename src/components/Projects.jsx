@@ -3,6 +3,8 @@ import styled from 'styled-components';
 
 import Project from './Project/Project';
 
+import { Container } from '../shared';
+
 const ProjectsContainer = styled.div`
   display: grid;
   gap: 20px;
@@ -13,11 +15,13 @@ const ProjectsContainer = styled.div`
 const Projects = ({ projects }) => {
   return (
     <main>
-      <ProjectsContainer>
-        {projects.map((project) => (
-          <Project project={project} key={project.id} />
-        ))}
-      </ProjectsContainer>
+      <Container>
+        <ProjectsContainer>
+          {projects.map((project) => (
+            <Project project={project} key={project.id} />
+          ))}
+        </ProjectsContainer>
+      </Container>
     </main>
   );
 };
