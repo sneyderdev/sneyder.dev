@@ -34,7 +34,7 @@ const About = () => {
         </Container>
       </section>
 
-      <PinnedMessage message={initialState.pinnedMessages.about} />
+      <PinnedMessage message={initialState.pinnedMessages.about()} />
 
       <main className='main-section'>
         <Container className='container'>
