@@ -17,3 +17,9 @@ export const Container = styled.div`
   padding: 0 20px;
   margin: 0 auto;
 `;
+
+export const Blur = styled.div`
+  backdrop-filter: blur(20px);
+  background: ${({ theme }) => theme.colors.blacks[2]};
+  ${setPosition('fixed', 20)};
+`;

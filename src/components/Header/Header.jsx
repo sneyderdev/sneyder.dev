@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import MenuContext from '../../context/MenuContext';
 
 import arrowIcon from '../../assets/icons/arrow.svg';
 import linkIcon from '../../assets/icons/link.svg';
@@ -18,6 +19,13 @@ import { Navbar, LogoText, BurgerButton, MenuContainer } from './Header.styles';
 import { ArrowBack } from '../../containers/ProjectInfo/ProjectInfo.styles';
 
 const Header = ({ hasArrow }) => {
+  const { menu, setMenu } = useContext(MenuContext);
+
+  const handleClick = () => {
+    setMenu(!menu);
+    document.getElementById('body').classList.toggle('overflow--hidden');
+  };
+
   return (
     <header>
       <Navbar>
@@ -33,27 +41,26 @@ const Header = ({ hasArrow }) => {
             order: 3;
           `}
         >
-          <BurgerButton id='burger-btn'>
+          <BurgerButton
+            id='burger-btn'
+            onClick={handleClick}
+            className={menu ? 'active' : ''}
+          >
             <i />
             <i />
             <i />
           </BurgerButton>
         </div>
-        <div
-          css={`
-            display: none;
-          `}
-          id='menu'
-        >
+        <div css={menu ? `display: block;` : `display: none;`} id='menu'>
           <MenuContainer>
             <Menu>
               <MenuItem>
-                <Link to='/portfolio'>
+                <Link to='/portfolio' onClick={handleClick}>
                   Portfolio <img src={arrowIcon} alt='Menu Arrow' />
                 </Link>
               </MenuItem>
               <MenuItem>
-                <Link to='/about'>
+                <Link to='/about' onClick={handleClick}>
                   About <img src={arrowIcon} alt='Menu Arrow' />
                 </Link>
               </MenuItem>

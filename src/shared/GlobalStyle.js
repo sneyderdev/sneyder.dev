@@ -36,6 +36,10 @@ const GlobalStyle = createGlobalStyle`
   img {
     user-select: none;
   }
+
+  .overflow--hidden {
+    overflow: hidden;
+  }
 `;
 
 export default GlobalStyle;
