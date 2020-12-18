@@ -1,13 +1,13 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 
 import { setFlex, setFont } from '../../shared';
 
-export const ArrowBack = styled(Link)`
+export const ArrowBack = styled.div`
   display: block;
   width: 25px;
   height: 30px;
   position: relative;
+  cursor: pointer;
 
   &::before,
   &::after {
@@ -44,8 +44,8 @@ export const ArrowBack = styled(Link)`
     transform: rotateZ(0deg);
   }
 
-  &.go::before,
-  &.go::after {
+  &.go-back::before,
+  &.go-back::after {
     transform: translate(-200%);
     opacity: 0;
   }

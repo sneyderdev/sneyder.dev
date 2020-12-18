@@ -1,5 +1,5 @@
-import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext, useState, useRef } from 'react';
+import { Link, useHistory } from 'react-router-dom';
 import MenuContext from '../../context/MenuContext';
 
 import arrowIcon from '../../assets/icons/arrow.svg';
@@ -26,12 +26,44 @@ const Header = ({ hasArrow }) => {
     document.getElementById('body').classList.toggle('overflow--hidden');
   };
 
+  const [arrowState, setArrowState] = useState(false);
+  const arrowRef = useRef(arrowState);
+  arrowRef.current = arrowState;
+
+  const [goState, setGoState] = useState(false);
+  const goRef = useRef(goState);
+  goRef.current = goState;
+
+  const history = useHistory();
+
+  const handleGoBack = () => {
+    setArrowState(!arrowState);
+
+    setTimeout(() => {
+      if (arrowRef.current) {
+        setGoState(!goRef.current);
+      }
+    }, 300);
+    setTimeout(() => {
+      history.goBack();
+    }, 600);
+    setTimeout(() => {
+      setArrowState(!arrowRef.current);
+      setGoState(!goRef.current);
+    }, 700);
+  };
+
   return (
     <header>
       <Navbar>
         <div className='logo'>
           {hasArrow ? (
-            <ArrowBack to='/portfolio' />
+            <ArrowBack
+              onClick={handleGoBack}
+              className={`${arrowState ? 'active' : ''} ${
+                goState ? 'go-back' : ''
+              }`}
+            />
           ) : (
             <LogoText to='/'>sneyder.dev</LogoText>
           )}
