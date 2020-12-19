@@ -19,7 +19,15 @@ import {
   WindowBar,
   WindowScreen,
 } from '../../shared';
-import { ButtonOptions, CodeButton, PreviewButton } from './ProjectInfo.styles';
+import {
+  ArrowBack,
+  ButtonOptions,
+  CodeButton,
+  PreviewButton,
+  Carousel,
+  CarouselControl,
+  CarouselBullets,
+} from './ProjectInfo.styles';
 
 const ProjectInfo = () => {
   const { projectName } = useParams();
@@ -72,12 +80,7 @@ const ProjectInfo = () => {
               Live Preview <img src={arrowIcon} alt='Preview arrow' />
             </PreviewButton>
           </ButtonOptions>
-          <section
-            className='projects slideshow fadeIn delay-6'
-            css={`
-              margin-bottom: 30px;
-            `}
-          >
+          <Carousel className='projects slideshow fadeIn delay-6'>
             <WindowContainer className='project slideshow__screen'>
               <WindowBar className='screen-bar'>
                 <div className='screen-bar__options'>
@@ -97,28 +100,28 @@ const ProjectInfo = () => {
                 {images.map((image) => (
                   <img key={image.id} src={image.src} alt='Project Preview' />
                 ))}
-                <button
+                <CarouselControl
                   type='button'
                   className='slideshow__control prev'
                   id='prev'
                 >
-                  <i className='arrow' />
-                </button>
-                <button
+                  <ArrowBack />
+                </CarouselControl>
+                <CarouselControl
                   type='button'
                   className='slideshow__control next'
                   id='next'
                 >
-                  <i className='arrow' />
-                </button>
+                  <ArrowBack />
+                </CarouselControl>
               </WindowScreen>
             </WindowContainer>
-            <div className='bullets'>
+            <CarouselBullets className='bullets'>
               <span className='bullet active' />
               <span className='bullet' />
               <span className='bullet' />
-            </div>
-          </section>
+            </CarouselBullets>
+          </Carousel>
           <ArticleContainer className='project-info fadeIn delay-6'>
             <Article className='article'>
               <h2 className='article__title'>About</h2>

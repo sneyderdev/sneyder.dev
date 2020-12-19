@@ -1,16 +1,8 @@
 import React from 'react';
-import styled from 'styled-components';
 
 import Project from './Project/Project';
 
-import { Container } from '../shared';
-
-const ProjectsContainer = styled.div`
-  display: grid;
-  gap: 20px;
-  justify-content: center;
-  ${'' /* opacity: 0; */}
-`;
+import { Container, ProjectsContainer } from '../shared';
 
 const Projects = ({ projects }) => {
   return (
