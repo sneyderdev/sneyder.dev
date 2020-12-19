@@ -1,9 +1,17 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import setFont from '../mixins/setFont';
 
 export const TitleContainer = styled.section`
-  text-align: center;
+  ${(props) =>
+    props.center &&
+    css`
+      text-align: center;
+    `}
+
+  @media screen and (min-width: 768px) {
+    font-size: 18px;
+  }
 `;
 
 export const Title = styled.div`

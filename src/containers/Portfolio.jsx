@@ -9,7 +9,7 @@ import { TitleContainer, Title } from '../shared';
 const Portfolio = () => {
   return (
     <>
-      <TitleContainer className='header'>
+      <TitleContainer className='header' center>
         <Title className='header__title'>
           <h1 className='slideUp'>Portfolio</h1>
         </Title>

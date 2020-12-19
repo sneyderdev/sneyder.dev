@@ -61,6 +61,14 @@ export const ButtonOptions = styled.div`
   margin-bottom: 40px;
   gap: 10px;
   ${'' /* opacity: 0; */}
+
+  @media screen and (min-width: 600px) {
+    grid-template-columns: repeat(2, 250px);
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: 18px;
+  }
 `;
 
 export const CodeButton = styled.a`
@@ -94,8 +102,8 @@ export const CodeButton = styled.a`
 `;
 
 export const PreviewButton = styled(CodeButton)`
-  background: hsl(280deg, 80%, 31%);
-  border-bottom: 6px solid hsl(280deg, 80%, 21%);
+  background: hsl(288deg, 80%, 31%);
+  border-bottom: 6px solid hsl(288deg, 80%, 21%);
 `;
 
 export const Carousel = styled(ProjectsContainer)`
@@ -113,6 +121,10 @@ export const Carousel = styled(ProjectsContainer)`
       height: 2px;
       box-shadow: none;
       background: hsl(3deg, 0%, 70%);
+    }
+
+    @media screen and (min-width: 768px) {
+      width: 25px;
     }
   }
 `;
@@ -161,6 +173,10 @@ export const CarouselControl = styled.button`
 
   &:hover ${ArrowBack}::after {
     transform: rotateZ(60deg);
+  }
+
+  @media screen and (min-width: 850px) {
+    padding: 0 20px;
   }
 `;
 

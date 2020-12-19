@@ -12,6 +12,10 @@ const Message = styled.section`
     font-size: ${({ theme }) => theme.sizes.n};
     ${'' /* transform: translateY(200%); */}
   }
+
+  @media screen and (min-width: 768px) {
+    font-size: 18px;
+  }
 `;
 
 const PinnedMessage = ({ message }) => {

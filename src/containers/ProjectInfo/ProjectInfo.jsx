@@ -52,7 +52,7 @@ const ProjectInfo = () => {
 
   return hasProject ? (
     <>
-      <TitleContainer className='header'>
+      <TitleContainer className='header' center>
         <Title className='header__title'>
           <h1 className='slideUp'>{name}</h1>
         </Title>
@@ -81,7 +81,7 @@ const ProjectInfo = () => {
             </PreviewButton>
           </ButtonOptions>
           <Carousel className='projects slideshow fadeIn delay-6'>
-            <WindowContainer className='project slideshow__screen'>
+            <WindowContainer className='project slideshow__screen' carousel>
               <WindowBar className='screen-bar'>
                 <div className='screen-bar__options'>
                   <svg width='10' height='10'>
@@ -96,7 +96,7 @@ const ProjectInfo = () => {
                 </div>
                 <h4 className='screen-bar__title'>{name}</h4>
               </WindowBar>
-              <WindowScreen className='main-screen'>
+              <WindowScreen className='main-screen' carousel>
                 {images.map((image) => (
                   <img key={image.id} src={image.src} alt='Project Preview' />
                 ))}

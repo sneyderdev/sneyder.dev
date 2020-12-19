@@ -13,7 +13,16 @@ export const Hero = styled.div`
   & > img {
     width: 150px;
   }
+
+  @media screen and (min-width: 768px) {
+    font-size: 18px;
+
+    & > img {
+      width: 200px;
+    }
+  }
 `;
+
 export const HeroTitle = styled.div`
   margin: 25px 0 10px;
 
@@ -74,5 +83,9 @@ export const StyledFooter = styled.footer`
     &:hover {
       text-decoration-color: ${(props) => props.theme.colors.white};
     }
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: 18px;
   }
 `;

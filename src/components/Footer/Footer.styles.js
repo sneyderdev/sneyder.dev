@@ -5,6 +5,7 @@ import {
   Menu,
   MenuItem,
   SocialMenu,
+  SocialMenuItem,
   SocialMenuIcon,
 } from '../../shared';
 
@@ -17,15 +18,40 @@ export const StyledFooter = styled.footer`
     img {
       margin-left: 5px;
     }
+
+    @media screen and (min-width: 850px) {
+      display: flex;
+
+      ${MenuItem} {
+        margin: 0 20px 0 0;
+      }
+    }
   }
 
   ${MenuItem}:last-child {
     margin-bottom: 0;
+
+    @media screen and (min-width: 850px) {
+      margin: 0;
+    }
   }
 
   ${SocialMenu} {
     text-align: right;
     font-size: ${(props) => props.theme.sizes.s};
+
+    @media screen and (min-width: 850px) {
+      display: flex;
+      justify-content: flex-end;
+
+      ${SocialMenuItem} {
+        margin: 0 0 0 20px;
+
+        &:first-child {
+          margin: 0;
+        }
+      }
+    }
   }
 
   ${SocialMenuIcon} {
@@ -42,6 +68,10 @@ export const StyledFooter = styled.footer`
   img {
     width: 10px;
     transition: all 200ms;
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: 17px;
   }
 `;
 

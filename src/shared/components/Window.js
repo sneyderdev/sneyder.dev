@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import setFlex from '../mixins/setFlex';
 import setFont from '../mixins/setFont';
@@ -14,6 +14,35 @@ export const WindowContainer = styled.div`
 
   &:hover ${ProjectOptions} {
     transform: translateY(-200px);
+  }
+
+  @media screen and (min-width: 400px) {
+    height: 295px;
+
+    &:hover ${ProjectOptions} {
+      transform: translateY(-270px);
+    }
+  }
+
+  ${(props) =>
+    props.carousel &&
+    css`
+      @media screen and (min-width: 600px) {
+        height: 395px;
+        max-width: unset;
+      }
+
+      @media screen and (min-width: 768px) {
+        height: 495px;
+      }
+
+      @media screen and (min-width: 850px) {
+        height: 560px;
+      }
+    `}
+
+  @media screen and (min-width: 768px) {
+    font-size: 18px;
   }
 `;
 
@@ -46,4 +75,24 @@ export const WindowScreen = styled.div`
     height: 100%;
     object-fit: cover;
   }
+
+  @media screen and (min-width: 400px) {
+    height: 270px;
+  }
+
+  ${(props) =>
+    props.carousel &&
+    css`
+      @media screen and (min-width: 600px) {
+        height: 380px;
+      }
+
+      @media screen and (min-width: 768px) {
+        height: 470px;
+      }
+
+      @media screen and (min-width: 850px) {
+        height: 545px;
+      }
+    `}
 `;

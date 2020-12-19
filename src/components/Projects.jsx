@@ -8,7 +8,7 @@ const Projects = ({ projects }) => {
   return (
     <main>
       <Container>
-        <ProjectsContainer>
+        <ProjectsContainer projects>
           {projects.map((project) => (
             <Project project={project} key={project.id} />
           ))}

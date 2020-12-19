@@ -74,6 +74,10 @@ const ProjectOptions = styled.div`
     margin-left: 10px;
     transition: all 200ms;
   }
+
+  @media screen and (min-width: 400px) {
+    height: 270px;
+  }
 `;
 
 export default ProjectOptions;

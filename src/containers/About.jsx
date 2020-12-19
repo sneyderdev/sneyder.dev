@@ -15,13 +15,14 @@ import {
   SocialMenuIcon,
   ListItem,
   Container,
+  TitleContainer,
   Title,
 } from '../shared';
 
 const About = () => {
   return (
     <>
-      <section className='header about-header'>
+      <TitleContainer className='header about-header'>
         <Container className='container'>
           <Title className='header__title about-header__title'>
             <div className='overflow--hidden'>
@@ -32,7 +33,7 @@ const About = () => {
             </div>
           </Title>
         </Container>
-      </section>
+      </TitleContainer>
 
       <PinnedMessage message={initialState.pinnedMessages.about()} />
 
