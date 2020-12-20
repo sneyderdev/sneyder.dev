@@ -31,11 +31,12 @@ export const Navbar = styled.nav`
 `;
 
 export const NavbarButton = styled.div`
+  order: 3;
+
   @media screen and (min-width: 1024px) {
     display: flex;
     justify-content: center;
     grid-area: auto / margin3-start / auto / margin4-end;
-    order: 3;
   }
 `;
 

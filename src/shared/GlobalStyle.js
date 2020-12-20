@@ -33,10 +33,6 @@ const GlobalStyle = createGlobalStyle`
     outline: none;
   }
 
-  img {
-    user-select: none;
-  }
-
   .overflow--hidden {
     overflow: hidden;
   }

@@ -31,6 +31,7 @@ const Grid = styled.div`
   display: grid;
   width: 100%;
   min-height: 100vh;
+  grid-auto-rows: max-content;
 
   @media screen and (min-width: 1024px) {
     max-width: 1900px;
