@@ -40,6 +40,24 @@ const GlobalStyle = createGlobalStyle`
   .overflow--hidden {
     overflow: hidden;
   }
+
+  @media screen and (min-width: 1024px) {
+    ::-webkit-scrollbar {
+      width: .4em;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: ${({ theme }) => theme.colors.black};
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: ${({ theme }) => theme.colors.whites[2]};
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: ${({ theme }) => theme.colors.white};
+    }
+  }
 `;
 
 export default GlobalStyle;

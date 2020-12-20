@@ -17,14 +17,15 @@ import {
   Container,
   TitleContainer,
   Title,
+  MainSection,
 } from '../shared';
 
 const About = () => {
   return (
     <>
-      <TitleContainer className='header about-header'>
+      <TitleContainer className='header about-header' aboutTitleContainer>
         <Container className='container'>
-          <Title className='header__title about-header__title'>
+          <Title className='header__title about-header__title' aboutTitle>
             <div className='overflow--hidden'>
               <h3 className='slideUp'>About</h3>
             </div>
@@ -37,7 +38,7 @@ const About = () => {
 
       <PinnedMessage message={initialState.pinnedMessages.about()} />
 
-      <main className='main-section'>
+      <MainSection className='main-section'>
         <Container className='container'>
           <ArticleContainer className='about-me fadeIn delay-8'>
             <Article className='article'>
@@ -121,7 +122,7 @@ const About = () => {
             </Article>
           </ArticleContainer>
         </Container>
-      </main>
+      </MainSection>
     </>
   );
 };

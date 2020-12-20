@@ -78,6 +78,28 @@ const ProjectOptions = styled.div`
   @media screen and (min-width: 400px) {
     height: 270px;
   }
+
+  @media screen and (min-width: 1024px) {
+    font-size: 20px;
+
+    span + div {
+      width: 20px;
+      height: 20px;
+      column-gap: 20px;
+
+      img {
+        transform: translateX(-40px);
+      }
+    }
+
+    img {
+      width: 20px;
+    }
+
+    a:last-child img {
+      width: 15px;
+    }
+  }
 `;
 
 export default ProjectOptions;

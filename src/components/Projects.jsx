@@ -2,11 +2,11 @@ import React from 'react';
 
 import Project from './Project/Project';
 
-import { Container, ProjectsContainer } from '../shared';
+import { Container, ProjectsContainer, MainSection } from '../shared';
 
 const Projects = ({ projects }) => {
   return (
-    <main>
+    <MainSection>
       <Container>
         <ProjectsContainer projects>
           {projects.map((project) => (
@@ -14,7 +14,7 @@ const Projects = ({ projects }) => {
           ))}
         </ProjectsContainer>
       </Container>
-    </main>
+    </MainSection>
   );
 };
 

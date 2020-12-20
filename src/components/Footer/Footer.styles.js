@@ -73,6 +73,25 @@ export const StyledFooter = styled.footer`
   @media screen and (min-width: 768px) {
     font-size: 17px;
   }
+
+  @media screen and (min-width: 1024px) {
+    grid-area: auto / main-start / auto / main-end;
+    font-size: 18px;
+
+    img {
+      width: 12px;
+    }
+
+    ${SocialMenuIcon} {
+      width: 12px;
+      height: 12px;
+      column-gap: 12px;
+
+      img {
+        transform: translateX(-24px);
+      }
+    }
+  }
 `;
 
 export const FooterOptions = styled.div`

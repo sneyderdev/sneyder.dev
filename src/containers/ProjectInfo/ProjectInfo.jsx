@@ -18,6 +18,7 @@ import {
   WindowContainer,
   WindowBar,
   WindowScreen,
+  MainSection,
 } from '../../shared';
 import {
   ArrowBack,
@@ -60,7 +61,7 @@ const ProjectInfo = () => {
 
       <PinnedMessage message={description} />
 
-      <main className='main-section'>
+      <MainSection className='main-section'>
         <Container className='container'>
           <ButtonOptions className='project-options fadeIn delay-6'>
             <CodeButton
@@ -140,7 +141,7 @@ const ProjectInfo = () => {
             </Article>
           </ArticleContainer>
         </Container>
-      </main>
+      </MainSection>
     </>
   ) : (
     <NotFound />

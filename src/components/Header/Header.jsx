@@ -15,7 +15,16 @@ import {
   SocialMenuItem,
   SocialMenuIcon,
 } from '../../shared';
-import { Navbar, LogoText, BurgerButton, MenuContainer } from './Header.styles';
+import {
+  StyledHeader,
+  Navbar,
+  NavbarButton,
+  NavbarMenu,
+  LogoContainer,
+  LogoText,
+  BurgerButton,
+  MenuContainer,
+} from './Header.styles';
 import { ArrowBack } from '../../containers/ProjectInfo/ProjectInfo.styles';
 
 const Header = ({ hasArrow }) => {
@@ -54,9 +63,9 @@ const Header = ({ hasArrow }) => {
   };
 
   return (
-    <header>
+    <StyledHeader>
       <Navbar>
-        <div className='logo'>
+        <LogoContainer className='logo'>
           {hasArrow ? (
             <ArrowBack
               onClick={handleGoBack}
@@ -67,12 +76,8 @@ const Header = ({ hasArrow }) => {
           ) : (
             <LogoText to='/'>sneyder.dev</LogoText>
           )}
-        </div>
-        <div
-          css={`
-            order: 3;
-          `}
-        >
+        </LogoContainer>
+        <NavbarButton>
           <BurgerButton
             id='burger-btn'
             onClick={handleClick}
@@ -82,8 +87,8 @@ const Header = ({ hasArrow }) => {
             <i />
             <i />
           </BurgerButton>
-        </div>
-        <div css={menu ? `display: block;` : `display: none;`} id='menu'>
+        </NavbarButton>
+        <NavbarMenu css={menu ? `display: block;` : `display: none;`} id='menu'>
           <MenuContainer>
             <Menu>
               <MenuItem>
@@ -151,9 +156,9 @@ const Header = ({ hasArrow }) => {
               </SocialMenuItem>
             </SocialMenu>
           </MenuContainer>
-        </div>
+        </NavbarMenu>
       </Navbar>
-    </header>
+    </StyledHeader>
   );
 };
 

@@ -5,6 +5,11 @@ import { setFont } from '../../shared';
 
 export const MainSection = styled.main`
   align-self: center;
+
+  @media screen and (min-width: 1024px) {
+    padding: 25px 0 0;
+    grid-area: 2 / main-start / 3 / main-end;
+  }
 `;
 
 export const Hero = styled.div`
@@ -19,6 +24,14 @@ export const Hero = styled.div`
 
     & > img {
       width: 200px;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: 20px;
+
+    & > img {
+      width: 250px;
     }
   }
 `;
@@ -87,5 +100,10 @@ export const StyledFooter = styled.footer`
 
   @media screen and (min-width: 768px) {
     font-size: 18px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    grid-area: 3 / main-start / -1 / main-end;
+    font-size: 20px;
   }
 `;

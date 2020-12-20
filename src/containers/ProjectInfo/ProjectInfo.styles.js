@@ -7,6 +7,8 @@ import {
   ProjectsContainer,
 } from '../../shared';
 
+import { Navbar } from '../../components/Header/Header.styles';
+
 export const ArrowBack = styled.div`
   display: block;
   width: 25px;
@@ -54,6 +56,15 @@ export const ArrowBack = styled.div`
     transform: translate(-200%);
     opacity: 0;
   }
+
+  @media screen and (min-width: 1024px) {
+    ${Navbar} & {
+      width: 35px;
+      position: fixed;
+      top: 55px;
+      z-index: 10;
+    }
+  }
 `;
 
 export const ButtonOptions = styled.div`
@@ -68,6 +79,10 @@ export const ButtonOptions = styled.div`
 
   @media screen and (min-width: 768px) {
     font-size: 18px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    font-size: 20px;
   }
 `;
 

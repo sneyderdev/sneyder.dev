@@ -39,6 +39,19 @@ export const WindowContainer = styled.div`
       @media screen and (min-width: 850px) {
         height: 560px;
       }
+
+      @media screen and (min-width: 1024px) {
+        height: 395px;
+        max-width: unset;
+      }
+
+      @media screen and (min-width: 1100px) {
+        height: 495px;
+      }
+
+      @media screen and (min-width: 1240px) {
+        height: 560px;
+      }
     `}
 
   @media screen and (min-width: 768px) {
@@ -92,6 +105,18 @@ export const WindowScreen = styled.div`
       }
 
       @media screen and (min-width: 850px) {
+        height: 545px;
+      }
+
+      @media screen and (min-width: 1024px) {
+        height: 370px;
+      }
+
+      @media screen and (min-width: 1100px) {
+        height: 470px;
+      }
+
+      @media screen and (min-width: 1240px) {
         height: 545px;
       }
     `}

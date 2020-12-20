@@ -16,6 +16,12 @@ const Message = styled.section`
   @media screen and (min-width: 768px) {
     font-size: 18px;
   }
+
+  @media screen and (min-width: 1024px) {
+    margin: 30px 0 40px;
+    grid-area: auto / main-start / auto / main-end;
+    font-size: 20px;
+  }
 `;
 
 const PinnedMessage = ({ message }) => {

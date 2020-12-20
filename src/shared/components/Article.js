@@ -10,6 +10,10 @@ export const ArticleContainer = styled.section`
   @media screen and (min-width: 768px) {
     font-size: 18px;
   }
+
+  @media screen and (min-width: 768px) {
+    font-size: 20px;
+  }
 `;
 
 export const Article = styled.article`

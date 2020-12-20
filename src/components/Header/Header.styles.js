@@ -3,6 +3,11 @@ import styled from 'styled-components';
 
 import { setFont } from '../../shared';
 
+export const StyledHeader = styled.header`
+  @media screen and (min-width: 1024px) {
+    grid-area: auto / margin1-start / auto / margin4-end;
+`;
+
 export const Navbar = styled.nav`
   display: flex;
   height: 70px;
@@ -11,10 +16,51 @@ export const Navbar = styled.nav`
   justify-content: space-between;
   overflow-x: hidden;
   user-select: none;
+
+  @media screen and (min-width: 1024px) {
+    display: grid;
+    height: auto;
+    padding: 0;
+    grid-template-columns:
+      [margin1-start] 100px [margin1-end margin2-start] 100px [margin2-end main-start] minmax(
+        auto,
+        850px
+      )
+      [main-end margin3-start] 100px [margin3-end margin4-start] 100px [margin4-end];
+  }
+`;
+
+export const NavbarButton = styled.div`
+  @media screen and (min-width: 1024px) {
+    display: flex;
+    justify-content: center;
+    grid-area: auto / margin3-start / auto / margin4-end;
+    order: 3;
+  }
+`;
+
+export const NavbarMenu = styled.div`
+  @media screen and (min-width: 1024px) {
+    grid-area: auto / margin3-start / auto / margin4-end;
+  }
+`;
+
+export const LogoContainer = styled.div`
+  @media screen and (min-width: 1024px) {
+    display: flex;
+    justify-content: center;
+    grid-area: auto / margin1-start / auto / margin2-end;
+  }
 `;
 
 export const LogoText = styled(Link)`
   ${(props) => setFont(props.theme.sizes.m, 600, props.theme.colors.white)}
+
+  @media screen and (min-width: 1024px) {
+    position: fixed;
+    top: 55px;
+    z-index: 10;
+  }
 `;
 
 export const BurgerButton = styled.div`
@@ -74,6 +120,47 @@ export const BurgerButton = styled.div`
       }
     }
   }
+
+  @media screen and (min-width: 1024px) {
+    width: 60px;
+    height: 60px;
+    position: fixed;
+    top: 40px;
+
+    i {
+      width: 100%;
+
+      &:first-child {
+        top: 20px;
+      }
+
+      &:nth-child(2) {
+        width: 45px;
+        top: 28.5px;
+        left: 7.5px;
+      }
+
+      &:last-child {
+        width: 30px;
+        bottom: 20px;
+        left: 15px;
+      }
+    }
+
+    &.active {
+      i {
+        &:first-child {
+          top: 30px;
+        }
+
+        &:last-child {
+          width: 100%;
+          bottom: 27px;
+          left: 0;
+        }
+      }
+    }
+  }
 `;
 
 export const MenuContainer = styled.div`
@@ -96,5 +183,11 @@ export const MenuContainer = styled.div`
 
   img {
     transition: all 200ms;
+  }
+
+  @media screen and (min-width: 1024px) {
+    padding-right: 70px;
+    top: 120px;
+    right: unset;
   }
 `;

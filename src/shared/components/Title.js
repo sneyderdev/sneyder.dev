@@ -12,6 +12,21 @@ export const TitleContainer = styled.section`
   @media screen and (min-width: 768px) {
     font-size: 18px;
   }
+
+  @media screen and (min-width: 1024px) {
+    grid-area: auto / margin2-start / auto / margin3-end;
+    font-size: 20px;
+    border-bottom: 1px solid ${({ theme }) => theme.colors.tertiary};
+  }
+
+  ${(props) =>
+    props.aboutTitleContainer &&
+    css`
+      @media screen and (min-width: 1024px) {
+        grid-area: auto / main-start / auto / main-end;
+        border: none;
+      }
+    `}
 `;
 
 export const Title = styled.div`
@@ -33,4 +48,17 @@ export const Title = styled.div`
     ${'' /* transform: translateY(200%); */}
     ${setFont(({ theme }) => theme.sizes.l, 500)};
   }
+
+  @media screen and (min-width: 1024px) {
+    margin: 40px 0;
+  }
+
+  ${(props) =>
+    props.aboutTitle &&
+    css`
+      @media screen and (min-width: 1024px) {
+        padding: 0;
+        margin: 40px 0 10px;
+      }
+    `}
 `;
