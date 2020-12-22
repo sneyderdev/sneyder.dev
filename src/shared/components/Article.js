@@ -5,7 +5,7 @@ import { SocialMenuIcon } from './SocialMenu';
 export const ArticleContainer = styled.section`
   display: grid;
   row-gap: 40px;
-  ${'' /* opacity: 0; */}
+  opacity: 0;
 
   @media screen and (min-width: 768px) {
     font-size: 18px;

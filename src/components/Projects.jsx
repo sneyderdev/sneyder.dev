@@ -8,7 +8,7 @@ const Projects = ({ projects }) => {
   return (
     <MainSection>
       <Container>
-        <ProjectsContainer projects>
+        <ProjectsContainer projects className='fadeIn delay-6'>
           {projects.map((project) => (
             <Project project={project} key={project.id} />
           ))}

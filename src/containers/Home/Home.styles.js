@@ -42,7 +42,7 @@ export const HeroTitle = styled.div`
   h1 {
     margin: 0;
     line-height: 1.2em;
-    ${'' /* transform: translateY(200%); */}
+    transform: translateY(200%);
     ${setFont((props) => props.theme.sizes.xl, 500)}
   }
 `;
@@ -52,7 +52,7 @@ export const HeroDescription = styled.div`
 
   p {
     margin: 0;
-    ${'' /* transform: translateY(200%); */}
+    transform: translateY(200%);
     font-size: ${(props) => props.theme.sizes.m};
   }
 `;
@@ -60,7 +60,7 @@ export const HeroDescription = styled.div`
 export const HeroLink = styled(Link)`
   display: inline-block;
   text-decoration: none;
-  ${'' /* transform: translateY(200%); */}
+  transform: translateY(200%);
   font-size: ${(props) => props.theme.sizes.s};
   color: ${(props) => props.theme.colors.primary};
 
@@ -83,7 +83,7 @@ export const StyledFooter = styled.footer`
 
   p {
     margin: 0;
-    ${'' /* transform: translateY(200%); */}
+    transform: translateY(200%);
     font-size: ${(props) => props.theme.sizes.s};
   }
 

@@ -103,7 +103,7 @@ export const FooterOptions = styled.div`
   a {
     display: inline-flex;
     align-items: center;
-    ${'' /* transform: translateY(200%); */}
+    transform: translateY(200%);
   }
 `;
 
@@ -115,13 +115,13 @@ export const FooterCopyright = styled.div`
   color: ${(props) => props.theme.colors.whites[1]};
 
   span:first-child {
-    ${'' /* transform: translateY(200%); */};
+    transform: translateY(200%);
     font-size: ${(props) => props.theme.sizes.xs};
     ${setFlex('justify-content')};
   }
 
   span:last-child {
-    ${'' /* transform: translateY(200%); */}
+    transform: translateY(200%);
     font-size: ${(props) => props.theme.sizes.xxs};
   }
 

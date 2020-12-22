@@ -1,5 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
+import { fadeIn, slideUp } from './animations';
+
 const GlobalStyle = createGlobalStyle`
   ::selection {
     background: ${(props) => props.theme.colors.secondary};
@@ -35,6 +37,77 @@ const GlobalStyle = createGlobalStyle`
 
   .overflow--hidden {
     overflow: hidden;
+  }
+
+  .fadeIn {
+    animation: ${fadeIn} 800ms ease-in forwards;
+  }
+
+  .slideUp {
+    animation: ${slideUp} 800ms cubic-bezier(0.04, 0.86, 1, 0.99) forwards;
+  }
+
+  .delay-1 {
+    animation-delay: 100ms;
+  }
+
+  .duration-1 {
+    animation-duration: 100ms;
+  }
+
+  .delay-2 {
+    animation-delay: 200ms;
+  }
+  .duration-2 {
+    animation-duration: 200ms;
+  }
+
+  .delay-3 {
+    animation-delay: 300ms;
+  }
+
+  .duration-3 {
+    animation-duration: 300ms;
+  }
+
+  .delay-4 {
+    animation-delay: 400ms;
+  }
+
+  .duration-4 {
+    animation-duration: 400ms;
+  }
+
+  .delay-5 {
+    animation-delay: 500ms;
+  }
+
+  .duration-5 {
+    animation-duration:  500ms;
+  }
+
+  .delay-6 {
+    animation-delay: 600ms;
+  }
+
+  .duration-6 {
+    animation-duration: 600ms;
+  }
+
+  .delay-7 {
+    animation-delay: 700ms;
+  }
+
+  .duration-7 {
+    animation-duration: 700ms;
+  }
+
+  .delay-8 {
+    animation-delay: 800ms;
+  }
+
+  .duration-8 {
+    animation-duration: 800ms;
   }
 
   @media screen and (min-width: 1024px) {

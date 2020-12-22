@@ -4,7 +4,7 @@ const ProjectsContainer = styled.section`
   display: grid;
   gap: 20px;
   justify-content: center;
-  ${'' /* opacity: 0; */}
+  opacity: 0;
 
   ${(props) =>
     props.projects &&

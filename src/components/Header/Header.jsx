@@ -71,17 +71,19 @@ const Header = ({ hasArrow }) => {
               onClick={handleGoBack}
               className={`${arrowState ? 'active' : ''} ${
                 goState ? 'go-back' : ''
-              }`}
+              } fadeIn`}
             />
           ) : (
-            <LogoText to='/'>sneyder.dev</LogoText>
+            <LogoText to='/' className='fadeIn'>
+              sneyder.dev
+            </LogoText>
           )}
         </LogoContainer>
         <NavbarButton>
           <BurgerButton
             id='burger-btn'
             onClick={handleClick}
-            className={menu ? 'active' : ''}
+            className={`${menu ? 'active' : ''} fadeIn`}
           >
             <i />
             <i />
@@ -92,12 +94,20 @@ const Header = ({ hasArrow }) => {
           <MenuContainer>
             <Menu>
               <MenuItem>
-                <Link to='/portfolio' onClick={handleClick}>
+                <Link
+                  to='/portfolio'
+                  onClick={handleClick}
+                  className='slideUp duration-3'
+                >
                   Portfolio <img src={arrowIcon} alt='Menu Arrow' />
                 </Link>
               </MenuItem>
               <MenuItem>
-                <Link to='/about' onClick={handleClick}>
+                <Link
+                  to='/about'
+                  onClick={handleClick}
+                  className='slideUp duration-3 delay-1'
+                >
                   About <img src={arrowIcon} alt='Menu Arrow' />
                 </Link>
               </MenuItem>
@@ -106,7 +116,7 @@ const Header = ({ hasArrow }) => {
                   href='mailto:hello@sneyder.dev'
                   target='_blank'
                   rel='noreferrer'
-                  className='slideUp delay-2 duration-3'
+                  className='slideUp duration-3 delay-2'
                 >
                   Contact <img src={arrowIcon} alt='Menu Arrow' />
                 </a>
@@ -118,6 +128,7 @@ const Header = ({ hasArrow }) => {
                   href='https://twitter.com/sneyderdev'
                   target='_blank'
                   rel='noreferrer'
+                  className='slideUp duration-3 delay-3'
                 >
                   <span>Twitter</span>
                   <SocialMenuIcon>
@@ -128,10 +139,10 @@ const Header = ({ hasArrow }) => {
               </SocialMenuItem>
               <SocialMenuItem>
                 <a
-                  className='github slideUp delay-4 duration-3'
                   href='https://github.com/sneyderdev'
                   target='_blank'
                   rel='noreferrer'
+                  className='slideUp duration-3 delay-4'
                 >
                   <span>GitHub</span>
                   <SocialMenuIcon>
@@ -142,10 +153,10 @@ const Header = ({ hasArrow }) => {
               </SocialMenuItem>
               <SocialMenuItem>
                 <a
-                  className='linkedin slideUp delay-5 duration-3'
                   href='https://www.linkedin.com/in/sneyderdev'
                   target='_blank'
                   rel='noreferrer'
+                  className='linkedin slideUp duration-3 delay-5'
                 >
                   <span>LinkedIn</span>
                   <SocialMenuIcon>

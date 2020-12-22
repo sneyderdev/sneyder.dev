@@ -179,7 +179,7 @@ export const MenuContainer = styled.div`
     align-items: center;
     justify-content: flex-end;
     text-decoration: none;
-    ${'' /* transform: translateY(200%); */}
+    transform: translateY(200%);
   }
 
   img {

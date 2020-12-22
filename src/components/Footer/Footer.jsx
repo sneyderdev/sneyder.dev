@@ -25,12 +25,12 @@ const Footer = () => {
         <FooterOptions>
           <Menu>
             <MenuItem>
-              <Link to='/portfolio'>
+              <Link to='/portfolio' className='slideUp delay-6'>
                 Portfolio <img src={arrowIcon} alt='Menu Arrow' />
               </Link>
             </MenuItem>
             <MenuItem>
-              <Link to='/about'>
+              <Link to='/about' className='slideUp delay-6'>
                 About <img src={arrowIcon} alt='Menu Arrow' />
               </Link>
             </MenuItem>

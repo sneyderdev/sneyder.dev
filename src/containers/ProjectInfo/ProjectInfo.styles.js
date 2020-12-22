@@ -71,7 +71,7 @@ export const ButtonOptions = styled.div`
   display: grid;
   margin-bottom: 40px;
   gap: 10px;
-  ${'' /* opacity: 0; */}
+  opacity: 0;
 
   @media screen and (min-width: 600px) {
     grid-template-columns: repeat(2, 250px);
