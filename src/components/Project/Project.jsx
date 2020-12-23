@@ -15,9 +15,9 @@ const Project = ({ project }) => {
     .toLowerCase()}`;
 
   return (
-    <WindowContainer className='project'>
-      <WindowBar className='screen-bar'>
-        <div className='screen-bar__options'>
+    <WindowContainer>
+      <WindowBar>
+        <div>
           <svg width='10' height='10'>
             <circle cx='5' cy='5' r='5' fill='#FF5F57' />
           </svg>
@@ -28,35 +28,26 @@ const Project = ({ project }) => {
             <circle cx='5' cy='5' r='5' fill='#28CA41' />
           </svg>
         </div>
-        <h4 className='screen-bar__title'>{project.name}</h4>
+        <h4>{project.name}</h4>
       </WindowBar>
-      <WindowScreen className='main-screen'>
+      <WindowScreen>
         <img src={project.images[0].src} alt={project.name} />
       </WindowScreen>
-      <ProjectOptions className='project__options'>
-        <div className='options'>
+      <ProjectOptions>
+        <div>
           <a href={project.codeURL} target='_blank' rel='noreferrer'>
             <span>Code</span>
-            <div className='options__github'>
+            <div>
               <img src={linkIcon} alt='Link' />
               <img src={githubLogo} alt='GitHub Logo' />
             </div>
           </a>
           <a href={project.previewURL} target='_blank' rel='noreferrer'>
             Live Preview
-            <img
-              src={arrowIcon}
-              alt='Preview arrow'
-              className='options__icon'
-            />
+            <img src={arrowIcon} alt='Preview arrow' />
           </a>
           <Link to={projectURL}>
-            Learn more...{' '}
-            <img
-              src={purpleArrowIcon}
-              alt='Learn more arrow'
-              className='options__icon'
-            />
+            Learn more... <img src={purpleArrowIcon} alt='Learn more arrow' />
           </Link>
         </div>
       </ProjectOptions>

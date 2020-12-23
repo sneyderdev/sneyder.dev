@@ -9,12 +9,14 @@ import { TitleContainer, Title } from '../shared';
 const Portfolio = () => {
   return (
     <>
-      <TitleContainer className='header' center>
-        <Title className='header__title'>
+      <TitleContainer center>
+        <Title>
           <h1 className='slideUp'>Portfolio</h1>
         </Title>
       </TitleContainer>
+
       <PinnedMessage message={initialState.pinnedMessages.projects} />
+
       <Projects projects={initialState.projects} />
     </>
   );

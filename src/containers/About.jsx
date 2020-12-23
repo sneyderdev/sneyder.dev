@@ -23,9 +23,9 @@ import {
 const About = () => {
   return (
     <>
-      <TitleContainer className='header about-header' aboutTitleContainer>
-        <Container className='container'>
-          <Title className='header__title about-header__title' aboutTitle>
+      <TitleContainer aboutTitleContainer>
+        <Container>
+          <Title aboutTitle>
             <div className='overflow--hidden'>
               <h3 className='slideUp'>About</h3>
             </div>
@@ -38,25 +38,24 @@ const About = () => {
 
       <PinnedMessage message={initialState.pinnedMessages.about()} />
 
-      <MainSection className='main-section'>
-        <Container className='container'>
-          <ArticleContainer className='about-me fadeIn delay-8'>
-            <Article className='article'>
-              <h2 className='article__title'>Who Am I?</h2>
-              <p className='article__text'>
+      <MainSection>
+        <Container>
+          <ArticleContainer className='fadeIn delay-8'>
+            <Article>
+              <h2>Who Am I?</h2>
+              <p>
                 I’m a developer from Colombia who is mainly interested in web
                 technologies, specially in frontend development.
                 <br />
                 Developing my skills as a self-taught person with books and
                 online platforms (like{' '}
                 <a
-                  className='article__link'
                   href='https://platzi.com/@sneyderdev'
                   target='_blank'
                   rel='noreferrer'
                 >
                   <span>Platzi</span>
-                  <SocialMenuIcon className='social-menu__icon'>
+                  <SocialMenuIcon>
                     <img src={linkIcon} alt='Link' />
                     <img
                       src='https://static.platzi.com/static/images/logos/platzi_favicon.png'
@@ -77,42 +76,41 @@ const About = () => {
               </p>
               <p>Last but not least, I like simplicity.</p>
             </Article>
-            <Article className='article'>
-              <h2 className='article__title'>My stack?</h2>
-              <p className='article__text'>I’m focused on:</p>
-              <ul className='list'>
-                <ListItem className='list__item'>
+            <Article>
+              <h2>My stack?</h2>
+              <p>I’m focused on:</p>
+              <ul>
+                <ListItem>
                   <img src={htmlLogo} alt='HTML5' />
                   <span>HTML</span>
                 </ListItem>
-                <ListItem className='list__item'>
+                <ListItem>
                   <img src={cssLogo} alt='CSS3' />
                   <span>CSS</span>
                 </ListItem>
-                <ListItem className='list__item'>
+                <ListItem>
                   <img src={javascriptLogo} alt='JavaScript' />
                   <span>JavaScript</span>
                 </ListItem>
-                <ListItem className='list__item'>
+                <ListItem>
                   <img src={sassLogo} alt='Sass' />
                   <span>Sass</span>
                 </ListItem>
-                <ListItem className='list__item'>
+                <ListItem>
                   <img src={gitLogo} alt='Git' />
                   <span>Git</span>
                 </ListItem>
               </ul>
             </Article>
-            <Article className='article'>
-              <h2 className='article__title'>Wanna talk?</h2>
-              <p className='article__text'>
+            <Article>
+              <h2>Wanna talk?</h2>
+              <p>
                 If you wanna get in touch or talk about a project, feel free to
                 contact me via email at{' '}
                 <a
                   href='mailto:hello@sneyder.dev'
                   target='_blank'
                   rel='noreferrer'
-                  className='article__link'
                 >
                   hello@sneyder.dev
                 </a>

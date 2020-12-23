@@ -16,23 +16,19 @@ import {
 const Home = () => {
   return (
     <>
-      <MainSection className='index-main-section'>
-        <Container className='container'>
-          <Hero className='hero'>
-            <img
-              src={mainPicture}
-              alt='Sneyder Barreto'
-              className='hero__picture fadeIn'
-            />
-            <HeroTitle className='hero__title overflow--hidden'>
+      <MainSection>
+        <Container>
+          <Hero>
+            <img src={mainPicture} alt='Sneyder Barreto' className='fadeIn' />
+            <HeroTitle className='overflow--hidden'>
               <h1 className='slideUp'>Hi, I&apos;m Sneyder Barreto</h1>
             </HeroTitle>
-            <HeroDescription className='hero__description overflow--hidden'>
+            <HeroDescription className='overflow--hidden'>
               <p className='slideUp delay-2'>
                 I like creating things with web technologies.
               </p>
             </HeroDescription>
-            <div className='hero__cta overflow--hidden'>
+            <div className='overflow--hidden'>
               <HeroLink className='slideUp delay-4' to='/portfolio'>
                 See the latest projects I&apos;ve been working on{' '}
                 <img src={purpleArrowIcon} alt='Projects Arrow' />
@@ -42,9 +38,9 @@ const Home = () => {
         </Container>
       </MainSection>
 
-      <StyledFooter className='index-footer'>
-        <Container className='container'>
-          <div className='index-footer__text overflow--hidden'>
+      <StyledFooter>
+        <Container>
+          <div className='overflow--hidden'>
             <p className='slideUp delay-6'>
               You can follow me on{' '}
               <a

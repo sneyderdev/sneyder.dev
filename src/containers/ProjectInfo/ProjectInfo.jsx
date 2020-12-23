@@ -53,38 +53,28 @@ const ProjectInfo = () => {
 
   return hasProject ? (
     <>
-      <TitleContainer className='header' center>
-        <Title className='header__title'>
+      <TitleContainer center>
+        <Title>
           <h1 className='slideUp'>{name}</h1>
         </Title>
       </TitleContainer>
 
       <PinnedMessage message={description} />
 
-      <MainSection className='main-section'>
-        <Container className='container'>
-          <ButtonOptions className='project-options fadeIn delay-6'>
-            <CodeButton
-              href={codeURL}
-              target='_blank'
-              rel='noreferrer'
-              className='button'
-            >
+      <MainSection>
+        <Container>
+          <ButtonOptions className='fadeIn delay-6'>
+            <CodeButton href={codeURL} target='_blank' rel='noreferrer'>
               Code <img src={githubLogo} alt='GitHub Logo' />
             </CodeButton>
-            <PreviewButton
-              href={previewURL}
-              target='_blank'
-              rel='noreferrer'
-              className='button'
-            >
+            <PreviewButton href={previewURL} target='_blank' rel='noreferrer'>
               Live Preview <img src={arrowIcon} alt='Preview arrow' />
             </PreviewButton>
           </ButtonOptions>
-          <Carousel className='projects slideshow fadeIn delay-6'>
-            <WindowContainer className='project slideshow__screen' carousel>
-              <WindowBar className='screen-bar'>
-                <div className='screen-bar__options'>
+          <Carousel className='fadeIn delay-6'>
+            <WindowContainer carousel>
+              <WindowBar>
+                <div>
                   <svg width='10' height='10'>
                     <circle cx='5' cy='5' r='5' fill='#FF5F57' />
                   </svg>
@@ -95,42 +85,34 @@ const ProjectInfo = () => {
                     <circle cx='5' cy='5' r='5' fill='#28CA41' />
                   </svg>
                 </div>
-                <h4 className='screen-bar__title'>{name}</h4>
+                <h4>{name}</h4>
               </WindowBar>
-              <WindowScreen className='main-screen' carousel>
+              <WindowScreen carousel>
                 {images.map((image) => (
                   <img key={image.id} src={image.src} alt='Project Preview' />
                 ))}
-                <CarouselControl
-                  type='button'
-                  className='slideshow__control prev'
-                  id='prev'
-                >
+                <CarouselControl className='prev'>
                   <ArrowBack />
                 </CarouselControl>
-                <CarouselControl
-                  type='button'
-                  className='slideshow__control next'
-                  id='next'
-                >
+                <CarouselControl className='next'>
                   <ArrowBack />
                 </CarouselControl>
               </WindowScreen>
             </WindowContainer>
-            <CarouselBullets className='bullets'>
-              <span className='bullet active' />
-              <span className='bullet' />
-              <span className='bullet' />
+            <CarouselBullets>
+              <span className='active' />
+              <span />
+              <span />
             </CarouselBullets>
           </Carousel>
-          <ArticleContainer className='project-info fadeIn delay-6'>
-            <Article className='article'>
-              <h2 className='article__title'>About</h2>
+          <ArticleContainer className='fadeIn delay-6'>
+            <Article>
+              <h2>About</h2>
               {about()}
             </Article>
-            <Article className='article'>
-              <h2 className='article__title'>Technologies</h2>
-              <ul className='list'>
+            <Article>
+              <h2>Technologies</h2>
+              <ul>
                 {stack.map((tech) => (
                   <ListItem key={tech.id}>
                     <img src={tech.icon} alt='' />

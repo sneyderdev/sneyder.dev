@@ -21,7 +21,7 @@ import { StyledFooter, FooterOptions, FooterCopyright } from './Footer.styles';
 const Footer = () => {
   return (
     <StyledFooter>
-      <Container className='container'>
+      <Container>
         <FooterOptions>
           <Menu>
             <MenuItem>
@@ -36,10 +36,10 @@ const Footer = () => {
             </MenuItem>
             <MenuItem>
               <a
+                className='slideUp delay-6'
                 href='mailto:hello@sneyder.dev'
                 target='_blank'
                 rel='noreferrer'
-                className='slideUp delay-6'
               >
                 Contact <img src={arrowIcon} alt='Menu Arrow' />
               </a>
@@ -48,7 +48,7 @@ const Footer = () => {
           <SocialMenu>
             <SocialMenuItem>
               <a
-                className='twitter slideUp delay-6'
+                className='slideUp delay-6'
                 href='https://twitter.com/sneyderdev'
                 target='_blank'
                 rel='noreferrer'
@@ -62,7 +62,7 @@ const Footer = () => {
             </SocialMenuItem>
             <SocialMenuItem>
               <a
-                className='github slideUp delay-6'
+                className='slideUp delay-6'
                 href='https://github.com/sneyderdev'
                 target='_blank'
                 rel='noreferrer'
@@ -76,7 +76,7 @@ const Footer = () => {
             </SocialMenuItem>
             <SocialMenuItem>
               <a
-                className='linkedin slideUp delay-6'
+                className='slideUp delay-6'
                 href='https://www.linkedin.com/in/sneyderdev'
                 target='_blank'
                 rel='noreferrer'
@@ -91,12 +91,10 @@ const Footer = () => {
           </SocialMenu>
         </FooterOptions>
         <FooterCopyright>
-          <span className='made-with slideUp delay-6'>
+          <span className='slideUp delay-6'>
             Made with <img src={heartIcon} alt='heart' />
           </span>
-          <span className='copyright slideUp delay-6'>
-            © 2020 Sneyder Barreto.
-          </span>
+          <span className='slideUp delay-6'>© 2020 Sneyder Barreto.</span>
         </FooterCopyright>
       </Container>
     </StyledFooter>

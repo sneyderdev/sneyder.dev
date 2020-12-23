@@ -26,9 +26,9 @@ const Message = styled.section`
 
 const PinnedMessage = ({ message }) => {
   return (
-    <Message className='pinned-message'>
+    <Message>
       <Container>
-        <p className='pinned-message__text slideUp delay-2'>{message}</p>
+        <p className='slideUp delay-2'>{message}</p>
       </Container>
     </Message>
   );

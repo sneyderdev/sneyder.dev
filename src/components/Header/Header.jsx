@@ -65,13 +65,13 @@ const Header = ({ hasArrow }) => {
   return (
     <StyledHeader>
       <Navbar>
-        <LogoContainer className='logo'>
+        <LogoContainer>
           {hasArrow ? (
             <ArrowBack
               onClick={handleGoBack}
-              className={`${arrowState ? 'active' : ''} ${
+              className={`fadeIn ${arrowState ? 'active' : ''} ${
                 goState ? 'go-back' : ''
-              } fadeIn`}
+              }`}
             />
           ) : (
             <LogoText to='/' className='fadeIn'>
@@ -81,16 +81,15 @@ const Header = ({ hasArrow }) => {
         </LogoContainer>
         <NavbarButton>
           <BurgerButton
-            id='burger-btn'
             onClick={handleClick}
-            className={`${menu ? 'active' : ''} fadeIn`}
+            className={`fadeIn ${menu ? 'active' : ''}`}
           >
             <i />
             <i />
             <i />
           </BurgerButton>
         </NavbarButton>
-        <NavbarMenu css={menu ? `display: block;` : `display: none;`} id='menu'>
+        <NavbarMenu css={menu ? `display: block;` : `display: none;`}>
           <MenuContainer>
             <Menu>
               <MenuItem>
@@ -156,7 +155,7 @@ const Header = ({ hasArrow }) => {
                   href='https://www.linkedin.com/in/sneyderdev'
                   target='_blank'
                   rel='noreferrer'
-                  className='linkedin slideUp duration-3 delay-5'
+                  className='slideUp duration-3 delay-5'
                 >
                   <span>LinkedIn</span>
                   <SocialMenuIcon>
