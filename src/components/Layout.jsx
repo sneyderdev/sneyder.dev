@@ -5,7 +5,7 @@ import { Header, Footer } from '.';
 
 import { Grid, GridBoundaries, Blur } from '../shared';
 
-const Layout = ({ children, hasFooter, hasArrow, isHome }) => {
+const Layout = ({ children, hasArrow, isHome }) => {
   const { menu } = useContext(MenuContext);
 
   return (
@@ -15,7 +15,7 @@ const Layout = ({ children, hasFooter, hasArrow, isHome }) => {
         <GridBoundaries />
         <Header hasArrow={hasArrow} />
         {children}
-        {hasFooter && <Footer />}
+        {!isHome && <Footer />}
       </Grid>
     </>
   );

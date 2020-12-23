@@ -20,17 +20,11 @@ const App = () => {
               exact
               path='/portfolio/:projectName'
               component={ProjectInfo}
-              hasFooter
               hasArrow
             />
-            <RouteWrapper
-              exact
-              path='/portfolio'
-              component={Portfolio}
-              hasFooter
-            />
-            <RouteWrapper exact path='/about' component={About} hasFooter />
-            <RouteWrapper component={NotFound} hasFooter />
+            <RouteWrapper exact path='/portfolio' component={Portfolio} />
+            <RouteWrapper exact path='/about' component={About} />
+            <RouteWrapper component={NotFound} />
           </Switch>
         </Router>
       </MenuContextProvider>
