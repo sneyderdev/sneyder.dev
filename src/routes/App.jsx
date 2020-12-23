@@ -15,7 +15,7 @@ const App = () => {
       <MenuContextProvider>
         <Router>
           <Switch>
-            <RouteWrapper exact path='/' component={Home} />
+            <RouteWrapper exact path='/' component={Home} isHome />
             <RouteWrapper
               exact
               path='/portfolio/:projectName'

@@ -19,5 +19,6 @@ export { WindowContainer, WindowBar, WindowScreen } from './components/Window';
 export { default as LinkList } from './components/LinkList';
 export { default as ProjectsContainer } from './components/ProjectsContainer';
 export { default as MainSection } from './components/MainSection';
+export { Grid, GridBoundaries } from './components/Grid';
 
 export { fadeIn, slideUp } from './animations';
