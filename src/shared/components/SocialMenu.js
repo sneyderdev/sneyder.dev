@@ -34,7 +34,7 @@ export const SocialMenuItem = styled(MenuItem)`
   }
 `;
 
-export const SocialMenuIcon = styled.div`
+export const SocialMenuIcon = styled.span`
   display: grid;
   width: 15px;
   height: 15px;
