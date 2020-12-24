@@ -23,11 +23,11 @@ export default {
     projects: `📌 As practice makes perfect, here’s a list with some of my personal
     projects.`,
     about: () => (
-      <p className='slideUp delay-4'>
+      <>
         📌 Hey there, I’m Sneyder!
         <br />
         First of all, thanks for visiting my personal website.
-      </p>
+      </>
     ),
   },
   projects: [
