@@ -1,8 +1,9 @@
 import React from 'react';
 
-import Project from './Project/Project';
+import Project from '../Project/Project';
 
-import { Container, ProjectsContainer, MainSection } from '../shared';
+import ProjectsContainer from './Projects.styles';
+import { Container, MainSection } from '../../shared';
 
 const Projects = ({ projects }) => {
   return (

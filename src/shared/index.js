@@ -8,7 +8,6 @@ export { default as setFlex } from './mixins/setFlex';
 
 export { default as ListItem } from './components/ListItem';
 export { default as LinkList } from './components/LinkList';
-export { default as ProjectsContainer } from './components/ProjectsContainer';
 export { default as MainSection } from './components/MainSection';
 export { default as Arrow } from './components/Arrow';
 export { MenuContainer, Menu, MenuItem } from './components/Menu';

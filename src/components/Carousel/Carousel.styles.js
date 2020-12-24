@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
-import { Arrow, ProjectsContainer } from '../../shared';
+import ProjectsContainer from '../Projects/Projects.styles';
+import { Arrow } from '../../shared';
 
 export const CarouselContainer = styled(ProjectsContainer)`
   margin-bottom: 30px;
