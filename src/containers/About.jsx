@@ -1,6 +1,7 @@
 import React from 'react';
-import PinnedMessage from '../components/PinnedMessage';
 import initialState from '../../initialState';
+
+import { PinnedMessage } from '../components';
 
 import linkIcon from '../assets/icons/link.svg';
 import htmlLogo from '../assets/icons/html-logo.svg';

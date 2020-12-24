@@ -1,16 +1,7 @@
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 import { setFont } from '../../shared';
-
-export const MainSection = styled.main`
-  align-self: center;
-
-  @media screen and (min-width: 1024px) {
-    padding: 25px 0 0;
-    grid-area: 2 / main-start / 3 / main-end;
-  }
-`;
 
 export const Hero = styled.div`
   text-align: center;

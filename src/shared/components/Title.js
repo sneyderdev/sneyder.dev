@@ -3,8 +3,8 @@ import styled, { css } from 'styled-components';
 import setFont from '../mixins/setFont';
 
 export const TitleContainer = styled.section`
-  ${(props) =>
-    props.center &&
+  ${({ center }) =>
+    center &&
     css`
       text-align: center;
     `}
@@ -19,8 +19,8 @@ export const TitleContainer = styled.section`
     border-bottom: 1px solid ${({ theme }) => theme.colors.tertiary};
   }
 
-  ${(props) =>
-    props.aboutTitleContainer &&
+  ${({ aboutTitleContainer }) =>
+    aboutTitleContainer &&
     css`
       @media screen and (min-width: 1024px) {
         grid-area: auto / main-start / auto / main-end;
@@ -53,8 +53,8 @@ export const Title = styled.div`
     margin: 40px 0;
   }
 
-  ${(props) =>
-    props.aboutTitle &&
+  ${({ aboutTitle }) =>
+    aboutTitle &&
     css`
       @media screen and (min-width: 1024px) {
         padding: 0;

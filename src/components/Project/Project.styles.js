@@ -8,7 +8,7 @@ const ProjectOptions = styled.div`
   height: 200px;
   transition: transform 300ms;
   backdrop-filter: blur(3px);
-  background: ${(props) => props.theme.colors.blacks[1]};
+  background: ${({ theme }) => theme.colors.blacks[1]};
   ${setFlex('justify-content')};
 
   & > div {
@@ -19,18 +19,18 @@ const ProjectOptions = styled.div`
     margin-bottom: 20px;
     text-decoration: none;
     ${setFont(
-      (props) => props.theme.sizes.n,
+      ({ theme }) => theme.sizes.n,
       600,
-      (props) => props.theme.colors.white
+      ({ theme }) => theme.colors.white
     )};
     ${setFlex()};
 
     &:last-child {
       margin: 30px 0 0;
       ${setFont(
-        (props) => props.theme.sizes.s,
+        ({ theme }) => theme.sizes.s,
         400,
-        (props) => props.theme.colors.primary
+        ({ theme }) => theme.colors.primary
       )};
 
       img {

@@ -6,8 +6,8 @@ const ProjectsContainer = styled.section`
   justify-content: center;
   opacity: 0;
 
-  ${(props) =>
-    props.projects &&
+  ${({ projects }) =>
+    projects &&
     css`
       @media screen and (min-width: 850px) {
         grid-template-columns: repeat(2, 1fr);

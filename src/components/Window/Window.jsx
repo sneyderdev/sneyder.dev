@@ -2,11 +2,11 @@ import React from 'react';
 
 import { WindowContainer, WindowBar, WindowScreen } from './Window.styles';
 import { CarouselControl } from '../Carousel/Carousel.styles';
-import { ArrowBack } from '../../containers/ProjectInfo/ProjectInfo.styles';
+import { Arrow } from '../../shared';
 
-const Window = ({ project: { name, images }, children, carousel }) => {
+const Window = ({ project: { name, images }, children, isCarousel }) => {
   return (
-    <WindowContainer carousel={carousel}>
+    <WindowContainer isCarousel={isCarousel}>
       <WindowBar>
         <div>
           <svg width='10' height='10'>
@@ -21,16 +21,16 @@ const Window = ({ project: { name, images }, children, carousel }) => {
         </div>
         <h4>{name}</h4>
       </WindowBar>
-      {carousel ? (
-        <WindowScreen carousel>
+      {isCarousel ? (
+        <WindowScreen isCarousel>
           {images.map((image) => (
             <img key={image.id} src={image.src} alt='Project Preview' />
           ))}
           <CarouselControl className='prev'>
-            <ArrowBack />
+            <Arrow />
           </CarouselControl>
           <CarouselControl className='next'>
-            <ArrowBack />
+            <Arrow />
           </CarouselControl>
         </WindowScreen>
       ) : (

@@ -3,8 +3,8 @@ import styled, { css } from 'styled-components';
 import setPosition from '../mixins/setPosition';
 
 export const Grid = styled.div`
-  ${(props) =>
-    props.isHome
+  ${({ isHome }) =>
+    isHome
       ? css`
           display: grid;
           height: 100vh;

@@ -1,12 +1,11 @@
 import styled from 'styled-components';
 
-import { ProjectsContainer } from '../../shared';
-import { ArrowBack } from '../../containers/ProjectInfo/ProjectInfo.styles';
+import { Arrow, ProjectsContainer } from '../../shared';
 
 export const CarouselContainer = styled(ProjectsContainer)`
   margin-bottom: 30px;
 
-  ${ArrowBack} {
+  ${Arrow} {
     width: 15px;
 
     &:before,
@@ -51,7 +50,7 @@ export const CarouselControl = styled.button`
       transparent
     );
 
-    ${ArrowBack} {
+    ${Arrow} {
       transform: rotateY(180deg);
     }
   }
@@ -60,11 +59,11 @@ export const CarouselControl = styled.button`
     opacity: 1;
   }
 
-  &:hover ${ArrowBack}::before {
+  &:hover ${Arrow}::before {
     transform: rotateZ(-60deg);
   }
 
-  &:hover ${ArrowBack}::after {
+  &:hover ${Arrow}::after {
     transform: rotateZ(60deg);
   }
 

@@ -1,9 +1,9 @@
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
-import { setFont } from '../../shared';
+import setFont from '../../shared/mixins/setFont';
 
-export const StyledHeader = styled.header`
+export const HeaderContainer = styled.header`
   @media screen and (min-width: 1024px) {
     grid-area: auto / margin1-start / auto / margin4-end;
 `;
@@ -55,7 +55,7 @@ export const LogoContainer = styled.div`
 `;
 
 export const LogoText = styled(Link)`
-  ${(props) => setFont(props.theme.sizes.m, 600, props.theme.colors.white)}
+  ${({ theme }) => setFont(theme.sizes.m, 600, theme.colors.white)}
 
   @media screen and (min-width: 1024px) {
     position: fixed;
@@ -78,7 +78,7 @@ export const BurgerButton = styled.div`
     height: 3px;
     position: absolute;
     transition: all 500ms;
-    background: ${(props) => props.theme.colors.white};
+    background: ${({ theme }) => theme.colors.white};
 
     &:first-child {
       top: 15px;
@@ -99,7 +99,7 @@ export const BurgerButton = styled.div`
 
   &.active {
     i {
-      background: ${(props) => props.theme.colors.primary};
+      background: ${({ theme }) => theme.colors.primary};
 
       &:first-child {
         top: 25px;
@@ -117,7 +117,7 @@ export const BurgerButton = styled.div`
         bottom: 22px;
         left: 0;
         transform: rotateZ(45deg);
-        box-shadow: 0 0 2px ${(props) => props.theme.colors.black};
+        box-shadow: 0 0 2px ${({ theme }) => theme.colors.black};
       }
     }
   }
@@ -161,34 +161,5 @@ export const BurgerButton = styled.div`
         }
       }
     }
-  }
-`;
-
-export const MenuContainer = styled.div`
-  padding-right: 25px;
-  position: fixed;
-  right: 10px;
-  top: 70px;
-  bottom: 0;
-  z-index: 30;
-  text-align: right;
-  overflow-y: auto;
-
-  a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: flex-end;
-    text-decoration: none;
-    transform: translateY(200%);
-  }
-
-  img {
-    transition: all 200ms;
-  }
-
-  @media screen and (min-width: 1024px) {
-    padding-right: 70px;
-    top: 120px;
-    right: unset;
   }
 `;

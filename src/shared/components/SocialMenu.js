@@ -1,10 +1,11 @@
 import styled from 'styled-components';
 
-import setFont from '../mixins/setFont';
 import { MenuItem } from './Menu';
 
+import setFont from '../mixins/setFont';
+
 export const SocialMenu = styled.ul`
-  ${(props) => setFont(props.theme.sizes.m, 600)}
+  ${({ theme }) => setFont(theme.sizes.m, 600)}
 
   span {
     overflow: hidden;
@@ -13,20 +14,20 @@ export const SocialMenu = styled.ul`
 
 export const SocialMenuItem = styled(MenuItem)`
   &:first-child a {
-    color: ${(props) => props.theme.colors.twitter};
+    color: ${({ theme }) => theme.colors.twitter};
   }
 
   &:nth-child(2) a {
-    color: ${(props) => props.theme.colors.white};
+    color: ${({ theme }) => theme.colors.white};
   }
 
   &:last-child a {
-    color: ${(props) => props.theme.colors.linkedin};
+    color: ${({ theme }) => theme.colors.linkedin};
   }
 
   a:hover {
     transition: color 200ms;
-    color: ${(props) => props.theme.colors.white};
+    color: ${({ theme }) => theme.colors.white};
   }
 
   a:hover img {

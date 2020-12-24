@@ -9,11 +9,11 @@ import {
   SocialMenuIcon,
 } from '../../shared';
 
-export const StyledFooter = styled.footer`
+export const FooterContainer = styled.footer`
   padding: 50px 0 20px;
 
   ${Menu} {
-    font-size: ${(props) => props.theme.sizes.s};
+    font-size: ${({ theme }) => theme.sizes.s};
 
     img {
       margin-left: 5px;
@@ -38,7 +38,7 @@ export const StyledFooter = styled.footer`
 
   ${SocialMenu} {
     text-align: right;
-    font-size: ${(props) => props.theme.sizes.s};
+    font-size: ${({ theme }) => theme.sizes.s};
 
     @media screen and (min-width: 850px) {
       display: flex;
@@ -112,17 +112,17 @@ export const FooterCopyright = styled.div`
   margin-top: 40px;
   text-align: center;
   overflow-y: hidden;
-  color: ${(props) => props.theme.colors.whites[1]};
+  color: ${({ theme }) => theme.colors.whites[1]};
 
   span:first-child {
     transform: translateY(200%);
-    font-size: ${(props) => props.theme.sizes.xs};
+    font-size: ${({ theme }) => theme.sizes.xs};
     ${setFlex('justify-content')};
   }
 
   span:last-child {
     transform: translateY(200%);
-    font-size: ${(props) => props.theme.sizes.xxs};
+    font-size: ${({ theme }) => theme.sizes.xxs};
   }
 
   img {

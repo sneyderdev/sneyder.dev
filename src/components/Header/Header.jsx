@@ -9,23 +9,23 @@ import githubLogo from '../../assets/icons/github-logo.svg';
 import linkedinLogo from '../../assets/icons/linkedin-logo.svg';
 
 import {
-  Menu,
-  MenuItem,
-  SocialMenu,
-  SocialMenuItem,
-  SocialMenuIcon,
-} from '../../shared';
-import {
-  StyledHeader,
+  HeaderContainer,
   Navbar,
   NavbarButton,
   NavbarMenu,
   LogoContainer,
   LogoText,
   BurgerButton,
-  MenuContainer,
 } from './Header.styles';
-import { ArrowBack } from '../../containers/ProjectInfo/ProjectInfo.styles';
+import {
+  Arrow,
+  MenuContainer,
+  Menu,
+  MenuItem,
+  SocialMenu,
+  SocialMenuItem,
+  SocialMenuIcon,
+} from '../../shared';
 
 const Header = ({ hasArrow }) => {
   const { menu, setMenu } = useContext(MenuContext);
@@ -63,11 +63,11 @@ const Header = ({ hasArrow }) => {
   };
 
   return (
-    <StyledHeader>
+    <HeaderContainer>
       <Navbar>
         <LogoContainer>
           {hasArrow ? (
-            <ArrowBack
+            <Arrow
               onClick={handleGoBack}
               className={`fadeIn ${arrowState ? 'active' : ''} ${
                 goState ? 'go-back' : ''
@@ -168,7 +168,7 @@ const Header = ({ hasArrow }) => {
           </MenuContainer>
         </NavbarMenu>
       </Navbar>
-    </StyledHeader>
+    </HeaderContainer>
   );
 };
 

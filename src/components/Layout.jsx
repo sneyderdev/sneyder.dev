@@ -1,7 +1,8 @@
 import React, { useContext } from 'react';
 import MenuContext from '../context/MenuContext';
 
-import { Header, Footer } from '.';
+import Header from './Header/Header';
+import Footer from './Footer/Footer';
 
 import { Grid, GridBoundaries, Blur } from '../shared';
 

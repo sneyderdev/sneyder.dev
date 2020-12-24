@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
-import { setFlex, setFont } from '../../shared';
 import ProjectOptions from '../Project/Project.styles';
+import { setFlex, setFont } from '../../shared';
 
 export const WindowContainer = styled.div`
   width: 100%;
@@ -22,8 +22,8 @@ export const WindowContainer = styled.div`
     }
   }
 
-  ${(props) =>
-    props.carousel &&
+  ${({ isCarousel }) =>
+    isCarousel &&
     css`
       @media screen and (min-width: 600px) {
         height: 395px;
@@ -60,7 +60,7 @@ export const WindowContainer = styled.div`
 export const WindowBar = styled.div`
   height: 25px;
   position: relative;
-  background: ${(props) => props.theme.colors.grey};
+  background: ${({ theme }) => theme.colors.grey};
   ${setFlex('justify-content')};
 
   div {
@@ -73,7 +73,7 @@ export const WindowBar = styled.div`
 
   h4 {
     display: inline;
-    ${setFont((props) => props.theme.sizes.xs, 500)};
+    ${setFont(({ theme }) => theme.sizes.xs, 500)};
   }
 `;
 
@@ -91,8 +91,8 @@ export const WindowScreen = styled.div`
     height: 270px;
   }
 
-  ${(props) =>
-    props.carousel &&
+  ${({ isCarousel }) =>
+    isCarousel &&
     css`
       position: relative;
 

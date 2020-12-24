@@ -9,6 +9,11 @@ import linkedinLogo from '../../assets/icons/linkedin-logo.svg';
 import heartIcon from '../../assets/icons/heart.svg';
 
 import {
+  FooterContainer,
+  FooterOptions,
+  FooterCopyright,
+} from './Footer.styles';
+import {
   Menu,
   MenuItem,
   SocialMenu,
@@ -16,11 +21,10 @@ import {
   SocialMenuIcon,
   Container,
 } from '../../shared';
-import { StyledFooter, FooterOptions, FooterCopyright } from './Footer.styles';
 
 const Footer = () => {
   return (
-    <StyledFooter>
+    <FooterContainer>
       <Container>
         <FooterOptions>
           <Menu>
@@ -97,7 +101,7 @@ const Footer = () => {
           <span className='slideUp delay-6'>© 2020 Sneyder Barreto.</span>
         </FooterCopyright>
       </Container>
-    </StyledFooter>
+    </FooterContainer>
   );
 };
 

@@ -1,7 +1,4 @@
-import React from 'react';
 import styled from 'styled-components';
-
-import { Container } from '../shared';
 
 const Message = styled.section`
   margin-bottom: 40px;
@@ -24,14 +21,4 @@ const Message = styled.section`
   }
 `;
 
-const PinnedMessage = ({ message }) => {
-  return (
-    <Message>
-      <Container>
-        <p className='slideUp delay-2'>{message}</p>
-      </Container>
-    </Message>
-  );
-};
-
-export default PinnedMessage;
+export default Message;

@@ -3,20 +3,19 @@ import React from 'react';
 import mainPicture from '../../assets/images/main-picture.png';
 import purpleArrowIcon from '../../assets/icons/purple-arrow.svg';
 
-import { Container } from '../../shared';
 import {
-  MainSection,
   Hero,
   HeroTitle,
   HeroDescription,
   HeroLink,
   StyledFooter,
 } from './Home.styles';
+import { MainSection, Container } from '../../shared';
 
 const Home = () => {
   return (
     <>
-      <MainSection>
+      <MainSection isHome>
         <Container>
           <Hero>
             <img src={mainPicture} alt='Sneyder Barreto' className='fadeIn' />

@@ -7,7 +7,7 @@ import { CarouselContainer, CarouselBullets } from './Carousel.styles';
 const Carousel = ({ project }) => {
   return (
     <CarouselContainer className='fadeIn delay-6'>
-      <Window project={project} carousel />
+      <Window project={project} isCarousel />
       <CarouselBullets>
         <span className='active' />
         <span />

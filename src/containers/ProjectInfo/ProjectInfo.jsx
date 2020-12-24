@@ -8,6 +8,7 @@ import NotFound from '../NotFound';
 import githubLogo from '../../assets/icons/github-logo.svg';
 import arrowIcon from '../../assets/icons/arrow.svg';
 
+import { ButtonOptions, CodeButton, PreviewButton } from './ProjectInfo.styles';
 import {
   Container,
   TitleContainer,
@@ -17,7 +18,6 @@ import {
   ListItem,
   MainSection,
 } from '../../shared';
-import { ButtonOptions, CodeButton, PreviewButton } from './ProjectInfo.styles';
 
 const ProjectInfo = () => {
   const { projectName } = useParams();
