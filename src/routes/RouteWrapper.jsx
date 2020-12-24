@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import Layout from '../components/Layout';
+
+import { Layout } from '../components';
 
 const RouteWrapper = ({ component: Component, hasArrow, isHome, ...rest }) => {
   return (
