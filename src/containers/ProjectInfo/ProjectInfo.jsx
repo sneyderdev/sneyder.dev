@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import useProject from '../../hooks/useProject';
 
-import PinnedMessage from '../../components/PinnedMessage';
+import { Carousel, PinnedMessage } from '../../components';
 import NotFound from '../NotFound';
 
 import githubLogo from '../../assets/icons/github-logo.svg';
@@ -15,20 +15,9 @@ import {
   ArticleContainer,
   Article,
   ListItem,
-  WindowContainer,
-  WindowBar,
-  WindowScreen,
   MainSection,
 } from '../../shared';
-import {
-  ArrowBack,
-  ButtonOptions,
-  CodeButton,
-  PreviewButton,
-  Carousel,
-  CarouselControl,
-  CarouselBullets,
-} from './ProjectInfo.styles';
+import { ButtonOptions, CodeButton, PreviewButton } from './ProjectInfo.styles';
 
 const ProjectInfo = () => {
   const { projectName } = useParams();
@@ -37,15 +26,7 @@ const ProjectInfo = () => {
   const { project } = useProject(projectName.split('-'), setLoading);
   const hasProject = Object.keys(project).length > 0;
 
-  const {
-    name,
-    description,
-    about,
-    images,
-    codeURL,
-    previewURL,
-    stack,
-  } = project;
+  const { name, description, about, codeURL, previewURL, stack } = project;
 
   if (loading) {
     return <h1>Loading</h1>;
@@ -71,40 +52,7 @@ const ProjectInfo = () => {
               Live Preview <img src={arrowIcon} alt='Preview arrow' />
             </PreviewButton>
           </ButtonOptions>
-          <Carousel className='fadeIn delay-6'>
-            <WindowContainer carousel>
-              <WindowBar>
-                <div>
-                  <svg width='10' height='10'>
-                    <circle cx='5' cy='5' r='5' fill='#FF5F57' />
-                  </svg>
-                  <svg width='10' height='10'>
-                    <circle cx='5' cy='5' r='5' fill='#FFBD2E' />
-                  </svg>
-                  <svg width='10' height='10'>
-                    <circle cx='5' cy='5' r='5' fill='#28CA41' />
-                  </svg>
-                </div>
-                <h4>{name}</h4>
-              </WindowBar>
-              <WindowScreen carousel>
-                {images.map((image) => (
-                  <img key={image.id} src={image.src} alt='Project Preview' />
-                ))}
-                <CarouselControl className='prev'>
-                  <ArrowBack />
-                </CarouselControl>
-                <CarouselControl className='next'>
-                  <ArrowBack />
-                </CarouselControl>
-              </WindowScreen>
-            </WindowContainer>
-            <CarouselBullets>
-              <span className='active' />
-              <span />
-              <span />
-            </CarouselBullets>
-          </Carousel>
+          <Carousel project={project} />
           <ArticleContainer className='fadeIn delay-6'>
             <Article>
               <h2>About</h2>

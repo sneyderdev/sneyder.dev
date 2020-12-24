@@ -1,9 +1,7 @@
 import styled, { css } from 'styled-components';
 
-import setFlex from '../mixins/setFlex';
-import setFont from '../mixins/setFont';
-
-import ProjectOptions from '../../components/Project/Project.styles';
+import { setFlex, setFont } from '../../shared';
+import ProjectOptions from '../Project/Project.styles';
 
 export const WindowContainer = styled.div`
   width: 100%;
@@ -96,6 +94,8 @@ export const WindowScreen = styled.div`
   ${(props) =>
     props.carousel &&
     css`
+      position: relative;
+
       @media screen and (min-width: 600px) {
         height: 380px;
       }

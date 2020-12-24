@@ -1,12 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import Window from '../Window/Window';
+
 import arrowIcon from '../../assets/icons/arrow.svg';
 import purpleArrowIcon from '../../assets/icons/purple-arrow.svg';
 import linkIcon from '../../assets/icons/link.svg';
 import githubLogo from '../../assets/icons/github-logo.svg';
 
-import { WindowContainer, WindowBar, WindowScreen } from '../../shared';
 import ProjectOptions from './Project.styles';
 
 const Project = ({ project }) => {
@@ -15,24 +16,7 @@ const Project = ({ project }) => {
     .toLowerCase()}`;
 
   return (
-    <WindowContainer>
-      <WindowBar>
-        <div>
-          <svg width='10' height='10'>
-            <circle cx='5' cy='5' r='5' fill='#FF5F57' />
-          </svg>
-          <svg width='10' height='10'>
-            <circle cx='5' cy='5' r='5' fill='#FFBD2E' />
-          </svg>
-          <svg width='10' height='10'>
-            <circle cx='5' cy='5' r='5' fill='#28CA41' />
-          </svg>
-        </div>
-        <h4>{project.name}</h4>
-      </WindowBar>
-      <WindowScreen>
-        <img src={project.images[0].src} alt={project.name} />
-      </WindowScreen>
+    <Window project={project}>
       <ProjectOptions>
         <div>
           <a href={project.codeURL} target='_blank' rel='noreferrer'>
@@ -51,7 +35,7 @@ const Project = ({ project }) => {
           </Link>
         </div>
       </ProjectOptions>
-    </WindowContainer>
+    </Window>
   );
 };
 
