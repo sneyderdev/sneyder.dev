@@ -8,7 +8,6 @@ export const WindowContainer = styled.div`
   max-width: 400px;
   height: 225px;
   overflow: hidden;
-  cursor: pointer;
 
   &:hover ${ProjectOptions} {
     transform: translateY(-200px);
@@ -25,30 +24,39 @@ export const WindowContainer = styled.div`
   ${({ isCarousel }) =>
     isCarousel &&
     css`
+      height: 260px;
+      margin: 0 auto;
+      margin-bottom: 40px;
+      opacity: 0;
+
+      @media screen and (min-width: 400px) {
+        height: 330px;
+      }
+
       @media screen and (min-width: 600px) {
-        height: 395px;
+        height: 440px;
         max-width: unset;
       }
 
       @media screen and (min-width: 768px) {
-        height: 495px;
+        height: 540px;
       }
 
       @media screen and (min-width: 850px) {
-        height: 560px;
+        height: 595px;
       }
 
       @media screen and (min-width: 1024px) {
-        height: 395px;
+        height: 440px;
         max-width: unset;
       }
 
       @media screen and (min-width: 1100px) {
-        height: 495px;
+        height: 540px;
       }
 
       @media screen and (min-width: 1240px) {
-        height: 560px;
+        height: 595px;
       }
     `}
 
@@ -80,6 +88,7 @@ export const WindowBar = styled.div`
 export const WindowScreen = styled.div`
   width: 100%;
   height: 200px;
+  cursor: pointer;
 
   img {
     width: 100%;
@@ -105,7 +114,7 @@ export const WindowScreen = styled.div`
       }
 
       @media screen and (min-width: 850px) {
-        height: 545px;
+        height: 535px;
       }
 
       @media screen and (min-width: 1024px) {
@@ -117,7 +126,7 @@ export const WindowScreen = styled.div`
       }
 
       @media screen and (min-width: 1240px) {
-        height: 545px;
+        height: 535px;
       }
     `}
 `;

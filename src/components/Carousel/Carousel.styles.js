@@ -1,10 +1,9 @@
 import styled from 'styled-components';
 
-import ProjectsContainer from '../Projects/Projects.styles';
 import { Arrow } from '../../shared';
 
-export const CarouselContainer = styled(ProjectsContainer)`
-  margin-bottom: 30px;
+export const CarouselContainer = styled.div`
+  height: 100%;
 
   ${Arrow} {
     width: 15px;
@@ -19,6 +18,18 @@ export const CarouselContainer = styled(ProjectsContainer)`
     @media screen and (min-width: 768px) {
       width: 25px;
     }
+  }
+`;
+
+export const CarouselContent = styled.div`
+  height: 100%;
+
+  img {
+    display: none;
+  }
+
+  img:nth-child(${({ slideIndex }) => slideIndex}) {
+    display: block;
   }
 `;
 
@@ -73,7 +84,8 @@ export const CarouselControl = styled.button`
   }
 `;
 
-export const CarouselBullets = styled.div`
+export const CarouselDots = styled.div`
+  margin-top: 20px;
   display: grid;
   grid-template: 15px / repeat(3, 15px);
   justify-content: center;
@@ -87,6 +99,7 @@ export const CarouselBullets = styled.div`
     width: 10px;
     border-radius: 50%;
     background: hsl(280deg, 0%, 20%);
+    outline: 0;
 
     transition: all 100ms ease-in;
     cursor: pointer;

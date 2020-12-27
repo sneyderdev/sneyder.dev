@@ -1,18 +1,49 @@
 import React from 'react';
+import useCarousel from '../../hooks/useCarousel';
 
-import Window from '../Window/Window';
+import { Arrow } from '../../shared';
 
-import { CarouselContainer, CarouselBullets } from './Carousel.styles';
+import {
+  CarouselContainer,
+  CarouselContent,
+  CarouselControl,
+  CarouselDots,
+} from './Carousel.styles';
 
-const Carousel = ({ project }) => {
+const Carousel = ({ images }) => {
+  const { slide, prevSlide, nextSlide, handleDotClick } = useCarousel(images);
+
   return (
-    <CarouselContainer className='fadeIn delay-6'>
-      <Window project={project} isCarousel />
-      <CarouselBullets>
-        <span className='active' />
-        <span />
-        <span />
-      </CarouselBullets>
+    <CarouselContainer>
+      <CarouselContent slideIndex={slide + 1}>
+        {images.map((image) => (
+          <img
+            key={image.id}
+            src={image.src}
+            alt='Project Preview'
+            className='fadeIn duration-2'
+          />
+        ))}
+      </CarouselContent>
+      <CarouselControl className='prev' onClick={prevSlide}>
+        <Arrow />
+      </CarouselControl>
+      <CarouselControl className='next' onClick={nextSlide}>
+        <Arrow />
+      </CarouselControl>
+      <CarouselDots>
+        {images.map((image, index) => (
+          <span
+            key={image.id}
+            onClick={() => handleDotClick(index)}
+            onKeyPress={() => handleDotClick(index)}
+            role='button'
+            tabIndex={index}
+            aria-label='Change Slide'
+            className={slide === index ? 'active' : ''}
+          />
+        ))}
+      </CarouselDots>
     </CarouselContainer>
   );
 };

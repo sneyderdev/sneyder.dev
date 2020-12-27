@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import useProject from '../../hooks/useProject';
 
-import { Carousel, PinnedMessage } from '../../components';
+import { Window, PinnedMessage } from '../../components';
 import NotFound from '../NotFound';
 
 import githubLogo from '../../assets/icons/github-logo.svg';
@@ -52,7 +52,7 @@ const ProjectInfo = () => {
               Live Preview <img src={arrowIcon} alt='Preview arrow' />
             </PreviewButton>
           </ButtonOptions>
-          <Carousel project={project} />
+          <Window project={project} isCarousel />
           <ArticleContainer className='fadeIn delay-6'>
             <Article>
               <h2>About</h2>

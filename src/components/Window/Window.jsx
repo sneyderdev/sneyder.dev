@@ -1,12 +1,15 @@
 import React from 'react';
 
+import Carousel from '../Carousel/Carousel';
+
 import { WindowContainer, WindowBar, WindowScreen } from './Window.styles';
-import { CarouselControl } from '../Carousel/Carousel.styles';
-import { Arrow } from '../../shared';
 
 const Window = ({ project: { name, images }, children, isCarousel }) => {
   return (
-    <WindowContainer isCarousel={isCarousel}>
+    <WindowContainer
+      isCarousel={isCarousel}
+      className={isCarousel ? 'fadeIn delay-6' : ''}
+    >
       <WindowBar>
         <div>
           <svg width='10' height='10'>
@@ -23,15 +26,7 @@ const Window = ({ project: { name, images }, children, isCarousel }) => {
       </WindowBar>
       {isCarousel ? (
         <WindowScreen isCarousel>
-          {images.map((image) => (
-            <img key={image.id} src={image.src} alt='Project Preview' />
-          ))}
-          <CarouselControl className='prev'>
-            <Arrow />
-          </CarouselControl>
-          <CarouselControl className='next'>
-            <Arrow />
-          </CarouselControl>
+          <Carousel images={images} />
         </WindowScreen>
       ) : (
         <WindowScreen>
