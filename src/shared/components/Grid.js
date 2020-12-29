@@ -46,7 +46,10 @@ export const Grid = styled.div`
 `;
 
 export const GridBoundaries = styled.div`
+  display: none;
+
   @media screen and (min-width: 1024px) {
+    display: block;
     grid-column: margin2-start / margin3-end;
     border-left: 1px solid ${({ theme }) => theme.colors.tertiary};
     border-right: 1px solid ${({ theme }) => theme.colors.tertiary};
