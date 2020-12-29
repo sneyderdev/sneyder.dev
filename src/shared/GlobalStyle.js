@@ -4,8 +4,8 @@ import { fadeIn, slideUp } from './animations';
 
 const GlobalStyle = createGlobalStyle`
   ::selection {
-    background: ${(props) => props.theme.colors.secondary};
-    color: ${(props) => props.theme.colors.white};
+    background: ${({ theme }) => theme.colors.secondary};
+    color: ${({ theme }) => theme.colors.white};
   }
 
   * {
@@ -15,9 +15,9 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     margin: 0;
-    font-family: ${(props) => props.theme.fonts.primary};
-    color: ${(props) => props.theme.colors.white};
-    background: ${(props) => props.theme.colors.black};
+    font-family: ${({ theme }) => theme.fonts.primary};
+    color: ${({ theme }) => theme.colors.white};
+    background: ${({ theme }) => theme.colors.black};
   }
 
   ul {
@@ -58,6 +58,7 @@ const GlobalStyle = createGlobalStyle`
   .delay-2 {
     animation-delay: 200ms;
   }
+
   .duration-2 {
     animation-duration: 200ms;
   }
@@ -104,10 +105,6 @@ const GlobalStyle = createGlobalStyle`
 
   .delay-8 {
     animation-delay: 800ms;
-  }
-
-  .duration-8 {
-    animation-duration: 800ms;
   }
 
   @media screen and (min-width: 1024px) {

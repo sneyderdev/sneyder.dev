@@ -20,10 +20,6 @@ export const MenuContainer = styled.div`
     transform: translateY(200%);
   }
 
-  img {
-    transition: all 200ms;
-  }
-
   @media screen and (min-width: 1024px) {
     padding-right: 70px;
     top: 120px;
@@ -45,6 +41,10 @@ export const Menu = styled.ul`
     &:hover img {
       opacity: 1;
     }
+  }
+
+  img {
+    transition: all 200ms;
   }
 `;
 

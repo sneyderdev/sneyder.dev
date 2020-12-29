@@ -8,7 +8,7 @@ export const SocialMenu = styled.ul`
   ${({ theme }) => setFont(theme.sizes.m, 600)}
 
   span {
-    overflow: hidden;
+    overflow-x: hidden;
   }
 `;
 
@@ -42,9 +42,10 @@ export const SocialMenuIcon = styled.span`
   margin-left: 10px;
   grid-template-columns: repeat(2, 1fr);
   column-gap: 15px;
-  overflow: hidden;
+  overflow-x: hidden;
 
   img {
     transform: translateX(-30px);
+    transition: all 200ms;
   }
 `;

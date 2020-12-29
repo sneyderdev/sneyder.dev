@@ -42,7 +42,6 @@ export const Article = styled.article`
     img {
       width: 15px;
       height: 15px;
-      transition: all 200ms;
     }
 
     &:hover {

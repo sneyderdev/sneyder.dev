@@ -1,14 +1,13 @@
 import React from 'react';
 import useCarousel from '../../hooks/useCarousel';
 
-import { Arrow } from '../../shared';
-
 import {
   CarouselContainer,
   CarouselContent,
   CarouselControl,
   CarouselDots,
 } from './Carousel.styles';
+import { Arrow } from '../../shared';
 
 const Carousel = ({ images }) => {
   const { slide, prevSlide, nextSlide, handleDotClick } = useCarousel(images);
@@ -33,7 +32,7 @@ const Carousel = ({ images }) => {
       </CarouselControl>
       <CarouselDots>
         {images.map((image, index) => (
-          <span
+          <div
             key={image.id}
             onClick={() => handleDotClick(index)}
             onKeyPress={() => handleDotClick(index)}

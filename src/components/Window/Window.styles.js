@@ -7,7 +7,7 @@ export const WindowContainer = styled.div`
   width: 100%;
   max-width: 400px;
   height: 225px;
-  overflow: hidden;
+  overflow-y: hidden;
 
   &:hover ${ProjectOptions} {
     transform: translateY(-200px);
@@ -19,6 +19,10 @@ export const WindowContainer = styled.div`
     &:hover ${ProjectOptions} {
       transform: translateY(-270px);
     }
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: 18px;
   }
 
   ${({ isCarousel }) =>
@@ -48,7 +52,6 @@ export const WindowContainer = styled.div`
 
       @media screen and (min-width: 1024px) {
         height: 440px;
-        max-width: unset;
       }
 
       @media screen and (min-width: 1100px) {
@@ -59,16 +62,12 @@ export const WindowContainer = styled.div`
         height: 595px;
       }
     `}
-
-  @media screen and (min-width: 768px) {
-    font-size: 18px;
-  }
 `;
 
 export const WindowBar = styled.div`
   height: 25px;
   position: relative;
-  background: ${({ theme }) => theme.colors.grey};
+  background: ${({ theme }) => theme.colors.greys[0]};
   ${setFlex('justify-content')};
 
   div {

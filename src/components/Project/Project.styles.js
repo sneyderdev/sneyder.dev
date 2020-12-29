@@ -1,13 +1,12 @@
 import styled from 'styled-components';
 
-import setFlex from '../../shared/mixins/setFlex';
-import setFont from '../../shared/mixins/setFont';
+import { SocialMenuIcon, setFlex, setFont } from '../../shared';
 
 const ProjectOptions = styled.div`
   width: 100%;
   height: 200px;
-  transition: transform 300ms;
   backdrop-filter: blur(3px);
+  transition: transform 300ms;
   background: ${({ theme }) => theme.colors.blacks[1]};
   ${setFlex('justify-content')};
 
@@ -25,6 +24,16 @@ const ProjectOptions = styled.div`
     )};
     ${setFlex()};
 
+    span {
+      overflow-x: hidden;
+    }
+
+    & > img {
+      opacity: 0.5;
+      margin-left: 10px;
+      transition: all 200ms;
+    }
+
     &:last-child {
       margin: 30px 0 0;
       ${setFont(
@@ -39,40 +48,13 @@ const ProjectOptions = styled.div`
       }
     }
 
-    &:hover div img {
+    &:hover ${SocialMenuIcon} img {
       transform: translateX(0);
     }
 
     &:hover > img {
       opacity: 1;
     }
-  }
-
-  span,
-  span + div {
-    overflow: hidden;
-  }
-
-  span + div {
-    display: grid;
-    width: 15px;
-    height: 15px;
-    margin-left: 10px;
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 15px;
-
-    img {
-      opacity: 1;
-      margin-left: 0;
-      transform: translateX(-30px);
-      transition: all 200ms;
-    }
-  }
-
-  a > img {
-    opacity: 0.5;
-    margin-left: 10px;
-    transition: all 200ms;
   }
 
   @media screen and (min-width: 400px) {
@@ -82,7 +64,7 @@ const ProjectOptions = styled.div`
   @media screen and (min-width: 1024px) {
     font-size: 20px;
 
-    span + div {
+    ${SocialMenuIcon} {
       width: 20px;
       height: 20px;
       column-gap: 20px;

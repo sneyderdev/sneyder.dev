@@ -41,6 +41,8 @@ export const NavbarButton = styled.div`
 `;
 
 export const NavbarMenu = styled.div`
+  display: ${({ menu }) => (menu ? 'block' : 'none')};
+
   @media screen and (min-width: 1024px) {
     grid-area: auto / margin3-start / auto / margin4-end;
   }
@@ -104,7 +106,6 @@ export const BurgerButton = styled.div`
       &:first-child {
         top: 25px;
         transform: rotateZ(-45deg);
-        box-shadow: none;
       }
 
       &:nth-child(2) {

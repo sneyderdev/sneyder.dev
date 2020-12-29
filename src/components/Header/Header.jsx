@@ -89,7 +89,7 @@ const Header = ({ hasArrow }) => {
             <i />
           </BurgerButton>
         </NavbarButton>
-        <NavbarMenu css={menu ? `display: block;` : `display: none;`}>
+        <NavbarMenu menu={menu}>
           <MenuContainer>
             <Menu>
               <MenuItem>

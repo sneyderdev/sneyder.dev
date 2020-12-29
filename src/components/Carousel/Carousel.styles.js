@@ -12,7 +12,7 @@ export const CarouselContainer = styled.div`
     &:after {
       height: 2px;
       box-shadow: none;
-      background: hsl(3deg, 0%, 70%);
+      background: ${({ theme }) => theme.colors.greys[2]};
     }
 
     @media screen and (min-width: 768px) {
@@ -48,7 +48,7 @@ export const CarouselControl = styled.button`
   &.prev {
     background: linear-gradient(
       to right,
-      ${({ theme }) => theme.colors.blacks[3]},
+      ${({ theme }) => theme.colors.blacks[1]},
       transparent
     );
   }
@@ -58,7 +58,7 @@ export const CarouselControl = styled.button`
     right: 0;
     background: linear-gradient(
       to left,
-      ${({ theme }) => theme.colors.blacks[3]},
+      ${({ theme }) => theme.colors.blacks[1]},
       transparent
     );
 
@@ -93,27 +93,25 @@ export const CarouselDots = styled.div`
   column-gap: 20px;
   justify-items: center;
 
-  span {
-    display: block;
+  div {
     height: 10px;
     width: 10px;
     border-radius: 50%;
-    background: hsl(280deg, 0%, 20%);
     outline: 0;
-
     transition: all 100ms ease-in;
     cursor: pointer;
+    background: ${({ theme }) => theme.colors.greys[0]};
 
     &:hover {
       height: 12px;
       width: 12px;
-      background: hsl(280deg, 0%, 50%);
+      background: ${({ theme }) => theme.colors.greys[1]};
     }
 
     &.active {
       height: 15px;
       width: 15px;
-      background: hsl(280deg, 0%, 80%);
+      background: ${({ theme }) => theme.colors.greys[2]};
     }
   }
 `;

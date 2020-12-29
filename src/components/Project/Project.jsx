@@ -9,6 +9,7 @@ import linkIcon from '../../assets/icons/link.svg';
 import githubLogo from '../../assets/icons/github-logo.svg';
 
 import ProjectOptions from './Project.styles';
+import { SocialMenuIcon } from '../../shared';
 
 const Project = ({ project }) => {
   const projectURL = `/portfolio/${project.name
@@ -21,10 +22,10 @@ const Project = ({ project }) => {
         <div>
           <a href={project.codeURL} target='_blank' rel='noreferrer'>
             <span>Code</span>
-            <div>
+            <SocialMenuIcon>
               <img src={linkIcon} alt='Link' />
               <img src={githubLogo} alt='GitHub Logo' />
-            </div>
+            </SocialMenuIcon>
           </a>
           <a href={project.previewURL} target='_blank' rel='noreferrer'>
             Live Preview

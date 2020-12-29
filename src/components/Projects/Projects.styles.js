@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 const ProjectsContainer = styled.section`
   display: grid;
@@ -6,14 +6,10 @@ const ProjectsContainer = styled.section`
   justify-content: center;
   opacity: 0;
 
-  ${({ projects }) =>
-    projects &&
-    css`
-      @media screen and (min-width: 850px) {
-        grid-template-columns: repeat(2, 1fr);
-        justify-content: space-between;
-      }
-    `}
+  @media screen and (min-width: 850px) {
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: space-between;
+  }
 `;
 
 export default ProjectsContainer;

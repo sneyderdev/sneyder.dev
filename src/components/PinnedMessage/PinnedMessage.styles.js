@@ -6,8 +6,8 @@ const Message = styled.section`
 
   p {
     margin: 0;
-    font-size: ${({ theme }) => theme.sizes.n};
     transform: translateY(200%);
+    font-size: ${({ theme }) => theme.sizes.n};
   }
 
   @media screen and (min-width: 768px) {

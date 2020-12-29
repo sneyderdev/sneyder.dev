@@ -23,7 +23,7 @@ export const FooterContainer = styled.footer`
       display: flex;
 
       ${MenuItem} {
-        margin: 0 20px 0 0;
+        margin-right: 20px;
       }
     }
   }
@@ -45,7 +45,7 @@ export const FooterContainer = styled.footer`
       justify-content: flex-end;
 
       ${SocialMenuItem} {
-        margin: 0 0 0 20px;
+        margin-left: 20px;
 
         &:first-child {
           margin: 0;
@@ -67,7 +67,6 @@ export const FooterContainer = styled.footer`
 
   img {
     width: 10px;
-    transition: all 200ms;
   }
 
   @media screen and (min-width: 768px) {

@@ -14,6 +14,7 @@ export const slideUp = keyframes`
   0% {
     transform: translateY(200%);
   }
+
   100% {
     transform: translateY(0);
   }

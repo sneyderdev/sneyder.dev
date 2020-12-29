@@ -27,8 +27,8 @@ export const CodeButton = styled.a`
   border-radius: 20px;
   transform: rotateX(15deg);
   transition: all 200ms;
-  background: hsl(280deg, 0%, 10%);
-  border-bottom: 6px solid hsl(280deg, 0%, 15%);
+  background: ${({ theme }) => theme.colors.blacks[3]};
+  border-bottom: 6px solid ${({ theme }) => theme.colors.blacks[4]};
   ${setFlex('justify-content')};
   ${setFont(
     ({ theme }) => theme.sizes.n,
@@ -52,6 +52,6 @@ export const CodeButton = styled.a`
 `;
 
 export const PreviewButton = styled(CodeButton)`
-  background: hsl(288deg, 80%, 31%);
-  border-bottom: 6px solid hsl(288deg, 80%, 21%);
+  background: ${({ theme }) => theme.colors.purples[3]};
+  border-bottom: 6px solid ${({ theme }) => theme.colors.purples[4]};
 `;
