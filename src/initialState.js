@@ -1,22 +1,22 @@
 import React from 'react';
 
-import sneyderDevCover from './src/assets/images/sneyder-dev-1.png';
-import sneyderDev2 from './src/assets/images/sneyder-dev-2.png';
-import sneyderDev3 from './src/assets/images/sneyder-dev-3.png';
+import sneyderDevCover from './assets/images/sneyder-dev-1.png';
+import sneyderDev2 from './assets/images/sneyder-dev-2.png';
+import sneyderDev3 from './assets/images/sneyder-dev-3.png';
 
-import platziVideoCover from './src/assets/images/platzi-video-1.png';
-import platziVideo2 from './src/assets/images/platzi-video-2.png';
-import platziVideo3 from './src/assets/images/platzi-video-3.png';
+import platziVideoCover from './assets/images/platzi-video-1.png';
+import platziVideo2 from './assets/images/platzi-video-2.png';
+import platziVideo3 from './assets/images/platzi-video-3.png';
 
-import htmlLogo from './src/assets/icons/html-logo.svg';
-import cssLogo from './src/assets/icons/css-logo.svg';
-import jsLogo from './src/assets/icons/js-logo.svg';
-import sassLogo from './src/assets/icons/sass-logo.svg';
-import gitLogo from './src/assets/icons/git-logo.svg';
-import linkIcon from './src/assets/icons/link.svg';
-import courseBadge from './src/assets/icons/badge-jquery-js.png';
+import htmlLogo from './assets/icons/html-logo.svg';
+import cssLogo from './assets/icons/css-logo.svg';
+import jsLogo from './assets/icons/js-logo.svg';
+import sassLogo from './assets/icons/sass-logo.svg';
+import gitLogo from './assets/icons/git-logo.svg';
+import linkIcon from './assets/icons/link.svg';
+import courseBadge from './assets/icons/badge-jquery-js.png';
 
-import { SocialMenuIcon, LinkList } from './src/shared';
+import { SocialMenuIcon, LinkList } from './shared';
 
 export default {
   pinnedMessages: {

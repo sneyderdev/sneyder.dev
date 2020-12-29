@@ -1,5 +1,5 @@
 import { useReducer, useEffect } from 'react';
-import initialState from '../../initialState';
+import initialState from '../initialState';
 
 const useProject = (projectName, setLoading) => {
   const projectReducer = (state, action) => {
