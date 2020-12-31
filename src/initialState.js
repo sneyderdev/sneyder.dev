@@ -37,11 +37,11 @@ export default {
       description: `📌 My personal website.`,
       about: () => (
         <>
-          <p className='article__text'>
+          <p>
             This project is my personal website. The main goal was having a
             place to showcase my work and where people might know me better.
           </p>
-          <p className='article__text'>
+          <p>
             The project is still on development. I&apos;ll be adding some
             features like a blog section and more projects as soon as I learn
             more advanced technologies.
@@ -98,29 +98,25 @@ export default {
       description: `📌 Movies platform project.`,
       about: () => (
         <>
-          <p className='article__text'>
+          <p>
             This is a project of the{' '}
             <a
-              className='article__link'
               href='https://platzi.com/clases/jquery-js/'
               target='_blank'
               rel='noreferrer'
             >
-              <span>Course from jQuery to JavaScript</span>
-              <SocialMenuIcon className='social-menu__icon'>
+              <span className='link--decoration'>
+                Course from jQuery to JavaScript
+              </span>
+              <SocialMenuIcon>
                 <img src={linkIcon} alt='Link' />
                 <img src={courseBadge} alt='Badge jQuery to JS' />
               </SocialMenuIcon>
             </a>{' '}
             from{' '}
-            <a
-              className='article__link'
-              href='https://platzi.com/'
-              target='_blank'
-              rel='noreferrer'
-            >
-              <span>Platzi</span>
-              <SocialMenuIcon className='social-menu__icon'>
+            <a href='https://platzi.com/' target='_blank' rel='noreferrer'>
+              <span className='link--decoration'>Platzi</span>
+              <SocialMenuIcon>
                 <img src={linkIcon} alt='Link' />
                 <img
                   src='https://static.platzi.com/static/images/logos/platzi_favicon.png'
@@ -130,49 +126,36 @@ export default {
             </a>
             .
           </p>
-          <p className='article__text'>
-            I&apos;ve used these APIs to request the data:
-          </p>
-          <LinkList className='link-list'>
+          <p>I&apos;ve used these APIs to request the data:</p>
+          <LinkList>
             <li>
-              <a
-                className='article__link'
-                href='https://yts.mx/'
-                target='_blank'
-                rel='noreferrer'
-              >
-                <SocialMenuIcon className='social-menu__icon'>
+              <a href='https://yts.mx/' target='_blank' rel='noreferrer'>
+                <SocialMenuIcon>
                   <img src={linkIcon} alt='Link' />
                   <img
                     src='https://yts.mx/assets/images/website/og_yts_logo.png'
                     alt='YTS YIFY'
                   />
                 </SocialMenuIcon>
-                <span>YTS YIFY</span>
+                <span className='link--decoration'>YTS YIFY</span>
               </a>
             </li>
             <li>
-              <a
-                href='https://randomuser.me/'
-                target='_blank'
-                className='article__link'
-                rel='noreferrer'
-              >
+              <a href='https://randomuser.me/' target='_blank' rel='noreferrer'>
                 <img src={linkIcon} alt='Random User Generator' />
-                <span>Random User</span>
+                <span className='link--decoration'>Random User</span>
               </a>
             </li>
           </LinkList>
-          <p className='article__text'>
+          <p>
             I also used{' '}
             <a
-              className='article__link'
               href='https://sweetalert2.github.io/'
               target='_blank'
               rel='noreferrer'
             >
-              <span>sweetalert2</span>
-              <SocialMenuIcon className='social-menu__icon'>
+              <span className='link--decoration'>sweetalert2</span>
+              <SocialMenuIcon>
                 <img src={linkIcon} alt='Link' />
                 <img
                   src='https://sweetalert2.github.io/images/favicon.png'

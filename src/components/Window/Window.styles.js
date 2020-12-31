@@ -10,6 +10,7 @@ export const WindowContainer = styled.div`
   overflow-y: hidden;
 
   &:hover ${ProjectOptions} {
+    opacity: 1;
     transform: translateY(-200px);
   }
 
@@ -87,7 +88,6 @@ export const WindowBar = styled.div`
 export const WindowScreen = styled.div`
   width: 100%;
   height: 200px;
-  cursor: pointer;
 
   img {
     width: 100%;

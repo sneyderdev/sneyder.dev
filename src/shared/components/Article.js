@@ -34,18 +34,15 @@ export const Article = styled.article`
   a {
     display: inline-flex;
     align-items: center;
-    font-weight: 500;
-    text-decoration: underline;
-    text-decoration-color: ${({ theme }) => theme.colors.whites[2]};
-    color: ${({ theme }) => theme.colors.white};
 
     img {
       width: 15px;
       height: 15px;
     }
 
-    &:hover {
-      text-decoration-color: ${({ theme }) => theme.colors.white};
+    &:hover .link--decoration::after {
+      transform: scaleX(1);
+      transform-origin: left;
     }
 
     &:hover img {

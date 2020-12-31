@@ -5,7 +5,7 @@ import { SocialMenuIcon } from './SocialMenu';
 const LinkList = styled.ul`
   img {
     margin-left: 0;
-    transition: all 200ms;
+    transition: all 300ms ease-out;
   }
 
   span {

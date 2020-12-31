@@ -6,7 +6,8 @@ const ProjectOptions = styled.div`
   width: 100%;
   height: 200px;
   backdrop-filter: blur(3px);
-  transition: transform 300ms;
+  opacity: 0;
+  transition: all 300ms ease-out;
   background: ${({ theme }) => theme.colors.blacks[1]};
   ${setFlex('justify-content')};
 
@@ -16,7 +17,6 @@ const ProjectOptions = styled.div`
 
   a {
     margin-bottom: 20px;
-    text-decoration: none;
     ${setFont(
       ({ theme }) => theme.sizes.n,
       600,
@@ -31,7 +31,7 @@ const ProjectOptions = styled.div`
     & > img {
       opacity: 0.5;
       margin-left: 10px;
-      transition: all 200ms;
+      transition: opacity 300ms;
     }
 
     &:last-child {

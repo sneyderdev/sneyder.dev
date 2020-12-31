@@ -17,7 +17,7 @@ const Arrow = styled.div`
     position: absolute;
     left: 0;
     transform-origin: left;
-    transition: all 300ms;
+    transition: all 300ms ease-out;
     background: ${({ theme }) => theme.colors.white};
   }
 

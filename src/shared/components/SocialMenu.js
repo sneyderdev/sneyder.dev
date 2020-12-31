@@ -13,6 +13,10 @@ export const SocialMenu = styled.ul`
 `;
 
 export const SocialMenuItem = styled(MenuItem)`
+  a {
+    transition: color 300ms ease-out;
+  }
+
   &:first-child a {
     color: ${({ theme }) => theme.colors.twitter};
   }
@@ -26,7 +30,6 @@ export const SocialMenuItem = styled(MenuItem)`
   }
 
   a:hover {
-    transition: color 200ms;
     color: ${({ theme }) => theme.colors.white};
   }
 
@@ -46,6 +49,6 @@ export const SocialMenuIcon = styled.span`
 
   img {
     transform: translateX(-30px);
-    transition: all 200ms;
+    transition: transform 300ms ease-out;
   }
 `;

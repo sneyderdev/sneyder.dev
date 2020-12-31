@@ -55,7 +55,7 @@ const About = () => {
                   target='_blank'
                   rel='noreferrer'
                 >
-                  <span>Platzi</span>
+                  <span className='link--decoration'>Platzi</span>
                   <SocialMenuIcon>
                     <img src={linkIcon} alt='Link' />
                     <img
@@ -112,6 +112,7 @@ const About = () => {
                   href='mailto:hello@sneyder.dev'
                   target='_blank'
                   rel='noreferrer'
+                  className='link--decoration'
                 >
                   hello@sneyder.dev
                 </a>

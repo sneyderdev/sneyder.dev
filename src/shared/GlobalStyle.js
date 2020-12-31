@@ -39,6 +39,37 @@ const GlobalStyle = createGlobalStyle`
     overflow: hidden;
   }
 
+  .link--decoration {
+    position: relative;
+    font-weight: 500;
+    color: ${({ theme }) => theme.colors.white};
+
+    &::before, &::after {
+      content: '';
+      width: 100%;
+      height: 2px;
+      position: absolute;
+      bottom: 3px;
+      left: 0;
+    }
+
+    &::before {
+      background: ${({ theme }) => theme.colors.whites[2]};
+    }
+
+    &::after {
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 300ms ease-out;
+      background: ${({ theme }) => theme.colors.white};
+    }
+
+    &:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+  }
+
   .fadeIn {
     animation: ${fadeIn} 800ms ease-in forwards;
   }

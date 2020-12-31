@@ -46,6 +46,7 @@ const Home = () => {
                 href='https://twitter.com/sneyderdev'
                 target='_blank'
                 rel='noreferrer'
+                className='link--decoration'
               >
                 Twitter
               </a>{' '}
@@ -54,6 +55,7 @@ const Home = () => {
                 href='https://github.com/sneyderdev'
                 target='_blank'
                 rel='noreferrer'
+                className='link--decoration'
               >
                 GitHub
               </a>
@@ -62,6 +64,7 @@ const Home = () => {
                 href='https://www.linkedin.com/in/sneyderdev'
                 target='_blank'
                 rel='noreferrer'
+                className='link--decoration'
               >
                 LinkedIn
               </a>{' '}
@@ -70,6 +73,7 @@ const Home = () => {
                 href='mailto:hello@sneyder.dev'
                 target='_blank'
                 rel='noreferrer'
+                className='link--decoration'
               >
                 Email
               </a>

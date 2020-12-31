@@ -50,7 +50,6 @@ export const HeroDescription = styled.div`
 
 export const HeroLink = styled(Link)`
   display: inline-block;
-  text-decoration: none;
   transform: translateY(200%);
   font-size: ${({ theme }) => theme.sizes.s};
   color: ${({ theme }) => theme.colors.primary};
@@ -59,7 +58,7 @@ export const HeroLink = styled(Link)`
     margin-left: 5px;
     vertical-align: middle;
     opacity: 0.4;
-    transition: all 200ms;
+    transition: opacity 300ms ease-out;
   }
 
   &:hover img {
@@ -76,17 +75,6 @@ export const StyledFooter = styled.footer`
     margin: 0;
     transform: translateY(200%);
     font-size: ${({ theme }) => theme.sizes.s};
-  }
-
-  a {
-    font-weight: 600;
-    text-decoration: underline;
-    text-decoration-color: ${({ theme }) => theme.colors.whites[2]};
-    color: ${({ theme }) => theme.colors.white};
-
-    &:hover {
-      text-decoration-color: ${({ theme }) => theme.colors.white};
-    }
   }
 
   @media screen and (min-width: 768px) {

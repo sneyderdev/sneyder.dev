@@ -16,7 +16,6 @@ export const MenuContainer = styled.div`
     display: inline-flex;
     align-items: center;
     justify-content: flex-end;
-    text-decoration: none;
     transform: translateY(200%);
   }
 
@@ -44,7 +43,7 @@ export const Menu = styled.ul`
   }
 
   img {
-    transition: all 200ms;
+    transition: opacity 300ms ease-out;
   }
 `;
 

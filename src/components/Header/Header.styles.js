@@ -79,7 +79,7 @@ export const BurgerButton = styled.div`
     width: 100%;
     height: 3px;
     position: absolute;
-    transition: all 500ms;
+    transition: all 400ms ease-out;
     background: ${({ theme }) => theme.colors.white};
 
     &:first-child {
