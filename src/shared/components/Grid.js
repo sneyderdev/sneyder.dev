@@ -3,6 +3,10 @@ import styled, { css } from 'styled-components';
 import setPosition from '../mixins/setPosition';
 
 export const Grid = styled.div`
+  @media screen and (max-width: 1023px) {
+    padding-top: 70px;
+  }
+
   ${({ isHome }) =>
     isHome
       ? css`

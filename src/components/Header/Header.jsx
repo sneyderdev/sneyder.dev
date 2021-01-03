@@ -1,6 +1,7 @@
 import React, { useContext, useState, useRef } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import MenuContext from '../../context/MenuContext';
+import useScroll from '../../hooks/useScroll';
 
 import arrowIcon from '../../assets/icons/arrow.svg';
 import linkIcon from '../../assets/icons/link.svg';
@@ -9,7 +10,7 @@ import githubLogo from '../../assets/icons/github-logo.svg';
 import linkedinLogo from '../../assets/icons/linkedin-logo.svg';
 
 import {
-  HeaderContainer,
+  HeaderBackground,
   Navbar,
   NavbarButton,
   NavbarMenu,
@@ -62,24 +63,30 @@ const Header = ({ hasArrow }) => {
     }, 700);
   };
 
+  const { header, background } = useScroll();
+
   return (
-    <HeaderContainer>
+    <>
+      <HeaderBackground
+        className={header ? 'header--visible' : ''}
+        isBlack={background}
+      />
+      <LogoContainer className={header ? 'header--visible' : ''}>
+        {hasArrow ? (
+          <Arrow
+            onClick={handleGoBack}
+            className={`fadeIn ${arrowState ? 'active' : ''} ${
+              goState ? 'go-back' : ''
+            }`}
+          />
+        ) : (
+          <LogoText to='/' className='fadeIn'>
+            sneyder.dev
+          </LogoText>
+        )}
+      </LogoContainer>
       <Navbar>
-        <LogoContainer>
-          {hasArrow ? (
-            <Arrow
-              onClick={handleGoBack}
-              className={`fadeIn ${arrowState ? 'active' : ''} ${
-                goState ? 'go-back' : ''
-              }`}
-            />
-          ) : (
-            <LogoText to='/' className='fadeIn'>
-              sneyder.dev
-            </LogoText>
-          )}
-        </LogoContainer>
-        <NavbarButton>
+        <NavbarButton className={header ? 'header--visible' : ''}>
           <BurgerButton
             onClick={handleClick}
             className={`fadeIn ${menu ? 'active' : ''}`}
@@ -168,7 +175,7 @@ const Header = ({ hasArrow }) => {
           </MenuContainer>
         </NavbarMenu>
       </Navbar>
-    </HeaderContainer>
+    </>
   );
 };
 

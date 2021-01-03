@@ -138,6 +138,12 @@ const GlobalStyle = createGlobalStyle`
     animation-delay: 800ms;
   }
 
+  @media screen and (max-width: 1023px) {
+    .header--visible {
+      transform: translateY(0px)
+    }
+  }
+
   @media screen and (min-width: 1024px) {
     ::-webkit-scrollbar {
       width: .4em;

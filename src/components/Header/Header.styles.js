@@ -1,46 +1,54 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Link } from 'react-router-dom';
 
 import setFont from '../../shared/mixins/setFont';
 
-export const HeaderContainer = styled.header`
-  @media screen and (min-width: 1024px) {
-    grid-area: auto / margin1-start / auto / margin4-end;
-`;
-
-export const Navbar = styled.nav`
-  display: flex;
+export const HeaderBackground = styled.div`
   height: 70px;
-  padding: 10px 25px;
-  align-items: center;
-  justify-content: space-between;
-  overflow-x: hidden;
-  user-select: none;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  transition: all 300ms ease-out;
+  transform: translateY(-70px);
+
+  ${({ isBlack }) =>
+    isBlack &&
+    css`
+      background: ${({ theme }) => theme.colors.black};
+    `}
 
   @media screen and (min-width: 1024px) {
-    display: grid;
-    height: auto;
-    padding: 0;
-    grid-template-columns:
-      [margin1-start] 100px [margin1-end margin2-start] 100px [margin2-end main-start] minmax(
-        auto,
-        850px
-      )
-      [main-end margin3-start] 100px [margin3-end margin4-start] 100px [margin4-end];
-  }
+    display: none;
 `;
 
-export const NavbarButton = styled.div`
-  order: 3;
-
+export const Navbar = styled.div`
   @media screen and (min-width: 1024px) {
-    display: flex;
-    justify-content: center;
     grid-area: auto / margin3-start / auto / margin4-end;
   }
 `;
 
-export const NavbarMenu = styled.div`
+export const NavbarButton = styled.div`
+  @media screen and (max-width: 1023px) {
+    display: flex;
+    height: 70px;
+    padding-right: 20px;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 20;
+    transition: all 300ms ease-out;
+    transform: translateY(-70px);
+  }
+
+  @media screen and (min-width: 1024px) {
+    display: flex;
+    justify-content: center;
+  }
+`;
+
+export const NavbarMenu = styled.nav`
   display: ${({ menu }) => (menu ? 'block' : 'none')};
 
   @media screen and (min-width: 1024px) {
@@ -49,6 +57,18 @@ export const NavbarMenu = styled.div`
 `;
 
 export const LogoContainer = styled.div`
+  @media screen and (max-width: 1023px) {
+    display: flex;
+    height: 70px;
+    padding-left: 20px;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 20;
+    transition: all 300ms ease-out;
+    transform: translateY(-70px);
+  }
+
   @media screen and (min-width: 1024px) {
     display: flex;
     justify-content: center;

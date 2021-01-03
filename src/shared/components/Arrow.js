@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { Navbar } from '../../components/Header/Header.styles';
+import { LogoContainer } from '../../components/Header/Header.styles';
 
 const Arrow = styled.div`
   display: block;
@@ -51,7 +51,7 @@ const Arrow = styled.div`
   }
 
   @media screen and (min-width: 1024px) {
-    ${Navbar} & {
+    ${LogoContainer} & {
       width: 35px;
       position: fixed;
       top: 55px;
