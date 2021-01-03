@@ -64,7 +64,7 @@ export const LogoContainer = styled.div`
     align-items: center;
     position: fixed;
     top: 0;
-    z-index: 20;
+    z-index: 10;
     transition: all 300ms ease-out;
     transform: translateY(-70px);
   }
