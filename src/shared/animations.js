@@ -19,3 +19,21 @@ export const slideUp = keyframes`
     transform: translateY(0);
   }
 `;
+
+export const load = keyframes`
+  0% {
+    width: 0;
+    height: 0;
+    top: 36px;
+    left: 36px;
+    opacity: 1;
+  }
+
+  100% {
+    width: 72px;
+    height: 72px;
+    top: 0;
+    left: 0;
+    opacity: 0;
+  }
+`;

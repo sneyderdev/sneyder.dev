@@ -1,6 +1,7 @@
 export { default as theme } from './theme';
 export { default as GlobalStyle } from './GlobalStyle';
 export { Background, Container, Blur } from './utils';
+export { load } from './animations';
 
 export { default as setPosition } from './mixins/setPosition';
 export { default as setFont } from './mixins/setFont';

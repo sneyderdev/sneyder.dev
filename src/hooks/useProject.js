@@ -20,7 +20,9 @@ const useProject = (projectName, setLoading) => {
 
   useEffect(() => {
     dispatch({ type: 'GET_PROJECT', payload: projectName });
-    setLoading(false);
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000);
   }, []);
 
   return project;

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import useProject from '../../hooks/useProject';
 
-import { Window, PinnedMessage } from '../../components';
+import { Window, PinnedMessage, Loader } from '../../components';
 import NotFound from '../NotFound';
 
 import githubLogo from '../../assets/icons/github-logo.svg';
@@ -29,7 +29,7 @@ const ProjectInfo = () => {
   const { name, description, about, codeURL, previewURL, stack } = project;
 
   if (loading) {
-    return <h1>Loading</h1>;
+    return <Loader />;
   }
 
   return hasProject ? (
