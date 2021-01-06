@@ -4,7 +4,9 @@ import Carousel from '../Carousel/Carousel';
 
 import { WindowContainer, WindowBar, WindowScreen } from './Window.styles';
 
-const Window = ({ project: { name, images }, children, isCarousel }) => {
+const Window = ({ project, children, isCarousel }) => {
+  const { name, images } = project;
+
   return (
     <WindowContainer
       isCarousel={isCarousel}
@@ -30,9 +32,7 @@ const Window = ({ project: { name, images }, children, isCarousel }) => {
         </WindowScreen>
       ) : (
         <WindowScreen>
-          {images.map((image) => (
-            <img key={image.id} src={image.src} alt='Project Preview' />
-          ))}
+          <img src={images} alt={name} />
         </WindowScreen>
       )}
       {children}
