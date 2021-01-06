@@ -55,6 +55,7 @@ const ProjectInfo = () => {
           <Window project={project} isCarousel />
           <ArticleContainer className='fadeIn delay-6'>
             <Article>
+              <h2>About</h2>
               <BlockContent blocks={about} />
             </Article>
             <Article>
