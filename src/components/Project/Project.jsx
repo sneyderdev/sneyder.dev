@@ -12,20 +12,20 @@ import ProjectOptions from './Project.styles';
 import { SocialMenuIcon } from '../../shared';
 
 const Project = ({ project }) => {
-  const { codeURL, previewURL, slug } = project;
+  const { codeUrl, previewUrl, slug } = project;
 
   return (
     <Window project={project}>
       <ProjectOptions>
         <div>
-          <a href={codeURL} target='_blank' rel='noreferrer'>
+          <a href={codeUrl} target='_blank' rel='noreferrer'>
             <span>Code</span>
             <SocialMenuIcon>
               <img src={linkIcon} alt='Link' />
               <img src={githubLogo} alt='GitHub Logo' />
             </SocialMenuIcon>
           </a>
-          <a href={previewURL} target='_blank' rel='noreferrer'>
+          <a href={previewUrl} target='_blank' rel='noreferrer'>
             Live Preview
             <img src={arrowIcon} alt='Preview arrow' />
           </a>
