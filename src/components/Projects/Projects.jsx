@@ -10,9 +10,10 @@ const Projects = ({ projects }) => {
     <MainSection>
       <Container>
         <ProjectsContainer className='fadeIn delay-6'>
-          {projects.map((project) => (
-            <Project project={project} key={project.id} />
-          ))}
+          {projects &&
+            projects.map((project) => (
+              <Project project={project} key={project._id} />
+            ))}
         </ProjectsContainer>
       </Container>
     </MainSection>
