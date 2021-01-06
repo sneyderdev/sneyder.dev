@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { useState, useEffect } from 'react';
 import client from '../client';
 
@@ -21,7 +22,7 @@ const useProject = (slug, setLoading) => {
           'stack': stack[]{
             _key,
             name,
-            'icon': Icon.asset->url
+            'icon': icon.asset->url
           }
         }`
       )

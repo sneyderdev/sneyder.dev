@@ -9,7 +9,7 @@ export default {
       type: 'string',
     },
     {
-      name: 'Icon',
+      name: 'icon',
       title: 'Icon',
       type: 'image',
     },
