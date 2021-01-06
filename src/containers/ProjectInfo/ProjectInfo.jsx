@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
+import BlockContent from '@sanity/block-content-to-react';
 import useProject from '../../hooks/useProject';
 
 import { Window, PinnedMessage, Loader } from '../../components';
@@ -20,19 +21,18 @@ import {
 } from '../../shared';
 
 const ProjectInfo = () => {
-  const { projectName } = useParams();
+  const { slug } = useParams();
   const [loading, setLoading] = useState(true);
 
-  const { project } = useProject(projectName.split('-'), setLoading);
-  const hasProject = Object.keys(project).length > 0;
-
-  const { name, description, about, codeURL, previewURL, stack } = project;
+  const project = useProject(slug, setLoading);
 
   if (loading) {
     return <Loader />;
   }
 
-  return hasProject ? (
+  const { name, description, codeUrl, previewUrl, about, stack } = project;
+
+  return project ? (
     <>
       <TitleContainer center>
         <Title>
@@ -45,25 +45,24 @@ const ProjectInfo = () => {
       <MainSection>
         <Container>
           <ButtonOptions className='fadeIn delay-6'>
-            <CodeButton href={codeURL} target='_blank' rel='noreferrer'>
+            <CodeButton href={codeUrl} target='_blank' rel='noreferrer'>
               Code <img src={githubLogo} alt='GitHub Logo' />
             </CodeButton>
-            <PreviewButton href={previewURL} target='_blank' rel='noreferrer'>
+            <PreviewButton href={previewUrl} target='_blank' rel='noreferrer'>
               Live Preview <img src={arrowIcon} alt='Preview arrow' />
             </PreviewButton>
           </ButtonOptions>
           <Window project={project} isCarousel />
           <ArticleContainer className='fadeIn delay-6'>
             <Article>
-              <h2>About</h2>
-              {about()}
+              <BlockContent blocks={about} />
             </Article>
             <Article>
               <h2>Technologies</h2>
               <ul>
                 {stack.map((tech) => (
-                  <ListItem key={tech.id}>
-                    <img src={tech.icon} alt='' />
+                  <ListItem key={tech._key}>
+                    <img src={tech.icon} alt={tech.name} />
                     <span>{tech.name}</span>
                   </ListItem>
                 ))}

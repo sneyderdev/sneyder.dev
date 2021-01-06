@@ -17,8 +17,8 @@ const Carousel = ({ images }) => {
       <CarouselContent slideIndex={slide + 1}>
         {images.map((image) => (
           <img
-            key={image.id}
-            src={image.src}
+            key={image._key}
+            src={image.url}
             alt='Project Preview'
             className='fadeIn duration-2'
           />
@@ -33,7 +33,7 @@ const Carousel = ({ images }) => {
       <CarouselDots>
         {images.map((image, index) => (
           <div
-            key={image.id}
+            key={image._key}
             onClick={() => handleDotClick(index)}
             onKeyPress={() => handleDotClick(index)}
             role='button'

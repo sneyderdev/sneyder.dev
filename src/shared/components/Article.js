@@ -21,6 +21,11 @@ export const Article = styled.article`
   row-gap: 20px;
   color: ${({ theme }) => theme.colors.whites[1]};
 
+  div {
+    display: inherit;
+    row-gap: inherit;
+  }
+
   h2 {
     margin: 0;
     font-weight: 600;

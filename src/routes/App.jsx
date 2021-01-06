@@ -18,7 +18,7 @@ const App = () => {
             <RouteWrapper exact path='/' component={Home} isHome />
             <RouteWrapper
               exact
-              path='/portfolio/:projectName'
+              path='/portfolio/:slug'
               component={ProjectInfo}
               hasArrow
             />

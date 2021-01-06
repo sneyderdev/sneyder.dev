@@ -1,28 +1,35 @@
-import { useReducer, useEffect } from 'react';
-import initialState from '../initialState';
+import { useState, useEffect } from 'react';
+import client from '../client';
 
-const useProject = (projectName, setLoading) => {
-  const projectReducer = (state, action) => {
-    switch (action.type) {
-      case 'GET_PROJECT':
-        return {
-          project:
-            state.projects.find((project) =>
-              project.name.toLowerCase().startsWith(action.payload[0])
-            ) || {},
-        };
-      default:
-        return state;
-    }
-  };
-
-  const [project, dispatch] = useReducer(projectReducer, initialState);
+const useProject = (slug, setLoading) => {
+  const [project, setProject] = useState(null);
 
   useEffect(() => {
-    dispatch({ type: 'GET_PROJECT', payload: projectName });
-    setTimeout(() => {
-      setLoading(false);
-    }, 1000);
+    client
+      .fetch(
+        `*[slug.current == '${slug}'][0]{
+          _id,
+          name,
+          description,
+          codeUrl,
+          previewUrl,
+          'images': images[]{
+            _key,
+            'url': asset->url
+          },
+          about,
+          'stack': stack[]{
+            _key,
+            name,
+            'icon': Icon.asset->url
+          }
+        }`
+      )
+      .then((data) => {
+        setProject(data);
+        setLoading(false);
+      })
+      .catch((error) => console.error(error));
   }, []);
 
   return project;
