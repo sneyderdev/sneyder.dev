@@ -5,6 +5,7 @@ import project from './project/project';
 import post from './post';
 import author from './author';
 import category from './category';
+import pinnedMessage from './pinnedMessage';
 
 import blockContent from './blockContent';
 import technology from './project/technology';
@@ -18,6 +19,7 @@ export default createSchema({
     post,
     author,
     category,
+    pinnedMessage,
     blockContent,
     technology,
     linkList,
