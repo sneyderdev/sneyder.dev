@@ -31,6 +31,11 @@ export default {
                 name: 'href',
                 type: 'url',
               },
+              {
+                title: 'Icon',
+                name: 'icon',
+                type: 'image',
+              },
             ],
           },
         ],
