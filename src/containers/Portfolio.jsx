@@ -1,34 +1,14 @@
-/* eslint-disable no-console */
-import React, { useState, useEffect } from 'react';
-import initialState from '../initialState';
-import sanityClient from '../sanityClient';
+import React, { useContext } from 'react';
+import AppContext from '../context/AppContext';
 
-import { Projects, PinnedMessage, Loader } from '../components';
+import { Projects, PinnedMessage } from '../components';
 
 import { TitleContainer, Title } from '../shared';
 
 const Portfolio = () => {
-  const [loading, setLoading] = useState(true);
-  const [projects, setProjects] = useState(null);
-
-  useEffect(() => {
-    sanityClient
-      .fetch(
-        `*[_type == 'project']{
-          _id,
-          name,
-          codeUrl,
-          previewUrl,
-          'slug': slug.current,
-          'images': images[0].asset->url
-        }`
-      )
-      .then((data) => {
-        setProjects(data);
-        setLoading(!loading);
-      })
-      .catch((error) => console.error(error));
-  }, []);
+  const {
+    state: { pinnedMessages, projects },
+  } = useContext(AppContext);
 
   return (
     <>
@@ -38,9 +18,9 @@ const Portfolio = () => {
         </Title>
       </TitleContainer>
 
-      <PinnedMessage message={initialState.pinnedMessages.projects} />
+      <PinnedMessage message={pinnedMessages.projects} />
 
-      {loading ? <Loader /> : <Projects projects={projects} />}
+      <Projects projects={projects} />
     </>
   );
 };

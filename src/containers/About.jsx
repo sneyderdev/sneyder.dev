@@ -1,5 +1,5 @@
-import React from 'react';
-import initialState from '../initialState';
+import React, { useContext } from 'react';
+import AppContext from '../context/AppContext';
 
 import { PinnedMessage } from '../components';
 
@@ -22,6 +22,10 @@ import {
 } from '../shared';
 
 const About = () => {
+  const {
+    state: { pinnedMessages },
+  } = useContext(AppContext);
+
   return (
     <>
       <TitleContainer aboutTitleContainer>
@@ -37,7 +41,7 @@ const About = () => {
         </Container>
       </TitleContainer>
 
-      <PinnedMessage message={initialState.pinnedMessages.about()} isAbout />
+      <PinnedMessage message={pinnedMessages.about()} isAbout />
 
       <MainSection>
         <Container>

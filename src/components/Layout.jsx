@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import MenuContext from '../context/MenuContext';
+import AppContext from '../context/AppContext';
 
 import Header from './Header/Header';
 import Footer from './Footer/Footer';
@@ -7,7 +7,9 @@ import Footer from './Footer/Footer';
 import { Grid, GridBoundaries, Blur } from '../shared';
 
 const Layout = ({ children, hasArrow, isHome }) => {
-  const { menu } = useContext(MenuContext);
+  const {
+    state: { menu },
+  } = useContext(AppContext);
 
   return (
     <>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
-import { MenuContextProvider } from '../context/MenuContext';
+import { AppContextProvider } from '../context/AppContext';
 
 import RouteWrapper from './RouteWrapper';
 import { Home, Portfolio, ProjectInfo, About, NotFound } from '../containers';
@@ -12,7 +12,7 @@ const App = () => {
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <Background />
-      <MenuContextProvider>
+      <AppContextProvider>
         <Router>
           <Switch>
             <RouteWrapper exact path='/' component={Home} isHome />
@@ -27,7 +27,7 @@ const App = () => {
             <RouteWrapper component={NotFound} />
           </Switch>
         </Router>
-      </MenuContextProvider>
+      </AppContextProvider>
     </ThemeProvider>
   );
 };
