@@ -18,7 +18,7 @@ const PinnedMessage = ({ message, isAbout }) => {
   return (
     <Message>
       <Container>
-        <PortableText blocks={message.message} serializers={serializer} />
+        <PortableText blocks={message} serializers={serializer} />
       </Container>
     </Message>
   );

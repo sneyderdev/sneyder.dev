@@ -26,6 +26,10 @@ const About = () => {
     state: { pinnedMessages },
   } = useContext(AppContext);
 
+  const { message } = pinnedMessages.find(
+    (pinnedMessage) => pinnedMessage.page === 'About'
+  );
+
   return (
     <>
       <TitleContainer aboutTitleContainer>
@@ -41,10 +45,7 @@ const About = () => {
         </Container>
       </TitleContainer>
 
-      <PinnedMessage
-        message={pinnedMessages.find((message) => message.page === 'About')}
-        isAbout
-      />
+      <PinnedMessage message={message} isAbout />
 
       <MainSection>
         <Container>

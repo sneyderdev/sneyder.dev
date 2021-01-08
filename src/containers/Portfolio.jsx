@@ -10,6 +10,10 @@ const Portfolio = () => {
     state: { pinnedMessages, projects },
   } = useContext(AppContext);
 
+  const { message } = pinnedMessages.find(
+    (pinnedMessage) => pinnedMessage.page === 'Portfolio'
+  );
+
   return (
     <>
       <TitleContainer center>
@@ -18,9 +22,7 @@ const Portfolio = () => {
         </Title>
       </TitleContainer>
 
-      <PinnedMessage
-        message={pinnedMessages.find((message) => message.page === 'Portfolio')}
-      />
+      <PinnedMessage message={message} />
 
       <Projects projects={projects} />
     </>
