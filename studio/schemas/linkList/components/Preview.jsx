@@ -5,7 +5,7 @@ import sanityClient from '../../../../src/sanityClient';
 const builder = imageUrlBuilder(sanityClient);
 const urlFor = (source) => builder.image(source);
 
-const LinkListPreview = ({ items }) => {
+const Preview = ({ items }) => {
   return (
     <div style={{ padding: '10px', color: '#fff', background: '#000' }}>
       {items &&
@@ -29,4 +29,4 @@ const LinkListPreview = ({ items }) => {
   );
 };
 
-export default LinkListPreview;
+export default Preview;

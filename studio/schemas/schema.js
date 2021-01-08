@@ -9,8 +9,8 @@ import pinnedMessage from './pinnedMessage';
 
 import blockContent from './blockContent';
 import technology from './project/technology';
-import linkList from './project/linkList';
-import listItem from './project/listItem';
+import linkList from './linkList/linkList';
+import listItem from './linkList/listItem';
 
 export default createSchema({
   name: 'portfolio',

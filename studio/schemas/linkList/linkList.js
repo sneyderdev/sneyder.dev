@@ -1,6 +1,6 @@
 import React from 'react';
 import { RiPlayListAddLine } from 'react-icons/ri';
-import LinkListPreview from './components/LinkListPreview';
+import Preview from './components/Preview';
 
 export default {
   title: 'Link List',
@@ -27,7 +27,7 @@ export default {
       return {
         title: 'Link List',
         media: () => <RiPlayListAddLine />,
-        extendedPreview: <LinkListPreview items={items} />,
+        extendedPreview: <Preview items={items} />,
       };
     },
   },
