@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 import React, { useState, useEffect } from 'react';
 import initialState from '../initialState';
-import client from '../client';
+import sanityClient from '../sanityClient';
 
 import { Projects, PinnedMessage } from '../components';
 
@@ -11,7 +11,7 @@ const Portfolio = () => {
   const [projects, setProjects] = useState(null);
 
   useEffect(() => {
-    client
+    sanityClient
       .fetch(
         `*[_type == 'project']{
           _id,

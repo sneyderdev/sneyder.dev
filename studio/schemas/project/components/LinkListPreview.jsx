@@ -1,8 +1,8 @@
 import React from 'react';
 import imageUrlBuilder from '@sanity/image-url';
-import client from '../../../../src/client';
+import sanityClient from '../../../../src/sanityClient';
 
-const builder = imageUrlBuilder(client);
+const builder = imageUrlBuilder(sanityClient);
 const urlFor = (source) => builder.image(source);
 
 const LinkListPreview = ({ items }) => {

@@ -1,12 +1,12 @@
 /* eslint-disable no-console */
 import { useState, useEffect } from 'react';
-import client from '../client';
+import sanityClient from '../sanityClient';
 
 const useProject = (slug, setLoading) => {
   const [project, setProject] = useState(null);
 
   useEffect(() => {
-    client
+    sanityClient
       .fetch(
         `*[slug.current == '${slug}'][0]{
           _id,

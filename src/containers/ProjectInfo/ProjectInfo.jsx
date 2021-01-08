@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import PortableText from '@sanity/block-content-to-react';
 import imageUrlBuilder from '@sanity/image-url';
-import client from '../../client';
+import sanityClient from '../../sanityClient';
 import useProject from '../../hooks/useProject';
 
 import { Window, PinnedMessage, Loader } from '../../components';
@@ -37,7 +37,7 @@ const ProjectInfo = () => {
 
   const { name, description, codeUrl, previewUrl, about, stack } = project;
 
-  const builder = imageUrlBuilder(client);
+  const builder = imageUrlBuilder(sanityClient);
   const urlFor = (source) => builder.image(source);
 
   const serializers = {
