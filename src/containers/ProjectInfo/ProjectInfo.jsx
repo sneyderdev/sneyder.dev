@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
-import BlockContent from '@sanity/block-content-to-react';
+import PortableText from '@sanity/block-content-to-react';
+import imageUrlBuilder from '@sanity/image-url';
+import client from '../../client';
 import useProject from '../../hooks/useProject';
 
 import { Window, PinnedMessage, Loader } from '../../components';
@@ -8,6 +10,7 @@ import NotFound from '../NotFound';
 
 import githubLogo from '../../assets/icons/github-logo.svg';
 import arrowIcon from '../../assets/icons/arrow.svg';
+import linkIcon from '../../assets/icons/link.svg';
 
 import { ButtonOptions, CodeButton, PreviewButton } from './ProjectInfo.styles';
 import {
@@ -18,6 +21,8 @@ import {
   Article,
   ListItem,
   MainSection,
+  LinkList,
+  SocialMenuIcon,
 } from '../../shared';
 
 const ProjectInfo = () => {
@@ -31,6 +36,33 @@ const ProjectInfo = () => {
   }
 
   const { name, description, codeUrl, previewUrl, about, stack } = project;
+
+  const builder = imageUrlBuilder(client);
+  const urlFor = (source) => builder.image(source);
+
+  const serializers = {
+    types: {
+      linkList: ({ node }) => {
+        const { items } = node;
+
+        return (
+          <LinkList>
+            {items.map((item) => (
+              <li key={item._key}>
+                <a href={item.href} target='_blank' rel='noreferrer'>
+                  <SocialMenuIcon>
+                    <img src={linkIcon} alt='Link' />
+                    <img src={urlFor(item.icon)} alt={item.text} />
+                  </SocialMenuIcon>
+                  <span className='link--decoration'>{item.text}</span>
+                </a>
+              </li>
+            ))}
+          </LinkList>
+        );
+      },
+    },
+  };
 
   return project ? (
     <>
@@ -56,7 +88,7 @@ const ProjectInfo = () => {
           <ArticleContainer className='fadeIn delay-6'>
             <Article>
               <h2>About</h2>
-              <BlockContent blocks={about} />
+              <PortableText blocks={about} serializers={serializers} />
             </Article>
             <Article>
               <h2>Technologies</h2>

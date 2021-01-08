@@ -11,7 +11,7 @@ export const ArticleContainer = styled.section`
     font-size: 18px;
   }
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1024px) {
     font-size: 20px;
   }
 `;
