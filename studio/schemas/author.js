@@ -1,7 +1,10 @@
+import { BsPerson } from 'react-icons/bs';
+
 export default {
   name: 'author',
   title: 'Author',
   type: 'document',
+  icon: BsPerson,
   fields: [
     {
       name: 'name',

@@ -1,7 +1,10 @@
+import { AiOutlineProject } from 'react-icons/ai';
+
 export default {
   name: 'project',
   title: 'Project',
   type: 'document',
+  icon: AiOutlineProject,
   fields: [
     {
       name: 'name',

@@ -1,7 +1,10 @@
+import { BsTag } from 'react-icons/bs';
+
 export default {
   name: 'category',
   title: 'Category',
   type: 'document',
+  icon: BsTag,
   fields: [
     {
       name: 'title',
@@ -14,4 +17,4 @@ export default {
       type: 'text',
     },
   ],
-}
+};
