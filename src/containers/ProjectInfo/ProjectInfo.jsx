@@ -62,6 +62,21 @@ const ProjectInfo = () => {
         );
       },
     },
+    marks: {
+      link: ({ mark, children }) => {
+        const { href, icon } = mark;
+
+        return (
+          <a href={href}>
+            <span className='link--decoration'>{children}</span>
+            <SocialMenuIcon>
+              <img src={linkIcon} alt='Link' />
+              <img src={urlFor(icon)} alt={children} />
+            </SocialMenuIcon>
+          </a>
+        );
+      },
+    },
   };
 
   return project ? (
