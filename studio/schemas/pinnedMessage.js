@@ -9,11 +9,13 @@ export default {
     {
       title: 'Page',
       name: 'page',
+      description: 'Page where you wanna show this message.',
       type: 'string',
     },
     {
       title: 'Message',
       name: 'message',
+      description: 'Content of the message',
       type: 'blockContent',
     },
   ],
