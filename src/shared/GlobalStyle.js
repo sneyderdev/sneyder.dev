@@ -139,7 +139,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   @media screen and (max-width: 1023px) {
-    .header--visible {
+    div.header--visible {
       transform: translateY(0px)
     }
   }
