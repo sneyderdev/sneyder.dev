@@ -32,7 +32,7 @@ export const Grid = styled.div`
           display: grid;
           width: 100%;
           min-height: 100vh;
-          grid-auto-rows: max-content;
+          grid-template-rows: repeat(3, auto) 1fr auto;
 
           @media screen and (min-width: 1024px) {
             max-width: 1900px;

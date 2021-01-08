@@ -32,7 +32,7 @@ const ProjectInfo = () => {
   const project = useProject(slug, setLoading);
 
   if (loading) {
-    return <Loader />;
+    return <Loader fullScreen />;
   }
 
   const { name, description, codeUrl, previewUrl, about, stack } = project;

@@ -3,11 +3,12 @@ import React, { useState, useEffect } from 'react';
 import initialState from '../initialState';
 import sanityClient from '../sanityClient';
 
-import { Projects, PinnedMessage } from '../components';
+import { Projects, PinnedMessage, Loader } from '../components';
 
 import { TitleContainer, Title } from '../shared';
 
 const Portfolio = () => {
+  const [loading, setLoading] = useState(true);
   const [projects, setProjects] = useState(null);
 
   useEffect(() => {
@@ -22,7 +23,10 @@ const Portfolio = () => {
           'images': images[0].asset->url
         }`
       )
-      .then((data) => setProjects(data))
+      .then((data) => {
+        setProjects(data);
+        setLoading(!loading);
+      })
       .catch((error) => console.error(error));
   }, []);
 
@@ -36,7 +40,7 @@ const Portfolio = () => {
 
       <PinnedMessage message={initialState.pinnedMessages.projects} />
 
-      <Projects projects={projects} />
+      {loading ? <Loader /> : <Projects projects={projects} />}
     </>
   );
 };
