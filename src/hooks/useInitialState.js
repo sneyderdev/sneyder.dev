@@ -9,19 +9,26 @@ const useInitialState = () => {
   useEffect(() => {
     sanityClient
       .fetch(
-        `*[_type == 'project']{
-          _id,
-          name,
-          codeUrl,
-          previewUrl,
-          'slug': slug.current,
-          'images': images[0].asset->url
+        `{
+          'projects': *[_type == 'project'] {
+            _id,
+            name,
+            codeUrl,
+            previewUrl,
+            'slug': slug.current,
+            'images': images[0].asset->url
+          },
+          'pinnedMessages': *[_type == 'pinnedMessage'] {
+            page,
+            message,
+          }
         }`
       )
       .then((data) => {
         setState({
           ...state,
-          projects: data,
+          projects: data.projects,
+          pinnedMessages: data.pinnedMessages,
         });
       })
       .catch((error) => console.error(error));

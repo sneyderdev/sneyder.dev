@@ -41,7 +41,10 @@ const About = () => {
         </Container>
       </TitleContainer>
 
-      <PinnedMessage message={pinnedMessages.about()} isAbout />
+      <PinnedMessage
+        message={pinnedMessages.find((message) => message.page === 'About')}
+        isAbout
+      />
 
       <MainSection>
         <Container>

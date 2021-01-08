@@ -18,7 +18,9 @@ const Portfolio = () => {
         </Title>
       </TitleContainer>
 
-      <PinnedMessage message={pinnedMessages.projects} />
+      <PinnedMessage
+        message={pinnedMessages.find((message) => message.page === 'Portfolio')}
+      />
 
       <Projects projects={projects} />
     </>
