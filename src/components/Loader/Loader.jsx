@@ -2,9 +2,9 @@ import React from 'react';
 
 import { LoaderContainer, LoaderContent } from './Loader.styles';
 
-const Loader = ({ fullScreen }) => {
+const Loader = () => {
   return (
-    <LoaderContainer fullScreen={fullScreen}>
+    <LoaderContainer>
       <LoaderContent />
     </LoaderContainer>
   );
