@@ -1,6 +1,7 @@
 import React, { useContext, useState, useRef } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import AppContext from '../../context/AppContext';
+import MenuContext from '../../context/MenuContext';
 import useScroll from '../../hooks/useScroll';
 
 import arrowIcon from '../../assets/icons/arrow.svg';
@@ -29,17 +30,15 @@ import {
 } from '../../shared';
 
 const Header = ({ hasArrow }) => {
-  const { state, setState } = useContext(AppContext);
+  const { menu, setMenu } = useContext(MenuContext);
+
+  const { state } = useContext(AppContext);
   const {
-    menu,
     author: { cv },
   } = state;
 
   const handleClick = () => {
-    setState({
-      ...state,
-      menu: !menu,
-    });
+    setMenu(!menu);
     document.getElementById('body').classList.toggle('overflow--hidden');
   };
 
