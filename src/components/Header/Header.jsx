@@ -30,7 +30,10 @@ import {
 
 const Header = ({ hasArrow }) => {
   const { state, setState } = useContext(AppContext);
-  const { menu } = state;
+  const {
+    menu,
+    author: { cv },
+  } = state;
 
   const handleClick = () => {
     setState({
@@ -131,6 +134,11 @@ const Header = ({ hasArrow }) => {
                   Contact <img src={arrowIcon} alt='Menu Arrow' />
                 </a>
               </MenuItem>
+              <MenuItem>
+                <a href={`${cv}?dl`} className='slideUp duration-3 delay-3'>
+                  Download CV <img src={arrowIcon} alt='Menu Arrow' />
+                </a>
+              </MenuItem>
             </Menu>
             <SocialMenu>
               <SocialMenuItem>
@@ -138,7 +146,7 @@ const Header = ({ hasArrow }) => {
                   href='https://twitter.com/sneyderdev'
                   target='_blank'
                   rel='noreferrer'
-                  className='slideUp duration-3 delay-3'
+                  className='slideUp duration-3 delay-4'
                 >
                   <span>Twitter</span>
                   <SocialMenuIcon>
@@ -152,7 +160,7 @@ const Header = ({ hasArrow }) => {
                   href='https://github.com/sneyderdev'
                   target='_blank'
                   rel='noreferrer'
-                  className='slideUp duration-3 delay-4'
+                  className='slideUp duration-3 delay-5'
                 >
                   <span>GitHub</span>
                   <SocialMenuIcon>
@@ -166,7 +174,7 @@ const Header = ({ hasArrow }) => {
                   href='https://www.linkedin.com/in/sneyderdev'
                   target='_blank'
                   rel='noreferrer'
-                  className='slideUp duration-3 delay-5'
+                  className='slideUp duration-3 delay-6'
                 >
                   <span>LinkedIn</span>
                   <SocialMenuIcon>

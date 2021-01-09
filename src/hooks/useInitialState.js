@@ -21,6 +21,9 @@ const useInitialState = () => {
           'pinnedMessages': *[_type == 'pinnedMessage'] {
             page,
             message,
+          },
+          'author': *[_type == 'author'][0] {
+            'cv': cv.asset->url,
           }
         }`
       )
@@ -29,6 +32,7 @@ const useInitialState = () => {
           ...state,
           projects: data.projects,
           pinnedMessages: data.pinnedMessages,
+          author: data.author,
         });
       })
       .catch((error) => console.error(error));
