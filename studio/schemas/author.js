@@ -41,6 +41,11 @@ export default {
         },
       ],
     },
+    {
+      name: 'cv',
+      title: 'CV',
+      type: 'file',
+    },
   ],
   preview: {
     select: {
