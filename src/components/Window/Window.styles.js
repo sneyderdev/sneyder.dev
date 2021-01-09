@@ -26,6 +26,10 @@ export const WindowContainer = styled.div`
     font-size: 18px;
   }
 
+  @media screen and (min-width: 1024px) {
+    max-width: unset;
+  }
+
   ${({ isCarousel }) =>
     isCarousel &&
     css`

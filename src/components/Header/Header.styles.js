@@ -49,10 +49,12 @@ export const NavbarButton = styled.div`
 `;
 
 export const NavbarMenu = styled.nav`
-  display: ${({ menu }) => (menu ? 'block' : 'none')};
+  display: ${({ menu }) => (menu ? 'flex' : 'none')};
+  user-select: none;
 
   @media screen and (min-width: 1024px) {
-    grid-area: auto / margin3-start / auto / margin4-end;
+    justify-content: flex-end;
+    grid-area: auto / margin1-start / auto / margin4-end;
   }
 `;
 

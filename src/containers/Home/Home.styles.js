@@ -82,7 +82,7 @@ export const StyledFooter = styled.footer`
   }
 
   @media screen and (min-width: 1024px) {
-    grid-area: 3 / main-start / -1 / main-end;
+    grid-area: 2 / main-start / -1 / main-end;
     font-size: 20px;
   }
 `;

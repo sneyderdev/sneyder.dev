@@ -16,7 +16,7 @@ const Message = styled.section`
 
   @media screen and (min-width: 1024px) {
     margin: 30px 0 40px;
-    grid-area: auto / main-start / auto / main-end;
+    grid-area: 2 / main-start / 3 / main-end;
     font-size: 20px;
   }
 `;

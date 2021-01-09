@@ -103,90 +103,90 @@ const Header = ({ hasArrow }) => {
             <i />
           </BurgerButton>
         </NavbarButton>
-        <NavbarMenu menu={menu}>
-          <MenuContainer>
-            <Menu>
-              <MenuItem>
-                <Link
-                  to='/portfolio'
-                  onClick={handleClick}
-                  className='slideUp duration-3'
-                >
-                  Portfolio <img src={arrowIcon} alt='Menu Arrow' />
-                </Link>
-              </MenuItem>
-              <MenuItem>
-                <Link
-                  to='/about'
-                  onClick={handleClick}
-                  className='slideUp duration-3 delay-1'
-                >
-                  About <img src={arrowIcon} alt='Menu Arrow' />
-                </Link>
-              </MenuItem>
-              <MenuItem>
-                <a
-                  href='mailto:hello@sneyder.dev'
-                  target='_blank'
-                  rel='noreferrer'
-                  className='slideUp duration-3 delay-2'
-                >
-                  Contact <img src={arrowIcon} alt='Menu Arrow' />
-                </a>
-              </MenuItem>
-              <MenuItem>
-                <a href={`${cv}?dl`} className='slideUp duration-3 delay-3'>
-                  Download CV <img src={arrowIcon} alt='Menu Arrow' />
-                </a>
-              </MenuItem>
-            </Menu>
-            <SocialMenu>
-              <SocialMenuItem>
-                <a
-                  href='https://twitter.com/sneyderdev'
-                  target='_blank'
-                  rel='noreferrer'
-                  className='slideUp duration-3 delay-4'
-                >
-                  <span>Twitter</span>
-                  <SocialMenuIcon>
-                    <img src={linkIcon} alt='Link' />
-                    <img src={twitterLogo} alt='Twitter Logo' />
-                  </SocialMenuIcon>
-                </a>
-              </SocialMenuItem>
-              <SocialMenuItem>
-                <a
-                  href='https://github.com/sneyderdev'
-                  target='_blank'
-                  rel='noreferrer'
-                  className='slideUp duration-3 delay-5'
-                >
-                  <span>GitHub</span>
-                  <SocialMenuIcon>
-                    <img src={linkIcon} alt='Link' />
-                    <img src={githubLogo} alt='GitHub Logo' />
-                  </SocialMenuIcon>
-                </a>
-              </SocialMenuItem>
-              <SocialMenuItem>
-                <a
-                  href='https://www.linkedin.com/in/sneyderdev'
-                  target='_blank'
-                  rel='noreferrer'
-                  className='slideUp duration-3 delay-6'
-                >
-                  <span>LinkedIn</span>
-                  <SocialMenuIcon>
-                    <img src={linkIcon} alt='Link' />
-                    <img src={linkedinLogo} alt='LinkedIn Logo' />
-                  </SocialMenuIcon>
-                </a>
-              </SocialMenuItem>
-            </SocialMenu>
-          </MenuContainer>
-        </NavbarMenu>
       </Navbar>
+      <NavbarMenu menu={menu}>
+        <MenuContainer>
+          <Menu>
+            <MenuItem>
+              <Link
+                to='/portfolio'
+                onClick={handleClick}
+                className='slideUp duration-3'
+              >
+                Portfolio <img src={arrowIcon} alt='Menu Arrow' />
+              </Link>
+            </MenuItem>
+            <MenuItem>
+              <Link
+                to='/about'
+                onClick={handleClick}
+                className='slideUp duration-3 delay-1'
+              >
+                About <img src={arrowIcon} alt='Menu Arrow' />
+              </Link>
+            </MenuItem>
+            <MenuItem>
+              <a
+                href='mailto:hello@sneyder.dev'
+                target='_blank'
+                rel='noreferrer'
+                className='slideUp duration-3 delay-2'
+              >
+                Contact <img src={arrowIcon} alt='Menu Arrow' />
+              </a>
+            </MenuItem>
+            <MenuItem>
+              <a href={`${cv}?dl`} className='slideUp duration-3 delay-3'>
+                Download CV <img src={arrowIcon} alt='Menu Arrow' />
+              </a>
+            </MenuItem>
+          </Menu>
+          <SocialMenu>
+            <SocialMenuItem>
+              <a
+                href='https://twitter.com/sneyderdev'
+                target='_blank'
+                rel='noreferrer'
+                className='slideUp duration-3 delay-4'
+              >
+                <span>Twitter</span>
+                <SocialMenuIcon>
+                  <img src={linkIcon} alt='Link' />
+                  <img src={twitterLogo} alt='Twitter Logo' />
+                </SocialMenuIcon>
+              </a>
+            </SocialMenuItem>
+            <SocialMenuItem>
+              <a
+                href='https://github.com/sneyderdev'
+                target='_blank'
+                rel='noreferrer'
+                className='slideUp duration-3 delay-5'
+              >
+                <span>GitHub</span>
+                <SocialMenuIcon>
+                  <img src={linkIcon} alt='Link' />
+                  <img src={githubLogo} alt='GitHub Logo' />
+                </SocialMenuIcon>
+              </a>
+            </SocialMenuItem>
+            <SocialMenuItem>
+              <a
+                href='https://www.linkedin.com/in/sneyderdev'
+                target='_blank'
+                rel='noreferrer'
+                className='slideUp duration-3 delay-6'
+              >
+                <span>LinkedIn</span>
+                <SocialMenuIcon>
+                  <img src={linkIcon} alt='Link' />
+                  <img src={linkedinLogo} alt='LinkedIn Logo' />
+                </SocialMenuIcon>
+              </a>
+            </SocialMenuItem>
+          </SocialMenu>
+        </MenuContainer>
+      </NavbarMenu>
     </>
   );
 };

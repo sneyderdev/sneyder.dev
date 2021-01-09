@@ -74,7 +74,7 @@ export const FooterContainer = styled.footer`
   }
 
   @media screen and (min-width: 1024px) {
-    grid-area: auto / main-start / auto / main-end;
+    grid-area: 4 / main-start / -1 / main-end;
     font-size: 18px;
 
     img {

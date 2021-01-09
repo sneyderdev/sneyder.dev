@@ -3,10 +3,10 @@ import styled from 'styled-components';
 import setFont from '../mixins/setFont';
 
 export const MenuContainer = styled.div`
-  padding-right: 25px;
+  padding-right: 30px;
   position: fixed;
-  right: 10px;
   top: 70px;
+  right: 0;
   bottom: 0;
   z-index: 30;
   text-align: right;
@@ -20,7 +20,7 @@ export const MenuContainer = styled.div`
   }
 
   @media screen and (min-width: 1024px) {
-    padding-right: 70px;
+    padding-right: 80px;
     top: 120px;
     right: unset;
   }
