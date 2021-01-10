@@ -27,9 +27,13 @@ export const Article = styled.article`
   }
 
   h2 {
-    margin: 0;
+    margin: 20px 0 0;
     font-weight: 600;
     color: ${({ theme }) => theme.colors.white};
+
+    &:first-child {
+      margin: 0;
+    }
   }
 
   p {

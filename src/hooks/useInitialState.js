@@ -24,6 +24,7 @@ const useInitialState = () => {
           },
           'author': *[_type == 'author'][0] {
             'cv': cv.asset->url,
+            bio,
           }
         }`
       )
