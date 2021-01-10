@@ -7,7 +7,7 @@ import author from './documents/author';
 import category from './documents/category';
 import pinnedMessage from './documents/pinnedMessage';
 
-import blockContent from './objects/blockContent';
+import blockContent from './objects/blockContent/blockContent';
 import technology from './objects/technology';
 import linkList from './objects/linkList/linkList';
 import iconList from './objects/iconList/iconList';

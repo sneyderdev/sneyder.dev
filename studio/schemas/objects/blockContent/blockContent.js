@@ -1,3 +1,7 @@
+import { BiLinkExternal } from 'react-icons/bi';
+
+import IconLinkRenderer from './components/IconLinkRenderer';
+
 export default {
   title: 'Block Content',
   name: 'blockContent',
@@ -25,6 +29,22 @@ export default {
             title: 'URL',
             name: 'link',
             type: 'object',
+            fields: [
+              {
+                title: 'URL',
+                name: 'href',
+                type: 'url',
+              },
+            ],
+          },
+          {
+            title: 'Icon Link',
+            name: 'iconLink',
+            type: 'object',
+            blockEditor: {
+              icon: BiLinkExternal,
+              render: IconLinkRenderer,
+            },
             fields: [
               {
                 title: 'URL',

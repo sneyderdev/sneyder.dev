@@ -1,5 +1,6 @@
 import React from 'react';
 import { BsCardChecklist } from 'react-icons/bs';
+
 import Preview from './components/Preview';
 
 export default {
