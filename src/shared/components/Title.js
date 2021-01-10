@@ -14,7 +14,7 @@ export const TitleContainer = styled.section`
   }
 
   @media screen and (min-width: 1024px) {
-    grid-area: 1 / main-start / 2 / main-end;
+    grid-area: 1 / margin2-start / 2 / margin3-end;
     font-size: 20px;
     border-bottom: 1px solid ${({ theme }) => theme.colors.tertiary};
   }
