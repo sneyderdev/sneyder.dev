@@ -63,11 +63,11 @@ const ProjectInfo = () => {
       },
     },
     marks: {
-      link: ({ mark, children }) => {
+      iconLink: ({ mark, children }) => {
         const { href, icon } = mark;
 
         return (
-          <a href={href}>
+          <a href={href} target='_blank' rel='noreferrer'>
             <span className='link--decoration'>{children}</span>
             <SocialMenuIcon>
               <img src={linkIcon} alt='Link' />

@@ -52,16 +52,30 @@ const About = () => {
       },
     },
     marks: {
-      link: ({ mark, children }) => {
+      iconLink: ({ mark, children }) => {
         const { href, icon } = mark;
 
         return (
-          <a href={href}>
+          <a href={href} target='_blank' rel='noreferrer'>
             <span className='link--decoration'>{children}</span>
             <SocialMenuIcon>
               <img src={linkIcon} alt='Link' />
               <img src={urlFor(icon)} alt={children} />
             </SocialMenuIcon>
+          </a>
+        );
+      },
+      link: ({ mark, children }) => {
+        const { href } = mark;
+
+        return (
+          <a
+            href={href}
+            target='_blank'
+            rel='noreferrer'
+            className='link--decoration'
+          >
+            {children}
           </a>
         );
       },
