@@ -1,6 +1,6 @@
 import React from 'react';
 import imageUrlBuilder from '@sanity/image-url';
-import sanityClient from '../../../../src/sanityClient';
+import sanityClient from '../../../../../src/sanityClient';
 
 const builder = imageUrlBuilder(sanityClient);
 const urlFor = (source) => builder.image(source);

@@ -1,12 +1,12 @@
 import React from 'react';
-import { RiPlayListAddLine } from 'react-icons/ri';
+import { BsCardChecklist } from 'react-icons/bs';
 import Preview from './components/Preview';
 
 export default {
   title: 'Link List',
   name: 'linkList',
   type: 'object',
-  icon: RiPlayListAddLine,
+  icon: BsCardChecklist,
   fields: [
     {
       title: 'List Items',
@@ -26,7 +26,7 @@ export default {
     prepare: ({ items }) => {
       return {
         title: 'Link List',
-        media: () => <RiPlayListAddLine />,
+        media: () => <BsCardChecklist />,
         extendedPreview: <Preview items={items} />,
       };
     },

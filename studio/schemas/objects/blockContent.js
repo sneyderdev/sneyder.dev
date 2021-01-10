@@ -48,5 +48,8 @@ export default {
     {
       type: 'linkList',
     },
+    {
+      type: 'iconList',
+    },
   ],
 };

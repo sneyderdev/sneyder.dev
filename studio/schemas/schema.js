@@ -1,16 +1,17 @@
 import createSchema from 'part:@sanity/base/schema-creator';
 import schemaTypes from 'all:part:@sanity/base/schema-type';
 
-import project from './project/project';
-import post from './post';
-import author from './author';
-import category from './category';
-import pinnedMessage from './pinnedMessage';
+import project from './documents/project';
+import post from './documents/post';
+import author from './documents/author';
+import category from './documents/category';
+import pinnedMessage from './documents/pinnedMessage';
 
-import blockContent from './blockContent';
-import technology from './project/technology';
-import linkList from './linkList/linkList';
-import listItem from './linkList/listItem';
+import blockContent from './objects/blockContent';
+import technology from './objects/technology';
+import linkList from './objects/linkList/linkList';
+import iconList from './objects/iconList/iconList';
+import listItem from './objects/listItem';
 
 export default createSchema({
   name: 'portfolio',
@@ -23,6 +24,7 @@ export default createSchema({
     blockContent,
     technology,
     linkList,
+    iconList,
     listItem,
   ]),
 });
