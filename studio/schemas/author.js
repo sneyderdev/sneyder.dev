@@ -29,22 +29,14 @@ export default {
       },
     },
     {
-      name: 'bio',
-      title: 'Bio',
-      type: 'array',
-      of: [
-        {
-          title: 'Block',
-          type: 'block',
-          styles: [{ title: 'Normal', value: 'normal' }],
-          lists: [],
-        },
-      ],
-    },
-    {
       name: 'cv',
       title: 'CV',
       type: 'file',
+    },
+    {
+      name: 'bio',
+      title: 'Bio',
+      type: 'blockContent',
     },
   ],
   preview: {
