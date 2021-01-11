@@ -4,10 +4,10 @@ import AppContext from '../../context/AppContext';
 
 import Window from '../Window/Window';
 
-import ProjectOptions from './Project.styles';
+import ProjectOptions from './SingleProject.styles';
 import { SocialMenuIcon } from '../../shared';
 
-const Project = ({ project }) => {
+const SingleProject = ({ project }) => {
   const {
     state: { icons },
   } = useContext(AppContext);
@@ -44,4 +44,4 @@ const Project = ({ project }) => {
   );
 };
 
-export default Project;
+export default SingleProject;

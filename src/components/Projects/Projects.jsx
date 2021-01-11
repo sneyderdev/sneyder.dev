@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Project from '../Project/Project';
+import SingleProject from '../SingleProject/SingleProject';
 
 import ProjectsContainer from './Projects.styles';
 import { Container, MainSection } from '../../shared';
@@ -12,7 +12,7 @@ const Projects = ({ projects }) => {
         <ProjectsContainer className='fadeIn delay-6'>
           {projects &&
             projects.map((project) => (
-              <Project project={project} key={project._id} />
+              <SingleProject project={project} key={project._id} />
             ))}
         </ProjectsContainer>
       </Container>

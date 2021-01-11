@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import ProjectOptions from '../Project/Project.styles';
+import ProjectOptions from '../SingleProject/SingleProject.styles';
 import { setFlex, setFont } from '../../shared';
 
 export const WindowContainer = styled.div`
