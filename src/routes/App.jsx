@@ -10,6 +10,7 @@ import {
   Portfolio,
   ProjectInfo,
   Blog,
+  PostInfo,
   About,
   NotFound,
 } from '../containers';
@@ -33,6 +34,12 @@ const App = () => {
                 hasArrow
               />
               <RouteWrapper exact path='/blog' component={Blog} />
+              <RouteWrapper
+                exact
+                path='/post/:slug'
+                component={PostInfo}
+                hasArrow
+              />
               <RouteWrapper exact path='/about' component={About} />
               <RouteWrapper component={NotFound} />
             </Switch>
