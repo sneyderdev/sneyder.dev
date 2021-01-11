@@ -17,7 +17,7 @@ export const PostBackground = styled.div`
 
 export const Post = styled(Link)`
   display: block;
-  height: 250px;
+  min-height: 250px;
   position: relative;
   overflow: hidden;
   border: 1px solid ${({ theme }) => theme.colors.greys[0]};
@@ -55,7 +55,7 @@ export const PostContent = styled.div`
   }
 
   p {
-    margin: 10px 0 0;
+    margin: 10px 0;
     ${({ theme }) => setFont(theme.sizes.n, null, theme.colors.whites[1])};
   }
 
