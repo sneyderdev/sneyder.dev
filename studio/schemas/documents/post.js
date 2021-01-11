@@ -21,6 +21,11 @@ export default {
       },
     },
     {
+      name: 'description',
+      title: 'Description',
+      type: 'blockContent',
+    },
+    {
       name: 'author',
       title: 'Author',
       type: 'reference',
