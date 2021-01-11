@@ -7,7 +7,7 @@ import { TitleContainer, Title } from '../shared';
 
 const Blog = () => {
   const {
-    state: { pinnedMessages },
+    state: { pinnedMessages, posts },
   } = useContext(AppContext);
 
   const { message } = pinnedMessages.find(
@@ -24,7 +24,7 @@ const Blog = () => {
 
       <PinnedMessage message={message} />
 
-      <Posts />
+      <Posts posts={posts} />
     </>
   );
 };

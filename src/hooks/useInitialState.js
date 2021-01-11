@@ -33,6 +33,15 @@ const useInitialState = () => {
           'icons': *[_type == 'asset' && type == 'Icons'][0].assets {
             alt,
             'url': asset->url
+          },
+          'posts': *[_type == 'post'] {
+            _id,
+            title,
+            description,
+            publishedAt,
+            categories,
+            'mainImage': mainImage.asset->url,
+            body
           }
         }`
       )
@@ -43,6 +52,7 @@ const useInitialState = () => {
           pinnedMessages: data.pinnedMessages,
           author: data.author,
           icons: data.icons,
+          posts: data.posts,
         });
       })
       .catch((error) => console.error(error));
