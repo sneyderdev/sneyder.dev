@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
+import { setFont } from '../../shared';
+
 export const PostBackground = styled.div`
   position: absolute;
   top: 0;
@@ -23,6 +25,15 @@ export const Post = styled(Link)`
   &:hover ${PostBackground} {
     transform: scale(1.05);
   }
+
+  @media screen and (min-width: 768px) {
+    height: 300px;
+    font-size: 18px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    font-size: 20px;
+  }
 `;
 
 export const PostContent = styled.div`
@@ -40,17 +51,16 @@ export const PostContent = styled.div`
   }
 
   span {
-    font-size: ${({ theme }) => theme.sizes.s};
+    ${({ theme }) => setFont(theme.sizes.s, 500)};
   }
 
   p {
     margin: 10px 0 0;
-    font-size: ${({ theme }) => theme.sizes.n};
-    color: ${({ theme }) => theme.colors.whites[1]};
+    ${({ theme }) => setFont(theme.sizes.n, null, theme.colors.whites[1])};
   }
 
   div {
     margin-top: auto;
-    font-size: ${({ theme }) => theme.sizes.n};
+    ${({ theme }) => setFont(theme.sizes.n, 500)};
   }
 `;
