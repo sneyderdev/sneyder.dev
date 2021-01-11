@@ -41,6 +41,7 @@ const useInitialState = () => {
             publishedAt,
             'categories': categories[]->title,
             'mainImage': mainImage.asset->url,
+            'slug': slug.current,
             body
           }
         }`
