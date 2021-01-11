@@ -39,7 +39,7 @@ const useInitialState = () => {
             title,
             description,
             publishedAt,
-            categories,
+            'categories': categories[]->title,
             'mainImage': mainImage.asset->url,
             body
           }
