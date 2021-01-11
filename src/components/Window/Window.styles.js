@@ -8,6 +8,7 @@ export const WindowContainer = styled.div`
   max-width: 400px;
   height: 225px;
   overflow-y: hidden;
+  border: 1px solid ${({ theme }) => theme.colors.greys[0]};
 
   &:hover ${ProjectOptions} {
     opacity: 1;
@@ -37,6 +38,7 @@ export const WindowContainer = styled.div`
       margin: 0 auto;
       margin-bottom: 40px;
       opacity: 0;
+      border: 0;
 
       @media screen and (min-width: 400px) {
         height: 330px;
@@ -107,6 +109,7 @@ export const WindowScreen = styled.div`
     isCarousel &&
     css`
       position: relative;
+      border: 1px solid ${({ theme }) => theme.colors.greys[0]};
 
       @media screen and (min-width: 600px) {
         height: 380px;
