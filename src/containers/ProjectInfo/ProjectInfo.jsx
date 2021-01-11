@@ -28,7 +28,7 @@ const ProjectInfo = () => {
 
   const { slug } = useParams();
 
-  const hasProject = projects.find((project) => project.slug === slug);
+  const singleProject = projects.find((project) => project.slug === slug);
 
   const arrowIcon = icons.find((icon) => icon.alt === 'Arrow');
   const linkIcon = icons.find((icon) => icon.alt === 'External Link');
@@ -76,47 +76,47 @@ const ProjectInfo = () => {
     },
   };
 
-  return hasProject ? (
+  return singleProject ? (
     <>
       <TitleContainer center>
         <Title>
-          <h1 className='slideUp'>{hasProject.name}</h1>
+          <h1 className='slideUp'>{singleProject.name}</h1>
         </Title>
       </TitleContainer>
 
-      <PinnedMessage message={hasProject.description} />
+      <PinnedMessage message={singleProject.description} />
 
       <MainSection>
         <Container>
           <ButtonOptions className='fadeIn delay-6'>
             <CodeButton
-              href={hasProject.codeUrl}
+              href={singleProject.codeUrl}
               target='_blank'
               rel='noreferrer'
             >
               Code <img src={githubLogo.url} alt={githubLogo.alt} />
             </CodeButton>
             <PreviewButton
-              href={hasProject.previewUrl}
+              href={singleProject.previewUrl}
               target='_blank'
               rel='noreferrer'
             >
               Live Preview <img src={arrowIcon.url} alt={arrowIcon.alt} />
             </PreviewButton>
           </ButtonOptions>
-          <Window project={hasProject} isCarousel />
+          <Window project={singleProject} isCarousel />
           <ArticleContainer className='fadeIn delay-6'>
             <Article>
               <h2>About</h2>
               <PortableText
-                blocks={hasProject.about}
+                blocks={singleProject.about}
                 serializers={serializers}
               />
             </Article>
             <Article>
               <h2>Technologies</h2>
               <ul>
-                {hasProject.stack.map((tech) => (
+                {singleProject.stack.map((tech) => (
                   <ListItem key={tech._key}>
                     <img src={tech.icon} alt={tech.name} />
                     <span>{tech.name}</span>
