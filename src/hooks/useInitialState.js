@@ -13,10 +13,20 @@ const useInitialState = () => {
           'projects': *[_type == 'project'] {
             _id,
             name,
+            description,
             codeUrl,
             previewUrl,
             'slug': slug.current,
-            'images': images[0].asset->url
+            'images': images[]{
+              _key,
+              'url': asset->url
+            },
+            about,
+            'stack': stack[]{
+              _key,
+              name,
+              'icon': icon.asset->url
+            }
           },
           'pinnedMessages': *[_type == 'pinnedMessage'] {
             page,

@@ -32,7 +32,7 @@ const Window = ({ project, children, isCarousel }) => {
         </WindowScreen>
       ) : (
         <WindowScreen>
-          <img src={images} alt={name} />
+          <img src={images[0].url} alt={name} />
         </WindowScreen>
       )}
       {children}

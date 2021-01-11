@@ -1,12 +1,11 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import PortableText from '@sanity/block-content-to-react';
 import imageUrlBuilder from '@sanity/image-url';
 import sanityClient from '../../sanityClient';
 import AppContext from '../../context/AppContext';
-import useProject from '../../hooks/useProject';
 
-import { Window, PinnedMessage, Loader } from '../../components';
+import { Window, PinnedMessage } from '../../components';
 import NotFound from '../NotFound';
 
 import { ButtonOptions, CodeButton, PreviewButton } from './ProjectInfo.styles';
@@ -24,19 +23,12 @@ import {
 
 const ProjectInfo = () => {
   const {
-    state: { icons },
+    state: { projects, icons },
   } = useContext(AppContext);
 
   const { slug } = useParams();
-  const [loading, setLoading] = useState(true);
 
-  const project = useProject(slug, setLoading);
-
-  if (loading) {
-    return <Loader />;
-  }
-
-  const { name, description, codeUrl, previewUrl, about, stack } = project;
+  const hasProject = projects.find((project) => project.slug === slug);
 
   const arrowIcon = icons.find((icon) => icon.alt === 'Arrow');
   const linkIcon = icons.find((icon) => icon.alt === 'External Link');
@@ -84,36 +76,47 @@ const ProjectInfo = () => {
     },
   };
 
-  return project ? (
+  return hasProject ? (
     <>
       <TitleContainer center>
         <Title>
-          <h1 className='slideUp'>{name}</h1>
+          <h1 className='slideUp'>{hasProject.name}</h1>
         </Title>
       </TitleContainer>
 
-      <PinnedMessage message={description} />
+      <PinnedMessage message={hasProject.description} />
 
       <MainSection>
         <Container>
           <ButtonOptions className='fadeIn delay-6'>
-            <CodeButton href={codeUrl} target='_blank' rel='noreferrer'>
+            <CodeButton
+              href={hasProject.codeUrl}
+              target='_blank'
+              rel='noreferrer'
+            >
               Code <img src={githubLogo.url} alt={githubLogo.alt} />
             </CodeButton>
-            <PreviewButton href={previewUrl} target='_blank' rel='noreferrer'>
+            <PreviewButton
+              href={hasProject.previewUrl}
+              target='_blank'
+              rel='noreferrer'
+            >
               Live Preview <img src={arrowIcon.url} alt={arrowIcon.alt} />
             </PreviewButton>
           </ButtonOptions>
-          <Window project={project} isCarousel />
+          <Window project={hasProject} isCarousel />
           <ArticleContainer className='fadeIn delay-6'>
             <Article>
               <h2>About</h2>
-              <PortableText blocks={about} serializers={serializers} />
+              <PortableText
+                blocks={hasProject.about}
+                serializers={serializers}
+              />
             </Article>
             <Article>
               <h2>Technologies</h2>
               <ul>
-                {stack.map((tech) => (
+                {hasProject.stack.map((tech) => (
                   <ListItem key={tech._key}>
                     <img src={tech.icon} alt={tech.name} />
                     <span>{tech.name}</span>
