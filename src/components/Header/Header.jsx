@@ -118,9 +118,18 @@ const Header = ({ hasArrow }) => {
             </MenuItem>
             <MenuItem>
               <Link
-                to='/about'
+                to='/blog'
                 onClick={handleClick}
                 className='slideUp duration-3 delay-1'
+              >
+                Blog <img src={arrowIcon.url} alt={arrowIcon.alt} />
+              </Link>
+            </MenuItem>
+            <MenuItem>
+              <Link
+                to='/about'
+                onClick={handleClick}
+                className='slideUp duration-3 delay-2'
               >
                 About <img src={arrowIcon.url} alt={arrowIcon.alt} />
               </Link>
@@ -130,7 +139,7 @@ const Header = ({ hasArrow }) => {
                 href='mailto:hello@sneyder.dev'
                 target='_blank'
                 rel='noreferrer'
-                className='slideUp duration-3 delay-2'
+                className='slideUp duration-3 delay-3'
               >
                 Contact <img src={arrowIcon.url} alt={arrowIcon.alt} />
               </a>

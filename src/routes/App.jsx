@@ -5,7 +5,14 @@ import { AppContextProvider } from '../context/AppContext';
 import { MenuContextProvider } from '../context/MenuContext';
 
 import RouteWrapper from './RouteWrapper';
-import { Home, Portfolio, ProjectInfo, About, NotFound } from '../containers';
+import {
+  Home,
+  Portfolio,
+  ProjectInfo,
+  Blog,
+  About,
+  NotFound,
+} from '../containers';
 import { theme, GlobalStyle, Background } from '../shared';
 
 const App = () => {
@@ -18,13 +25,14 @@ const App = () => {
           <Router>
             <Switch>
               <RouteWrapper exact path='/' component={Home} isHome />
+              <RouteWrapper exact path='/portfolio' component={Portfolio} />
               <RouteWrapper
                 exact
                 path='/portfolio/:slug'
                 component={ProjectInfo}
                 hasArrow
               />
-              <RouteWrapper exact path='/portfolio' component={Portfolio} />
+              <RouteWrapper exact path='/blog' component={Blog} />
               <RouteWrapper exact path='/about' component={About} />
               <RouteWrapper component={NotFound} />
             </Switch>
