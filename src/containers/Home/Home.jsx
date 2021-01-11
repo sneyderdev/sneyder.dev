@@ -1,8 +1,6 @@
 import React, { useContext } from 'react';
 import AppContext from '../../context/AppContext';
 
-import mainPicture from '../../assets/images/main-picture.png';
-
 import {
   Hero,
   HeroTitle,
@@ -14,7 +12,10 @@ import { MainSection, Container } from '../../shared';
 
 const Home = () => {
   const {
-    state: { icons },
+    state: {
+      author: { image },
+      icons,
+    },
   } = useContext(AppContext);
 
   const purpleArrowIcon = icons.find((icon) => icon.alt === 'Purple Arrow');
@@ -24,7 +25,7 @@ const Home = () => {
       <MainSection isHome>
         <Container>
           <Hero>
-            <img src={mainPicture} alt='Sneyder Barreto' className='fadeIn' />
+            <img src={image.url} alt={image.alt} className='fadeIn' />
             <HeroTitle className='overflow--hidden'>
               <h1 className='slideUp'>Hi, I&apos;m Sneyder Barreto</h1>
             </HeroTitle>

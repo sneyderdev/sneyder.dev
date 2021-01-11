@@ -23,6 +23,10 @@ const useInitialState = () => {
             message,
           },
           'author': *[_type == 'author'][0] {
+            'image': {
+              'alt': image.alt,
+              'url': image.asset->url
+            },
             'cv': cv.asset->url,
             bio,
           },
