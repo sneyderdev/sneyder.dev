@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import AppContext from '../context/AppContext';
 
-import { PinnedMessage } from '../components';
+import { Posts, PinnedMessage } from '../components';
 
 import { TitleContainer, Title } from '../shared';
 
@@ -23,6 +23,8 @@ const Blog = () => {
       </TitleContainer>
 
       <PinnedMessage message={message} />
+
+      <Posts />
     </>
   );
 };
