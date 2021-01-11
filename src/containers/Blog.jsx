@@ -1,10 +1,29 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import AppContext from '../context/AppContext';
+
+import { PinnedMessage } from '../components';
+
+import { TitleContainer, Title } from '../shared';
 
 const Blog = () => {
+  const {
+    state: { pinnedMessages },
+  } = useContext(AppContext);
+
+  const { message } = pinnedMessages.find(
+    (pinnedMessage) => pinnedMessage.page === 'Blog'
+  );
+
   return (
-    <div>
-      <h1>Blog</h1>
-    </div>
+    <>
+      <TitleContainer center>
+        <Title>
+          <h1 className='slideUp'>Blog</h1>
+        </Title>
+      </TitleContainer>
+
+      <PinnedMessage message={message} />
+    </>
   );
 };
 
