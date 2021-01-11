@@ -1,11 +1,134 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { useParams } from 'react-router-dom';
+import PortableText from '@sanity/block-content-to-react';
+import imageUrlBuilder from '@sanity/image-url';
+import sanityClient from '../../sanityClient';
+import AppContext from '../../context/AppContext';
 
-const PostInfo = () => {
-  return (
-    <div>
-      <h1>Post Info</h1>
-    </div>
+import { PinnedMessage } from '../../components';
+import NotFound from '../NotFound';
+
+import {
+  Container,
+  TitleContainer,
+  Title,
+  ArticleContainer,
+  Article,
+  MainSection,
+  LinkList,
+  ListItem,
+  SocialMenuIcon,
+} from '../../shared';
+
+const ProjectInfo = () => {
+  const {
+    state: { posts, icons },
+  } = useContext(AppContext);
+
+  const { slug } = useParams();
+
+  const singlePost = posts.find((post) => post.slug === slug);
+
+  const linkIcon = icons.find((icon) => icon.alt === 'External Link');
+
+  const builder = imageUrlBuilder(sanityClient);
+  const urlFor = (source) => builder.image(source);
+
+  const serializers = {
+    types: {
+      linkList: ({ node }) => {
+        const { items } = node;
+
+        return (
+          <LinkList>
+            {items.map((item) => (
+              <li key={item._key}>
+                <a href={item.href} target='_blank' rel='noreferrer'>
+                  <SocialMenuIcon>
+                    <img src={linkIcon.url} alt={linkIcon.alt} />
+                    <img src={urlFor(item.icon)} alt={item.text} />
+                  </SocialMenuIcon>
+                  <span className='link--decoration'>{item.text}</span>
+                </a>
+              </li>
+            ))}
+          </LinkList>
+        );
+      },
+      iconList: ({ node }) => {
+        const { items } = node;
+
+        return (
+          <ul>
+            {items.map((item) => (
+              <ListItem key={item._key}>
+                <img src={urlFor(item.icon)} alt={item.text} />
+                <span>{item.text}</span>
+              </ListItem>
+            ))}
+          </ul>
+        );
+      },
+    },
+    marks: {
+      iconLink: ({ mark, children }) => {
+        const { href, icon } = mark;
+
+        return (
+          <a href={href} target='_blank' rel='noreferrer'>
+            <span className='link--decoration'>{children}</span>
+            <SocialMenuIcon>
+              <img src={linkIcon.url} alt={linkIcon.alt} />
+              <img src={urlFor(icon)} alt={children} />
+            </SocialMenuIcon>
+          </a>
+        );
+      },
+      link: ({ mark, children }) => {
+        const { href } = mark;
+
+        return (
+          <a
+            href={href}
+            target='_blank'
+            rel='noreferrer'
+            className='link--decoration'
+          >
+            {children}
+          </a>
+        );
+      },
+    },
+  };
+
+  return singlePost ? (
+    <>
+      <TitleContainer aboutTitleContainer>
+        <Container>
+          <Title aboutTitle>
+            <h1 className='slideUp'>{singlePost.title}</h1>
+          </Title>
+        </Container>
+      </TitleContainer>
+
+      <PinnedMessage message={singlePost.description} />
+
+      <MainSection>
+        <Container>
+          <ArticleContainer className='fadeIn delay-6'>
+            <Article>
+              <PortableText
+                blocks={singlePost.body}
+                serializers={serializers}
+              />
+            </Article>
+          </ArticleContainer>
+        </Container>
+      </MainSection>
+    </>
+  ) : (
+    <NotFound />
   );
 };
 
-export default PostInfo;
+export default ProjectInfo;

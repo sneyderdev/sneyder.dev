@@ -36,7 +36,7 @@ const App = () => {
               <RouteWrapper exact path='/blog' component={Blog} />
               <RouteWrapper
                 exact
-                path='/post/:slug'
+                path='/blog/:slug'
                 component={PostInfo}
                 hasArrow
               />
