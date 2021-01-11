@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import AppContext from '../../context/AppContext';
 
 import mainPicture from '../../assets/images/main-picture.png';
-import purpleArrowIcon from '../../assets/icons/purple-arrow.svg';
 
 import {
   Hero,
@@ -13,6 +13,12 @@ import {
 import { MainSection, Container } from '../../shared';
 
 const Home = () => {
+  const {
+    state: { icons },
+  } = useContext(AppContext);
+
+  const purpleArrowIcon = icons.find((icon) => icon.alt === 'Purple Arrow');
+
   return (
     <>
       <MainSection isHome>
@@ -30,7 +36,7 @@ const Home = () => {
             <div className='overflow--hidden'>
               <HeroLink className='slideUp delay-4' to='/portfolio'>
                 See the latest projects I&apos;ve been working on{' '}
-                <img src={purpleArrowIcon} alt='Projects Arrow' />
+                <img src={purpleArrowIcon.url} alt={purpleArrowIcon.alt} />
               </HeroLink>
             </div>
           </Hero>

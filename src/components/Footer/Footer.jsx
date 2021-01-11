@@ -1,12 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-
-import arrowIcon from '../../assets/icons/arrow.svg';
-import linkIcon from '../../assets/icons/link.svg';
-import twitterLogo from '../../assets/icons/twitter-logo.svg';
-import githubLogo from '../../assets/icons/github-logo.svg';
-import linkedinLogo from '../../assets/icons/linkedin-logo.svg';
-import heartIcon from '../../assets/icons/heart.svg';
+import AppContext from '../../context/AppContext';
 
 import {
   FooterContainer,
@@ -23,6 +17,17 @@ import {
 } from '../../shared';
 
 const Footer = () => {
+  const {
+    state: { icons },
+  } = useContext(AppContext);
+
+  const arrowIcon = icons.find((icon) => icon.alt === 'Arrow');
+  const linkIcon = icons.find((icon) => icon.alt === 'External Link');
+  const twitterLogo = icons.find((icon) => icon.alt === 'Twitter');
+  const githubLogo = icons.find((icon) => icon.alt === 'GitHub');
+  const linkedinLogo = icons.find((icon) => icon.alt === 'LinkedIn');
+  const heartIcon = icons.find((icon) => icon.alt === 'Heart');
+
   return (
     <FooterContainer>
       <Container>
@@ -30,12 +35,12 @@ const Footer = () => {
           <Menu>
             <MenuItem>
               <Link to='/portfolio' className='slideUp delay-6'>
-                Portfolio <img src={arrowIcon} alt='Menu Arrow' />
+                Portfolio <img src={arrowIcon.url} alt={arrowIcon.alt} />
               </Link>
             </MenuItem>
             <MenuItem>
               <Link to='/about' className='slideUp delay-6'>
-                About <img src={arrowIcon} alt='Menu Arrow' />
+                About <img src={arrowIcon.url} alt={arrowIcon.alt} />
               </Link>
             </MenuItem>
             <MenuItem>
@@ -45,7 +50,7 @@ const Footer = () => {
                 target='_blank'
                 rel='noreferrer'
               >
-                Contact <img src={arrowIcon} alt='Menu Arrow' />
+                Contact <img src={arrowIcon.url} alt={arrowIcon.alt} />
               </a>
             </MenuItem>
           </Menu>
@@ -59,8 +64,8 @@ const Footer = () => {
               >
                 <span>Twitter</span>
                 <SocialMenuIcon>
-                  <img src={linkIcon} alt='Link' />
-                  <img src={twitterLogo} alt='Twitter Logo' />
+                  <img src={linkIcon.url} alt={linkIcon.alt} />
+                  <img src={twitterLogo.url} alt={twitterLogo.alt} />
                 </SocialMenuIcon>
               </a>
             </SocialMenuItem>
@@ -73,8 +78,8 @@ const Footer = () => {
               >
                 <span>GitHub</span>
                 <SocialMenuIcon>
-                  <img src={linkIcon} alt='Link' />
-                  <img src={githubLogo} alt='GitHub Logo' />
+                  <img src={linkIcon.url} alt={linkIcon.alt} />
+                  <img src={githubLogo.url} alt={githubLogo.alt} />
                 </SocialMenuIcon>
               </a>
             </SocialMenuItem>
@@ -87,8 +92,8 @@ const Footer = () => {
               >
                 <span>LinkedIn</span>
                 <SocialMenuIcon>
-                  <img src={linkIcon} alt='Link' />
-                  <img src={linkedinLogo} alt='LinkedIn Logo' />
+                  <img src={linkIcon.url} alt={linkIcon.alt} />
+                  <img src={linkedinLogo.url} alt={linkedinLogo.alt} />
                 </SocialMenuIcon>
               </a>
             </SocialMenuItem>
@@ -96,7 +101,7 @@ const Footer = () => {
         </FooterOptions>
         <FooterCopyright>
           <span className='slideUp delay-6'>
-            Made with <img src={heartIcon} alt='heart' />
+            Made with <img src={heartIcon.url} alt={heartIcon.alt} />
           </span>
           <span className='slideUp delay-6'>© 2020 Sneyder Barreto.</span>
         </FooterCopyright>

@@ -1,16 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import PortableText from '@sanity/block-content-to-react';
 import imageUrlBuilder from '@sanity/image-url';
 import sanityClient from '../../sanityClient';
+import AppContext from '../../context/AppContext';
 import useProject from '../../hooks/useProject';
 
 import { Window, PinnedMessage, Loader } from '../../components';
 import NotFound from '../NotFound';
-
-import githubLogo from '../../assets/icons/github-logo.svg';
-import arrowIcon from '../../assets/icons/arrow.svg';
-import linkIcon from '../../assets/icons/link.svg';
 
 import { ButtonOptions, CodeButton, PreviewButton } from './ProjectInfo.styles';
 import {
@@ -26,6 +23,10 @@ import {
 } from '../../shared';
 
 const ProjectInfo = () => {
+  const {
+    state: { icons },
+  } = useContext(AppContext);
+
   const { slug } = useParams();
   const [loading, setLoading] = useState(true);
 
@@ -36,6 +37,10 @@ const ProjectInfo = () => {
   }
 
   const { name, description, codeUrl, previewUrl, about, stack } = project;
+
+  const arrowIcon = icons.find((icon) => icon.alt === 'Arrow');
+  const linkIcon = icons.find((icon) => icon.alt === 'External Link');
+  const githubLogo = icons.find((icon) => icon.alt === 'GitHub');
 
   const builder = imageUrlBuilder(sanityClient);
   const urlFor = (source) => builder.image(source);
@@ -51,7 +56,7 @@ const ProjectInfo = () => {
               <li key={item._key}>
                 <a href={item.href} target='_blank' rel='noreferrer'>
                   <SocialMenuIcon>
-                    <img src={linkIcon} alt='Link' />
+                    <img src={linkIcon.url} alt={linkIcon.alt} />
                     <img src={urlFor(item.icon)} alt={item.text} />
                   </SocialMenuIcon>
                   <span className='link--decoration'>{item.text}</span>
@@ -70,7 +75,7 @@ const ProjectInfo = () => {
           <a href={href} target='_blank' rel='noreferrer'>
             <span className='link--decoration'>{children}</span>
             <SocialMenuIcon>
-              <img src={linkIcon} alt='Link' />
+              <img src={linkIcon.url} alt={linkIcon.alt} />
               <img src={urlFor(icon)} alt={children} />
             </SocialMenuIcon>
           </a>
@@ -93,10 +98,10 @@ const ProjectInfo = () => {
         <Container>
           <ButtonOptions className='fadeIn delay-6'>
             <CodeButton href={codeUrl} target='_blank' rel='noreferrer'>
-              Code <img src={githubLogo} alt='GitHub Logo' />
+              Code <img src={githubLogo.url} alt={githubLogo.alt} />
             </CodeButton>
             <PreviewButton href={previewUrl} target='_blank' rel='noreferrer'>
-              Live Preview <img src={arrowIcon} alt='Preview arrow' />
+              Live Preview <img src={arrowIcon.url} alt={arrowIcon.alt} />
             </PreviewButton>
           </ButtonOptions>
           <Window project={project} isCarousel />

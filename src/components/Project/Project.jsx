@@ -1,17 +1,22 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import AppContext from '../../context/AppContext';
 
 import Window from '../Window/Window';
-
-import arrowIcon from '../../assets/icons/arrow.svg';
-import purpleArrowIcon from '../../assets/icons/purple-arrow.svg';
-import linkIcon from '../../assets/icons/link.svg';
-import githubLogo from '../../assets/icons/github-logo.svg';
 
 import ProjectOptions from './Project.styles';
 import { SocialMenuIcon } from '../../shared';
 
 const Project = ({ project }) => {
+  const {
+    state: { icons },
+  } = useContext(AppContext);
+
+  const arrowIcon = icons.find((icon) => icon.alt === 'Arrow');
+  const purpleArrowIcon = icons.find((icon) => icon.alt === 'Purple Arrow');
+  const linkIcon = icons.find((icon) => icon.alt === 'External Link');
+  const githubLogo = icons.find((icon) => icon.alt === 'GitHub');
+
   const { codeUrl, previewUrl, slug } = project;
 
   return (
@@ -21,16 +26,17 @@ const Project = ({ project }) => {
           <a href={codeUrl} target='_blank' rel='noreferrer'>
             <span>Code</span>
             <SocialMenuIcon>
-              <img src={linkIcon} alt='Link' />
-              <img src={githubLogo} alt='GitHub Logo' />
+              <img src={linkIcon.url} alt={linkIcon.alt} />
+              <img src={githubLogo.url} alt={githubLogo.alt} />
             </SocialMenuIcon>
           </a>
           <a href={previewUrl} target='_blank' rel='noreferrer'>
             Live Preview
-            <img src={arrowIcon} alt='Preview arrow' />
+            <img src={arrowIcon.url} alt={arrowIcon.alt} />
           </a>
           <Link to={`portfolio/${slug}`}>
-            Learn more... <img src={purpleArrowIcon} alt='Learn more arrow' />
+            Learn more...{' '}
+            <img src={purpleArrowIcon.url} alt={purpleArrowIcon.alt} />
           </Link>
         </div>
       </ProjectOptions>

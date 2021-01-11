@@ -6,8 +6,6 @@ import AppContext from '../context/AppContext';
 
 import { PinnedMessage } from '../components';
 
-import linkIcon from '../assets/icons/link.svg';
-
 import {
   ArticleContainer,
   Article,
@@ -24,12 +22,15 @@ const About = () => {
     state: {
       pinnedMessages,
       author: { bio },
+      icons,
     },
   } = useContext(AppContext);
 
   const { message } = pinnedMessages.find(
     (pinnedMessage) => pinnedMessage.page === 'About'
   );
+
+  const linkIcon = icons.find((icon) => icon.alt === 'External Link');
 
   const builder = imageUrlBuilder(sanityClient);
   const urlFor = (source) => builder.image(source);
@@ -59,7 +60,7 @@ const About = () => {
           <a href={href} target='_blank' rel='noreferrer'>
             <span className='link--decoration'>{children}</span>
             <SocialMenuIcon>
-              <img src={linkIcon} alt='Link' />
+              <img src={linkIcon.url} alt={linkIcon.alt} />
               <img src={urlFor(icon)} alt={children} />
             </SocialMenuIcon>
           </a>

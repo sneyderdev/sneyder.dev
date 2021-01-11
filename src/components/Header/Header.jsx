@@ -4,12 +4,6 @@ import AppContext from '../../context/AppContext';
 import MenuContext from '../../context/MenuContext';
 import useScroll from '../../hooks/useScroll';
 
-import arrowIcon from '../../assets/icons/arrow.svg';
-import linkIcon from '../../assets/icons/link.svg';
-import twitterLogo from '../../assets/icons/twitter-logo.svg';
-import githubLogo from '../../assets/icons/github-logo.svg';
-import linkedinLogo from '../../assets/icons/linkedin-logo.svg';
-
 import {
   HeaderBackground,
   Navbar,
@@ -35,6 +29,7 @@ const Header = ({ hasArrow }) => {
   const { state } = useContext(AppContext);
   const {
     author: { cv },
+    icons,
   } = state;
 
   const handleClick = () => {
@@ -70,6 +65,12 @@ const Header = ({ hasArrow }) => {
   };
 
   const { header, background } = useScroll();
+
+  const arrowIcon = icons.find((icon) => icon.alt === 'Arrow');
+  const linkIcon = icons.find((icon) => icon.alt === 'External Link');
+  const twitterLogo = icons.find((icon) => icon.alt === 'Twitter');
+  const githubLogo = icons.find((icon) => icon.alt === 'GitHub');
+  const linkedinLogo = icons.find((icon) => icon.alt === 'LinkedIn');
 
   return (
     <>
@@ -112,7 +113,7 @@ const Header = ({ hasArrow }) => {
                 onClick={handleClick}
                 className='slideUp duration-3'
               >
-                Portfolio <img src={arrowIcon} alt='Menu Arrow' />
+                Portfolio <img src={arrowIcon.url} alt={arrowIcon.alt} />
               </Link>
             </MenuItem>
             <MenuItem>
@@ -121,7 +122,7 @@ const Header = ({ hasArrow }) => {
                 onClick={handleClick}
                 className='slideUp duration-3 delay-1'
               >
-                About <img src={arrowIcon} alt='Menu Arrow' />
+                About <img src={arrowIcon.url} alt={arrowIcon.alt} />
               </Link>
             </MenuItem>
             <MenuItem>
@@ -131,12 +132,12 @@ const Header = ({ hasArrow }) => {
                 rel='noreferrer'
                 className='slideUp duration-3 delay-2'
               >
-                Contact <img src={arrowIcon} alt='Menu Arrow' />
+                Contact <img src={arrowIcon.url} alt={arrowIcon.alt} />
               </a>
             </MenuItem>
             <MenuItem>
               <a href={`${cv}?dl`} className='slideUp duration-3 delay-3'>
-                Download CV <img src={arrowIcon} alt='Menu Arrow' />
+                Download CV <img src={arrowIcon.url} alt={arrowIcon.alt} />
               </a>
             </MenuItem>
           </Menu>
@@ -150,8 +151,8 @@ const Header = ({ hasArrow }) => {
               >
                 <span>Twitter</span>
                 <SocialMenuIcon>
-                  <img src={linkIcon} alt='Link' />
-                  <img src={twitterLogo} alt='Twitter Logo' />
+                  <img src={linkIcon.url} alt={linkIcon.alt} />
+                  <img src={twitterLogo.url} alt={twitterLogo.alt} />
                 </SocialMenuIcon>
               </a>
             </SocialMenuItem>
@@ -164,8 +165,8 @@ const Header = ({ hasArrow }) => {
               >
                 <span>GitHub</span>
                 <SocialMenuIcon>
-                  <img src={linkIcon} alt='Link' />
-                  <img src={githubLogo} alt='GitHub Logo' />
+                  <img src={linkIcon.url} alt={linkIcon.alt} />
+                  <img src={githubLogo.url} alt={githubLogo.alt} />
                 </SocialMenuIcon>
               </a>
             </SocialMenuItem>
@@ -178,8 +179,8 @@ const Header = ({ hasArrow }) => {
               >
                 <span>LinkedIn</span>
                 <SocialMenuIcon>
-                  <img src={linkIcon} alt='Link' />
-                  <img src={linkedinLogo} alt='LinkedIn Logo' />
+                  <img src={linkIcon.url} alt={linkIcon.alt} />
+                  <img src={linkedinLogo.url} alt={linkedinLogo.alt} />
                 </SocialMenuIcon>
               </a>
             </SocialMenuItem>

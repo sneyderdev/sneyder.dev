@@ -25,6 +25,10 @@ const useInitialState = () => {
           'author': *[_type == 'author'][0] {
             'cv': cv.asset->url,
             bio,
+          },
+          'icons': *[_type == 'asset' && type == 'Icons'][0].assets {
+            alt,
+            'url': asset->url
           }
         }`
       )
@@ -34,6 +38,7 @@ const useInitialState = () => {
           projects: data.projects,
           pinnedMessages: data.pinnedMessages,
           author: data.author,
+          icons: data.icons,
         });
       })
       .catch((error) => console.error(error));
