@@ -47,11 +47,11 @@ export const PostContent = styled.div`
 
   h2 {
     margin: 0;
-    font-size: ${({ theme }) => theme.sizes.l};
+    ${({ theme }) => setFont(theme.sizes.l, 600)};
   }
 
   span {
-    ${({ theme }) => setFont(theme.sizes.s, 500)};
+    font-size: ${({ theme }) => theme.sizes.s};
   }
 
   p {
