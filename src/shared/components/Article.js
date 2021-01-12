@@ -70,4 +70,8 @@ export const Article = styled.article`
       opacity: 1;
     }
   }
+
+  strong {
+    color: ${({ theme }) => theme.colors.white};
+  }
 `;

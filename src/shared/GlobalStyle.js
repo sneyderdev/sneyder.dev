@@ -26,6 +26,10 @@ const GlobalStyle = createGlobalStyle`
     list-style-type: none;
   }
 
+  ol {
+    margin: 0;
+  }
+
   a {
     text-decoration: none;
   }
