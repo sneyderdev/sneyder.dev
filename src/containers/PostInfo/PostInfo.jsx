@@ -19,6 +19,7 @@ import {
   LinkList,
   ListItem,
   SocialMenuIcon,
+  Tag,
 } from '../../shared';
 
 const ProjectInfo = () => {
@@ -125,7 +126,18 @@ const ProjectInfo = () => {
                   dateOptions
                 )}
               </span>
-              <div className='slideUp delay-4'>{singlePost.categories}</div>
+              <div>
+                {singlePost.tags.map((tag) => (
+                  <Tag
+                    to={`blog/tag/${tag.name.toLowerCase()}`}
+                    key={tag._id}
+                    className='slideUp delay-4'
+                  >
+                    <span>#</span>
+                    <span>{tag.name}</span>
+                  </Tag>
+                ))}
+              </div>
             </PostMeta>
           </TitleContainer>
         </Container>

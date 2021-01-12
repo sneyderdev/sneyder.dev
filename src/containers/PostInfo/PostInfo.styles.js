@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 import Message from '../../components/PinnedMessage/PinnedMessage.styles';
 
-import { Title, setFont } from '../../shared';
+import { Title } from '../../shared';
 
 export const PostHeader = styled.div`
   margin-bottom: 40px;
@@ -36,13 +36,15 @@ export const PostMeta = styled.div`
   row-gap: 5px;
   overflow-y: hidden;
 
-  span {
-    transform: translateY(300%);
-    ${({ theme }) => setFont(theme.sizes.s, 500)};
+  a {
+    transform: translateY(200%);
   }
 
-  div {
-    transform: translateY(200%);
-    ${({ theme }) => setFont(theme.sizes.n, 500)};
+  & > span {
+    transform: translateY(300%);
+  }
+
+  span {
+    font-size: ${({ theme }) => theme.sizes.xs};
   }
 `;

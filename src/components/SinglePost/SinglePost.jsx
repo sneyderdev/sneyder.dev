@@ -1,12 +1,8 @@
 import React from 'react';
 import PortableText from '@sanity/block-content-to-react';
 
-import {
-  Post,
-  PostBackground,
-  PostContent,
-  PostTag,
-} from './SinglePost.styles';
+import { Post, PostBackground, PostContent } from './SinglePost.styles';
+import { Tag } from '../../shared';
 
 const SinglePost = ({ post }) => {
   const { slug, title, publishedAt, description, tags, mainImage } = post;
@@ -28,10 +24,10 @@ const SinglePost = ({ post }) => {
         <PortableText blocks={description} />
         <div>
           {tags.map((tag) => (
-            <PostTag to={`blog/tag/${tag.name.toLowerCase()}`} key={tag._id}>
+            <Tag to={`blog/tag/${tag.name.toLowerCase()}`} key={tag._id}>
               <span>#</span>
               <span>{tag.name}</span>
-            </PostTag>
+            </Tag>
           ))}
         </div>
       </PostContent>

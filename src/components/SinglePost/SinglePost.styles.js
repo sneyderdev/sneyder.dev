@@ -63,15 +63,3 @@ export const PostContent = styled.div`
     margin-top: auto;
   }
 `;
-
-export const PostTag = styled(Link)`
-  display: inline-flex;
-  padding: 0 5px;
-  margin-right: 5px;
-  color: ${({ theme }) => theme.colors.black};
-  background: ${({ theme }) => theme.colors.white};
-
-  span:last-child {
-    font-weight: 500;
-  }
-`;

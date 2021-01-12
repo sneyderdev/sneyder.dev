@@ -20,3 +20,4 @@ export {
 export { ArticleContainer, Article } from './components/Article';
 export { TitleContainer, Title } from './components/Title';
 export { Grid, GridBoundaries } from './components/Grid';
+export { default as Tag } from './components/Tag';
