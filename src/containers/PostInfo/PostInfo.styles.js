@@ -18,6 +18,10 @@ export const PostHeader = styled.div`
       padding: 0;
     }
   }
+
+  @media screen and (min-width: 1024px) {
+    grid-area: 1 / main-start / 2 / main-end;
+  }
 `;
 
 export const PostImage = styled.div`
