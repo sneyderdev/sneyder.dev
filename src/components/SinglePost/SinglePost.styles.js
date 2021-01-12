@@ -51,7 +51,7 @@ export const PostContent = styled.div`
   }
 
   span {
-    font-size: ${({ theme }) => theme.sizes.s};
+    font-size: ${({ theme }) => theme.sizes.xs};
   }
 
   p {
@@ -61,6 +61,17 @@ export const PostContent = styled.div`
 
   div {
     margin-top: auto;
-    ${({ theme }) => setFont(theme.sizes.n, 500)};
+  }
+`;
+
+export const PostTag = styled(Link)`
+  display: inline-flex;
+  padding: 0 5px;
+  margin-right: 5px;
+  color: ${({ theme }) => theme.colors.black};
+  background: ${({ theme }) => theme.colors.white};
+
+  span:last-child {
+    font-weight: 500;
   }
 `;

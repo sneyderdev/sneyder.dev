@@ -4,7 +4,7 @@ import schemaTypes from 'all:part:@sanity/base/schema-type';
 import project from './documents/project';
 import post from './documents/post';
 import author from './documents/author';
-import category from './documents/category';
+import tag from './documents/tag';
 import pinnedMessage from './documents/pinnedMessage';
 import asset from './documents/asset';
 
@@ -20,7 +20,7 @@ export default createSchema({
     project,
     post,
     author,
-    category,
+    tag,
     pinnedMessage,
     asset,
     blockContent,

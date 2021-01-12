@@ -49,7 +49,10 @@ const useInitialState = () => {
             title,
             description,
             publishedAt,
-            'categories': categories[]->title,
+            'tags': tags[]->{
+              _id,
+              name
+            },
             'mainImage': mainImage.asset->url,
             'slug': slug.current,
             body

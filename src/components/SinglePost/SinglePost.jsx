@@ -1,10 +1,15 @@
 import React from 'react';
 import PortableText from '@sanity/block-content-to-react';
 
-import { Post, PostBackground, PostContent } from './SinglePost.styles';
+import {
+  Post,
+  PostBackground,
+  PostContent,
+  PostTag,
+} from './SinglePost.styles';
 
 const SinglePost = ({ post }) => {
-  const { slug, title, publishedAt, description, categories, mainImage } = post;
+  const { slug, title, publishedAt, description, tags, mainImage } = post;
 
   const dateOptions = {
     month: 'long',
@@ -21,7 +26,14 @@ const SinglePost = ({ post }) => {
           {new Date(publishedAt).toLocaleDateString('en-US', dateOptions)}
         </span>
         <PortableText blocks={description} />
-        <div>{categories}</div>
+        <div>
+          {tags.map((tag) => (
+            <PostTag to={`blog/tag/${tag.name.toLowerCase()}`} key={tag._id}>
+              <span>#</span>
+              <span>{tag.name}</span>
+            </PostTag>
+          ))}
+        </div>
       </PostContent>
     </Post>
   );
