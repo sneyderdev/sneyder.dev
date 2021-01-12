@@ -8,6 +8,7 @@ import AppContext from '../../context/AppContext';
 import { PinnedMessage } from '../../components';
 import NotFound from '../NotFound';
 
+import { PostHeader, PostImage, PostMeta } from './PostInfo.styles';
 import {
   Container,
   TitleContainer,
@@ -101,17 +102,34 @@ const ProjectInfo = () => {
     },
   };
 
+  const dateOptions = {
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric',
+  };
+
   return singlePost ? (
     <>
-      <TitleContainer aboutTitleContainer>
+      <PostHeader>
+        <PostImage image={singlePost.mainImage} className='fadeIn' />
         <Container>
-          <Title aboutTitle>
-            <h1 className='slideUp'>{singlePost.title}</h1>
-          </Title>
+          <TitleContainer aboutTitleContainer>
+            <Title aboutTitle>
+              <h1 className='slideUp'>{singlePost.title}</h1>
+            </Title>
+            <PinnedMessage message={singlePost.description} />
+            <PostMeta>
+              <span className='slideUp delay-4'>
+                {new Date(singlePost.publishedAt).toLocaleDateString(
+                  'en-US',
+                  dateOptions
+                )}
+              </span>
+              <div className='slideUp delay-4'>{singlePost.categories}</div>
+            </PostMeta>
+          </TitleContainer>
         </Container>
-      </TitleContainer>
-
-      <PinnedMessage message={singlePost.description} />
+      </PostHeader>
 
       <MainSection>
         <Container>
