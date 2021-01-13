@@ -95,7 +95,9 @@ export const FooterContainer = styled.footer`
   ${({ isPost }) =>
     isPost &&
     css`
-      margin-bottom: 50px;
+      @media screen and (max-width: 1023px) {
+        margin-bottom: 60px;
+      }
     `}
 `;
 
