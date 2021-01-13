@@ -160,7 +160,7 @@ const ProjectInfo = () => {
         </Container>
       </MainSection>
 
-      <PostShare>
+      <PostShare className='slideUp'>
         <a
           href={`https://twitter.com/intent/tweet?text=${singlePost.title}%20by%20@sneyderdev%0Ahttps://sneyder.dev${pathname}`}
           target='__blank'

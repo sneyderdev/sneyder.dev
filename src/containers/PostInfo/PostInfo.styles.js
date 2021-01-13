@@ -52,24 +52,50 @@ export const PostMeta = styled.div`
 export const PostShare = styled.aside`
   display: flex;
   height: 60px;
-  padding: 0 20px;
   align-items: center;
   justify-content: space-between;
   position: fixed;
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 20;
+  z-index: 15;
+  transform: translateY(200%);
   background: ${({ theme }) => theme.colors.black};
 
   a {
-    display: inline-block;
-    width: 25px;
-    height: 25px;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    transition: border-color 300ms ease-out;
+    border: 1px solid ${({ theme }) => theme.colors.greys[0]};
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: -10;
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 300ms ease-out;
+      background: ${({ theme }) => theme.colors.white};
+    }
+
+    &:hover::before {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+
+    &:hover {
+      border-color: ${({ theme }) => theme.colors.white};
+    }
   }
 
   img {
-    width: 100%;
-    height: 100%;
+    width: 25px;
+    height: 25px;
   }
 `;
