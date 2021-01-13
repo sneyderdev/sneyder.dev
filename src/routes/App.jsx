@@ -40,6 +40,7 @@ const App = () => {
                 path='/blog/:slug'
                 component={PostInfo}
                 hasArrow
+                isPost
               />
               <RouteWrapper exact path='/blog/tag/:slug' component={TagInfo} />
               <RouteWrapper exact path='/about' component={About} />

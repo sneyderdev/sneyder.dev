@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import {
   setFlex,
@@ -91,6 +91,12 @@ export const FooterContainer = styled.footer`
       }
     }
   }
+
+  ${({ isPost }) =>
+    isPost &&
+    css`
+      margin-bottom: 50px;
+    `}
 `;
 
 export const FooterOptions = styled.div`

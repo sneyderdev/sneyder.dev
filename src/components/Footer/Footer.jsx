@@ -16,7 +16,7 @@ import {
   Container,
 } from '../../shared';
 
-const Footer = () => {
+const Footer = ({ isPost }) => {
   const {
     state: { icons },
   } = useContext(AppContext);
@@ -29,7 +29,7 @@ const Footer = () => {
   const heartIcon = icons.find((icon) => icon.alt === 'Heart');
 
   return (
-    <FooterContainer>
+    <FooterContainer isPost={isPost}>
       <Container>
         <FooterOptions>
           <Menu>
