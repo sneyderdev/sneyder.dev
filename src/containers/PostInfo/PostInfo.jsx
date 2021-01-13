@@ -32,6 +32,9 @@ const ProjectInfo = () => {
   const singlePost = posts.find((post) => post.slug === slug);
 
   const linkIcon = icons.find((icon) => icon.alt === 'External Link');
+  const twitterLogo = icons.find((icon) => icon.alt === 'Twitter');
+  const linkedinLogo = icons.find((icon) => icon.alt === 'LinkedIn');
+  const facebookLogo = icons.find((icon) => icon.alt === 'Facebook');
 
   const builder = imageUrlBuilder(sanityClient);
   const urlFor = (source) => builder.image(source);
@@ -155,6 +158,18 @@ const ProjectInfo = () => {
           </ArticleContainer>
         </Container>
       </MainSection>
+
+      <aside>
+        <a href='/'>
+          <img src={twitterLogo.url} alt='Share to Twitter' />
+        </a>
+        <a href='/'>
+          <img src={linkedinLogo.url} alt='Share to LinkedIn' />
+        </a>
+        <a href='/'>
+          <img src={facebookLogo.url} alt='Share to Facebook' />
+        </a>
+      </aside>
     </>
   ) : (
     <NotFound />
