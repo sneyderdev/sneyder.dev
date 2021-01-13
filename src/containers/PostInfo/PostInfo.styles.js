@@ -48,3 +48,28 @@ export const PostMeta = styled.div`
     font-size: ${({ theme }) => theme.sizes.xs};
   }
 `;
+
+export const PostShare = styled.aside`
+  display: flex;
+  height: 60px;
+  padding: 0 20px;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 20;
+  background: ${({ theme }) => theme.colors.black};
+
+  a {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+`;

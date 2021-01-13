@@ -8,7 +8,7 @@ import AppContext from '../../context/AppContext';
 import { PinnedMessage } from '../../components';
 import NotFound from '../NotFound';
 
-import { PostHeader, PostImage, PostMeta } from './PostInfo.styles';
+import { PostHeader, PostImage, PostMeta, PostShare } from './PostInfo.styles';
 import {
   Container,
   TitleContainer,
@@ -159,7 +159,7 @@ const ProjectInfo = () => {
         </Container>
       </MainSection>
 
-      <aside>
+      <PostShare>
         <a href='/'>
           <img src={twitterLogo.url} alt='Share to Twitter' />
         </a>
@@ -169,7 +169,7 @@ const ProjectInfo = () => {
         <a href='/'>
           <img src={facebookLogo.url} alt='Share to Facebook' />
         </a>
-      </aside>
+      </PostShare>
     </>
   ) : (
     <NotFound />
