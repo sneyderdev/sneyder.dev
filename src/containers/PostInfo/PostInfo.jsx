@@ -129,7 +129,7 @@ const ProjectInfo = () => {
               <div>
                 {singlePost.tags.map((tag) => (
                   <Tag
-                    to={`blog/tag/${tag.name.toLowerCase()}`}
+                    to={`/blog/tag/${tag.name.toLowerCase()}`}
                     key={tag._id}
                     className='slideUp delay-4'
                   >

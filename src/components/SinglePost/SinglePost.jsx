@@ -14,7 +14,7 @@ const SinglePost = ({ post }) => {
   };
 
   return (
-    <Post to={`blog/${slug}`}>
+    <Post to={`/blog/${slug}`}>
       <PostBackground image={mainImage} />
       <PostContent>
         <h2>{title}</h2>
@@ -24,7 +24,7 @@ const SinglePost = ({ post }) => {
         <PortableText blocks={description} />
         <div>
           {tags.map((tag) => (
-            <Tag to={`blog/tag/${tag.name.toLowerCase()}`} key={tag._id}>
+            <Tag to={`/blog/tag/${tag.name.toLowerCase()}`} key={tag._id}>
               <span>#</span>
               <span>{tag.name}</span>
             </Tag>
