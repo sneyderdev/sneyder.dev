@@ -11,6 +11,7 @@ import {
   ProjectInfo,
   Blog,
   PostInfo,
+  TagInfo,
   About,
   NotFound,
 } from '../containers';
@@ -40,6 +41,7 @@ const App = () => {
                 component={PostInfo}
                 hasArrow
               />
+              <RouteWrapper exact path='/blog/tag/:slug' component={TagInfo} />
               <RouteWrapper exact path='/about' component={About} />
               <RouteWrapper component={NotFound} />
             </Switch>
