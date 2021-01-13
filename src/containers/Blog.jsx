@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { Helmet } from 'react-helmet';
 import AppContext from '../context/AppContext';
 
 import { Posts, PinnedMessage } from '../components';
@@ -16,6 +17,10 @@ const Blog = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Blog - Sneyder Barreto</title>
+      </Helmet>
+
       <TitleContainer center>
         <Title>
           <h1 className='slideUp'>Blog</h1>

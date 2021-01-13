@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { Helmet } from 'react-helmet';
 import AppContext from '../context/AppContext';
 
 import { Projects, PinnedMessage } from '../components';
@@ -16,6 +17,10 @@ const Portfolio = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Portfolio - Sneyder Barreto</title>
+      </Helmet>
+
       <TitleContainer center>
         <Title>
           <h1 className='slideUp'>Portfolio</h1>

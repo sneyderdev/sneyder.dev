@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { useParams } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 import PortableText from '@sanity/block-content-to-react';
 import imageUrlBuilder from '@sanity/image-url';
 import sanityClient from '../../sanityClient';
@@ -78,6 +79,10 @@ const ProjectInfo = () => {
 
   return singleProject ? (
     <>
+      <Helmet>
+        <title>{singleProject.name} - Sneyder Barreto</title>
+      </Helmet>
+
       <TitleContainer center>
         <Title>
           <h1 className='slideUp'>{singleProject.name}</h1>

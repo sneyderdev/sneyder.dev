@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { Helmet } from 'react-helmet';
 import PortableText from '@sanity/block-content-to-react';
 import imageUrlBuilder from '@sanity/image-url';
 import sanityClient from '../sanityClient';
@@ -85,6 +86,10 @@ const About = () => {
 
   return (
     <>
+      <Helmet>
+        <title>About - Sneyder Barreto</title>
+      </Helmet>
+
       <TitleContainer aboutTitleContainer>
         <Container>
           <Title aboutTitle>
