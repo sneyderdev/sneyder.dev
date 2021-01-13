@@ -1,7 +1,12 @@
 import React from 'react';
 import PortableText from '@sanity/block-content-to-react';
 
-import { Post, PostBackground, PostContent } from './SinglePost.styles';
+import {
+  Post,
+  PostBackground,
+  PostContent,
+  PostTitle,
+} from './SinglePost.styles';
 import { Tag } from '../../shared';
 
 const SinglePost = ({ post }) => {
@@ -14,10 +19,12 @@ const SinglePost = ({ post }) => {
   };
 
   return (
-    <Post to={`/blog/${slug}`}>
+    <Post>
       <PostBackground image={mainImage} />
       <PostContent>
-        <h2>{title}</h2>
+        <PostTitle to={`/blog/${slug}`}>
+          <h2>{title}</h2>
+        </PostTitle>
         <span>
           {new Date(publishedAt).toLocaleDateString('en-US', dateOptions)}
         </span>

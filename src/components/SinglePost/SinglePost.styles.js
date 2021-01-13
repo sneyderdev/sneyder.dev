@@ -15,8 +15,7 @@ export const PostBackground = styled.div`
   transition: transform 300ms ease-out;
 `;
 
-export const Post = styled(Link)`
-  display: block;
+export const Post = styled.div`
   min-height: 250px;
   position: relative;
   overflow: hidden;
@@ -61,5 +60,19 @@ export const PostContent = styled.div`
 
   div {
     margin-top: auto;
+  }
+`;
+
+export const PostTitle = styled(Link)`
+  color: ${({ theme }) => theme.colors.white};
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
   }
 `;

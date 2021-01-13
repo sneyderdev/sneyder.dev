@@ -5,6 +5,8 @@ const Tag = styled(Link)`
   display: inline-flex;
   padding: 0 5px;
   margin-right: 5px;
+  position: relative;
+  z-index: 10;
   color: ${({ theme }) => theme.colors.black};
   background: ${({ theme }) => theme.colors.white};
 
