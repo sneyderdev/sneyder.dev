@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useLocation } from 'react-router-dom';
 import PortableText from '@sanity/block-content-to-react';
 import imageUrlBuilder from '@sanity/image-url';
 import sanityClient from '../../sanityClient';
@@ -28,6 +28,7 @@ const ProjectInfo = () => {
   } = useContext(AppContext);
 
   const { slug } = useParams();
+  const { pathname } = useLocation();
 
   const singlePost = posts.find((post) => post.slug === slug);
 
@@ -160,13 +161,25 @@ const ProjectInfo = () => {
       </MainSection>
 
       <PostShare>
-        <a href='/'>
+        <a
+          href={`https://twitter.com/intent/tweet?text=${singlePost.title}%20by%20@sneyderdev%0Ahttps://sneyder.dev${pathname}`}
+          target='__blank'
+          rel='noreferrer'
+        >
           <img src={twitterLogo.url} alt='Share to Twitter' />
         </a>
-        <a href='/'>
+        <a
+          href={`https://www.linkedin.com/shareArticle?url=https://sneyder.dev${pathname}`}
+          target='__blank'
+          rel='noreferrer'
+        >
           <img src={linkedinLogo.url} alt='Share to LinkedIn' />
         </a>
-        <a href='/'>
+        <a
+          href={`https://www.facebook.com/sharer/sharer.php?u=https://sneyder.dev${pathname}`}
+          target='__blank'
+          rel='noreferrer'
+        >
           <img src={facebookLogo.url} alt='Share to Facebook' />
         </a>
       </PostShare>
