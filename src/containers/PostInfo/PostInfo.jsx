@@ -160,28 +160,30 @@ const ProjectInfo = () => {
         </Container>
       </MainSection>
 
-      <PostShare className='slideUp'>
-        <a
-          href={`https://twitter.com/intent/tweet?text=${singlePost.title}%20by%20@sneyderdev%0Ahttps://sneyder.dev${pathname}`}
-          target='__blank'
-          rel='noreferrer'
-        >
-          <img src={twitterLogo.url} alt='Share to Twitter' />
-        </a>
-        <a
-          href={`https://www.linkedin.com/shareArticle?url=https://sneyder.dev${pathname}`}
-          target='__blank'
-          rel='noreferrer'
-        >
-          <img src={linkedinLogo.url} alt='Share to LinkedIn' />
-        </a>
-        <a
-          href={`https://www.facebook.com/sharer/sharer.php?u=https://sneyder.dev${pathname}`}
-          target='__blank'
-          rel='noreferrer'
-        >
-          <img src={facebookLogo.url} alt='Share to Facebook' />
-        </a>
+      <PostShare>
+        <div className='slideUp delay-6'>
+          <a
+            href={`https://twitter.com/intent/tweet?text=${singlePost.title}%20by%20@sneyderdev%0Ahttps://sneyder.dev${pathname}`}
+            target='__blank'
+            rel='noreferrer'
+          >
+            <img src={twitterLogo.url} alt='Share to Twitter' />
+          </a>
+          <a
+            href={`https://www.linkedin.com/shareArticle?url=https://sneyder.dev${pathname}`}
+            target='__blank'
+            rel='noreferrer'
+          >
+            <img src={linkedinLogo.url} alt='Share to LinkedIn' />
+          </a>
+          <a
+            href={`https://www.facebook.com/sharer/sharer.php?u=https://sneyder.dev${pathname}`}
+            target='__blank'
+            rel='noreferrer'
+          >
+            <img src={facebookLogo.url} alt='Share to Facebook' />
+          </a>
+        </div>
       </PostShare>
     </>
   ) : (

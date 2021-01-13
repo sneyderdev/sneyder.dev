@@ -50,17 +50,29 @@ export const PostMeta = styled.div`
 `;
 
 export const PostShare = styled.aside`
-  display: flex;
-  height: 60px;
-  align-items: center;
-  justify-content: space-between;
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 15;
-  transform: translateY(200%);
-  background: ${({ theme }) => theme.colors.black};
+  @media screen and (min-width: 1024px) {
+    display: flex;
+    justify-content: center;
+    grid-area: auto / margin3-start / auto / margin4-end;
+  }
+
+  div {
+    position: fixed;
+    bottom: 70px;
+    transform: translateY(200%);
+    background: ${({ theme }) => theme.colors.black};
+
+    @media screen and (max-width: 1023px) {
+      display: flex;
+      height: 60px;
+      align-items: center;
+      justify-content: space-between;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 15;
+    }
+  }
 
   a {
     display: flex;
@@ -92,10 +104,16 @@ export const PostShare = styled.aside`
     &:hover {
       border-color: ${({ theme }) => theme.colors.white};
     }
+
+    @media screen and (min-width: 1024px) {
+      width: 60px;
+      height: 60px;
+      border-color: ${({ theme }) => theme.colors.tertiary};
+    }
   }
 
   img {
-    width: 25px;
-    height: 25px;
+    width: 20px;
+    height: 20px;
   }
 `;
