@@ -9,6 +9,7 @@ export default {
     {
       title: 'Assets Type',
       name: 'type',
+      description: 'Type of assets you wanna upload to the Studio.',
       type: 'string',
     },
     {
