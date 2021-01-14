@@ -116,7 +116,7 @@ const ProjectInfo = () => {
   return singlePost ? (
     <>
       <PostHeader>
-        <PostImage image={singlePost.mainImage} className='fadeIn' />
+        <PostImage coverImage={singlePost.cover} className='fadeIn' />
         <Container>
           <TitleContainer aboutTitleContainer>
             <Title aboutTitle>

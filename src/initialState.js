@@ -1,7 +1,7 @@
 export default {
-  pinnedMessages: [],
   projects: [],
   posts: [],
-  author: {},
+  pinnedMessages: [],
   icons: [],
+  author: {},
 };

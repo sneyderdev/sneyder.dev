@@ -10,7 +10,7 @@ import {
 import { Tag } from '../../shared';
 
 const SinglePost = ({ post }) => {
-  const { slug, title, publishedAt, description, tags, mainImage } = post;
+  const { title, slug, description, cover, tags, publishedAt } = post;
 
   const dateOptions = {
     month: 'long',
@@ -20,7 +20,7 @@ const SinglePost = ({ post }) => {
 
   return (
     <Post>
-      <PostBackground image={mainImage} />
+      <PostBackground coverImage={cover} />
       <PostContent>
         <PostTitle to={`/blog/${slug}`}>
           <h2>{title}</h2>

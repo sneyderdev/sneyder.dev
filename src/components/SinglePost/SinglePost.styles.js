@@ -10,7 +10,7 @@ export const PostBackground = styled.div`
   bottom: 0;
   left: 0;
   z-index: -10;
-  background: url('${({ image }) => image}') center;
+  background: url('${({ coverImage }) => coverImage}') center;
   background-size: cover;
   transition: transform 300ms ease-out;
 `;

@@ -26,7 +26,7 @@ export const PostHeader = styled.div`
 
 export const PostImage = styled.div`
   padding-top: 50%;
-  background: url('${({ image }) => image}') center;
+  background: url('${({ coverImage }) => coverImage}') center;
   background-size: cover;
   opacity: 0;
 `;
