@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { SocialMenuIcon } from './SocialMenu';
+import Icon from './Icon';
 
 const LinkList = styled.ul`
   img {
@@ -12,7 +12,7 @@ const LinkList = styled.ul`
     margin-left: 20px;
   }
 
-  && ${SocialMenuIcon} {
+  && ${Icon} {
     margin-left: 0;
   }
 `;

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { SocialMenuIcon } from './SocialMenu';
+import Icon from './Icon';
 
 export const ArticleContainer = styled.section`
   display: grid;
@@ -58,7 +58,7 @@ export const Article = styled.article`
       transform: translateX(0);
     }
 
-    & ${SocialMenuIcon} {
+    & ${Icon} {
       margin-left: 5px;
     }
 

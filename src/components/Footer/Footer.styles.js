@@ -4,9 +4,8 @@ import { MenuContainer, MenuItem } from '../Menu/Menu.styles';
 import {
   SocialMenuContainer,
   SocialMenuItem,
-  SocialMenuIcon,
 } from '../SocialMenu/SocialMenu.styles';
-import { setFlex } from '../../shared';
+import { setFlex, Icon } from '../../shared';
 
 export const FooterContainer = styled.footer`
   padding: 50px 0 20px;
@@ -45,7 +44,7 @@ export const FooterContainer = styled.footer`
     }
   }
 
-  ${SocialMenuIcon} {
+  ${Icon} {
     width: 10px;
     height: 10px;
     margin-left: 5px;
@@ -72,7 +71,7 @@ export const FooterContainer = styled.footer`
       width: 12px;
     }
 
-    ${SocialMenuIcon} {
+    ${Icon} {
       width: 12px;
       height: 12px;
       column-gap: 12px;

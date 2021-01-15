@@ -1,11 +1,8 @@
 import React, { useContext } from 'react';
 import AppContext from '../../context/AppContext';
 
-import {
-  SocialMenuContainer,
-  SocialMenuItem,
-  SocialMenuIcon,
-} from './SocialMenu.styles';
+import { SocialMenuContainer, SocialMenuItem } from './SocialMenu.styles';
+import { Icon } from '../../shared';
 
 const SocialMenu = ({ isFooter }) => {
   const { state } = useContext(AppContext);
@@ -26,10 +23,10 @@ const SocialMenu = ({ isFooter }) => {
           className={`slideUp ${isFooter ? 'delay-6' : 'duration-3 delay-5'}`}
         >
           <span>Twitter</span>
-          <SocialMenuIcon>
+          <Icon>
             <img src={linkIcon.url} alt={linkIcon.alt} />
             <img src={twitterLogo.url} alt={twitterLogo.alt} />
-          </SocialMenuIcon>
+          </Icon>
         </a>
       </SocialMenuItem>
       <SocialMenuItem>
@@ -40,10 +37,10 @@ const SocialMenu = ({ isFooter }) => {
           className={`slideUp ${isFooter ? '' : 'duration-3'} delay-6`}
         >
           <span>GitHub</span>
-          <SocialMenuIcon>
+          <Icon>
             <img src={linkIcon.url} alt={linkIcon.alt} />
             <img src={githubLogo.url} alt={githubLogo.alt} />
-          </SocialMenuIcon>
+          </Icon>
         </a>
       </SocialMenuItem>
       <SocialMenuItem>
@@ -54,10 +51,10 @@ const SocialMenu = ({ isFooter }) => {
           className={`slideUp ${isFooter ? 'delay-6' : 'duration-3 delay-7'}`}
         >
           <span>LinkedIn</span>
-          <SocialMenuIcon>
+          <Icon>
             <img src={linkIcon.url} alt={linkIcon.alt} />
             <img src={linkedinLogo.url} alt={linkedinLogo.alt} />
-          </SocialMenuIcon>
+          </Icon>
         </a>
       </SocialMenuItem>
     </SocialMenuContainer>

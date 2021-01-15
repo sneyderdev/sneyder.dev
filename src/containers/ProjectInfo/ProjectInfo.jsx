@@ -18,7 +18,7 @@ import {
   ListItem,
   MainSection,
   LinkList,
-  SocialMenuIcon,
+  Icon,
 } from '../../shared';
 
 const ProjectInfo = () => {
@@ -47,10 +47,10 @@ const ProjectInfo = () => {
             {items.map((item) => (
               <li key={item._key}>
                 <a href={item.href} target='_blank' rel='noreferrer'>
-                  <SocialMenuIcon>
+                  <Icon>
                     <img src={linkIcon.url} alt={linkIcon.alt} />
                     <img src={urlFor(item.icon)} alt={item.text} />
-                  </SocialMenuIcon>
+                  </Icon>
                   <span className='link--decoration'>{item.text}</span>
                 </a>
               </li>
@@ -66,10 +66,10 @@ const ProjectInfo = () => {
         return (
           <a href={href} target='_blank' rel='noreferrer'>
             <span className='link--decoration'>{children}</span>
-            <SocialMenuIcon>
+            <Icon>
               <img src={linkIcon.url} alt={linkIcon.alt} />
               <img src={urlFor(icon)} alt={children} />
-            </SocialMenuIcon>
+            </Icon>
           </a>
         );
       },

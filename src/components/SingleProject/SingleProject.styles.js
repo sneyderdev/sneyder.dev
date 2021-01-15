@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { SocialMenuIcon, setFlex, setFont } from '../../shared';
+import { setFlex, setFont, Icon } from '../../shared';
 
 const ProjectOptions = styled.div`
   width: 100%;
@@ -48,7 +48,7 @@ const ProjectOptions = styled.div`
       }
     }
 
-    &:hover ${SocialMenuIcon} img {
+    &:hover ${Icon} img {
       transform: translateX(0);
     }
 
@@ -64,7 +64,7 @@ const ProjectOptions = styled.div`
   @media screen and (min-width: 1024px) {
     font-size: 20px;
 
-    ${SocialMenuIcon} {
+    ${Icon} {
       width: 20px;
       height: 20px;
       column-gap: 20px;

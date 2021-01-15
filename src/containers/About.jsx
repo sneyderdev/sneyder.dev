@@ -9,7 +9,7 @@ import { PinnedMessage } from '../components';
 import {
   ArticleContainer,
   Article,
-  SocialMenuIcon,
+  Icon,
   ListItem,
   Container,
   TitleContainer,
@@ -59,10 +59,10 @@ const About = () => {
         return (
           <a href={href} target='_blank' rel='noreferrer'>
             <span className='link--decoration'>{children}</span>
-            <SocialMenuIcon>
+            <Icon>
               <img src={linkIcon.url} alt={linkIcon.alt} />
               <img src={urlFor(icon)} alt={children} />
-            </SocialMenuIcon>
+            </Icon>
           </a>
         );
       },

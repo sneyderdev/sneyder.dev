@@ -5,7 +5,7 @@ import AppContext from '../../context/AppContext';
 import Window from '../Window/Window';
 
 import ProjectOptions from './SingleProject.styles';
-import { SocialMenuIcon } from '../../shared';
+import { Icon } from '../../shared';
 
 const SingleProject = ({ project }) => {
   const {
@@ -25,10 +25,10 @@ const SingleProject = ({ project }) => {
         <div>
           <a href={codeUrl} target='_blank' rel='noreferrer'>
             <span>Code</span>
-            <SocialMenuIcon>
+            <Icon>
               <img src={linkIcon.url} alt={linkIcon.alt} />
               <img src={githubLogo.url} alt={githubLogo.alt} />
-            </SocialMenuIcon>
+            </Icon>
           </a>
           <a href={previewUrl} target='_blank' rel='noreferrer'>
             Live Preview

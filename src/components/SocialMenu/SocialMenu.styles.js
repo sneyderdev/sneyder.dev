@@ -37,18 +37,3 @@ export const SocialMenuItem = styled(MenuItem)`
     transform: translateX(0);
   }
 `;
-
-export const SocialMenuIcon = styled.span`
-  display: grid;
-  width: 15px;
-  height: 15px;
-  margin-left: 10px;
-  grid-template-columns: repeat(2, 1fr);
-  column-gap: 15px;
-  overflow-x: hidden;
-
-  img {
-    transform: translateX(-30px);
-    transition: transform 300ms ease-out;
-  }
-`;
