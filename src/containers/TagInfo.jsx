@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { useParams } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 import AppContext from '../context/AppContext';
 
 import { Posts, PinnedMessage } from '../components';
@@ -27,6 +28,10 @@ const TagInfo = () => {
 
   return (
     <>
+      <Helmet>
+        <title>#{tagName} - Sneyder Barreto</title>
+      </Helmet>
+
       <TitleContainer center>
         <Title>
           <h1 className='slideUp'>

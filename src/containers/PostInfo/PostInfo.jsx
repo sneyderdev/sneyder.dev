@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { useParams, useLocation } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 import PortableText from '@sanity/block-content-to-react';
 import imageUrlBuilder from '@sanity/image-url';
 import sanityClient from '../../sanityClient';
@@ -115,6 +116,10 @@ const ProjectInfo = () => {
 
   return singlePost ? (
     <>
+      <Helmet>
+        <title>{singlePost.title} - Sneyder Barreto</title>
+      </Helmet>
+
       <PostHeader>
         <PostImage coverImage={singlePost.cover} className='fadeIn' />
         <Container>
