@@ -15,6 +15,7 @@ const SinglePost = ({ post }) => {
     month: 'long',
     day: 'numeric',
     year: 'numeric',
+    timeZone: 'UTC',
   };
 
   return (

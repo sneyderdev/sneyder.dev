@@ -112,6 +112,7 @@ const ProjectInfo = () => {
     month: 'long',
     day: 'numeric',
     year: 'numeric',
+    timeZone: 'UTC',
   };
 
   return singlePost ? (
