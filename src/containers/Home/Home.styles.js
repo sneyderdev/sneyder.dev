@@ -18,7 +18,7 @@ export const Hero = styled.div`
     }
   }
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1024px) {
     font-size: 20px;
 
     & > img {
