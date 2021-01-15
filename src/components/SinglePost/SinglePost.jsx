@@ -1,5 +1,4 @@
 import React from 'react';
-import PortableText from '@sanity/block-content-to-react';
 
 import {
   Post,
@@ -28,7 +27,7 @@ const SinglePost = ({ post }) => {
         <span>
           {new Date(publishedAt).toLocaleDateString('en-US', dateOptions)}
         </span>
-        <PortableText blocks={description} />
+        <p>{description}</p>
         <div>
           {tags.map((tag) => (
             <Tag to={`/blog/tag/${tag.name.toLowerCase()}`} key={tag._id}>
