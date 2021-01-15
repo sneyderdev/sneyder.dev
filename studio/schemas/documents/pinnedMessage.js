@@ -16,7 +16,7 @@ export default {
       title: 'Message',
       name: 'message',
       description: 'Content of the message.',
-      type: 'blockContent',
+      type: 'text',
     },
   ],
 };

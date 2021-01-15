@@ -27,7 +27,7 @@ export default {
       title: 'Description',
       description:
         'Little description of the project. (This is used as a Pinned Message).',
-      type: 'blockContent',
+      type: 'text',
     },
     {
       name: 'codeUrl',
