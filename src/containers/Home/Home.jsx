@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import { Helmet } from 'react-helmet';
 import AppContext from '../../context/AppContext';
 
 import {
@@ -23,15 +22,6 @@ const Home = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Sneyder Barreto</title>
-        <meta
-          name='description'
-          content="Welcome to my website. I'm Sneyder Barreto, a web developer that enjoys coding."
-        />
-        <meta name='author' content='Sneyder Barreto' />
-      </Helmet>
-
       <MainSection isHome>
         <Container>
           <Hero>
