@@ -1,18 +1,17 @@
 import styled, { css } from 'styled-components';
 
+import { MenuContainer, MenuItem } from '../Menu/Menu.styles';
 import {
-  setFlex,
-  Menu,
-  MenuItem,
-  SocialMenu,
+  SocialMenuContainer,
   SocialMenuItem,
   SocialMenuIcon,
-} from '../../shared';
+} from '../SocialMenu/SocialMenu.styles';
+import { setFlex } from '../../shared';
 
 export const FooterContainer = styled.footer`
   padding: 50px 0 20px;
 
-  ${Menu} {
+  ${MenuContainer} {
     font-size: ${({ theme }) => theme.sizes.s};
 
     img {
@@ -23,20 +22,16 @@ export const FooterContainer = styled.footer`
       display: flex;
 
       ${MenuItem} {
-        margin-right: 20px;
+        margin: 0 20px 0 0;
       }
     }
   }
 
   ${MenuItem}:last-child {
     margin-bottom: 0;
-
-    @media screen and (min-width: 850px) {
-      margin: 0;
-    }
   }
 
-  ${SocialMenu} {
+  ${SocialMenuContainer} {
     text-align: right;
     font-size: ${({ theme }) => theme.sizes.s};
 
@@ -45,11 +40,7 @@ export const FooterContainer = styled.footer`
       justify-content: flex-end;
 
       ${SocialMenuItem} {
-        margin-left: 20px;
-
-        &:first-child {
-          margin: 0;
-        }
+        margin: 0 0 0 20px;
       }
     }
   }

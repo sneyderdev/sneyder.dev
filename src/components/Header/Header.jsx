@@ -1,41 +1,32 @@
 import React, { useContext, useState, useRef } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import AppContext from '../../context/AppContext';
 import MenuContext from '../../context/MenuContext';
 import useScroll from '../../hooks/useScroll';
 
+import Menu from '../Menu/Menu';
+import SocialMenu from '../SocialMenu/SocialMenu';
+
 import {
   HeaderBackground,
+  LogoContainer,
+  LogoText,
   Navbar,
   NavbarButton,
   NavbarMenu,
-  LogoContainer,
-  LogoText,
+  MenuContainer,
   BurgerButton,
 } from './Header.styles';
-import {
-  Arrow,
-  MenuContainer,
-  Menu,
-  MenuItem,
-  SocialMenu,
-  SocialMenuItem,
-  SocialMenuIcon,
-} from '../../shared';
+import { MenuItem } from '../Menu/Menu.styles';
+import { Arrow } from '../../shared';
 
 const Header = ({ hasArrow }) => {
   const { menu, setMenu } = useContext(MenuContext);
-
   const { state } = useContext(AppContext);
   const {
     author: { cv },
     icons,
   } = state;
-
-  const handleClick = () => {
-    setMenu(!menu);
-    document.getElementById('body').classList.toggle('overflow--hidden');
-  };
 
   const [arrowState, setArrowState] = useState(false);
   const arrowRef = useRef(arrowState);
@@ -46,6 +37,13 @@ const Header = ({ hasArrow }) => {
   goRef.current = goState;
 
   const history = useHistory();
+
+  const { header, background } = useScroll();
+
+  const handleClick = () => {
+    setMenu(!menu);
+    document.getElementById('body').classList.toggle('overflow--hidden');
+  };
 
   const handleGoBack = () => {
     setArrowState(!arrowState);
@@ -64,13 +62,7 @@ const Header = ({ hasArrow }) => {
     }, 700);
   };
 
-  const { header, background } = useScroll();
-
   const arrowIcon = icons.find((icon) => icon.alt === 'Arrow');
-  const linkIcon = icons.find((icon) => icon.alt === 'External Link');
-  const twitterLogo = icons.find((icon) => icon.alt === 'Twitter');
-  const githubLogo = icons.find((icon) => icon.alt === 'GitHub');
-  const linkedinLogo = icons.find((icon) => icon.alt === 'LinkedIn');
 
   return (
     <>
@@ -106,94 +98,14 @@ const Header = ({ hasArrow }) => {
       </Navbar>
       <NavbarMenu menu={menu}>
         <MenuContainer>
-          <Menu>
+          <Menu handleClick={handleClick}>
             <MenuItem>
-              <Link
-                to='/portfolio'
-                onClick={handleClick}
-                className='slideUp duration-3'
-              >
-                Portfolio <img src={arrowIcon.url} alt={arrowIcon.alt} />
-              </Link>
-            </MenuItem>
-            <MenuItem>
-              <Link
-                to='/blog'
-                onClick={handleClick}
-                className='slideUp duration-3 delay-1'
-              >
-                Blog <img src={arrowIcon.url} alt={arrowIcon.alt} />
-              </Link>
-            </MenuItem>
-            <MenuItem>
-              <Link
-                to='/about'
-                onClick={handleClick}
-                className='slideUp duration-3 delay-2'
-              >
-                About <img src={arrowIcon.url} alt={arrowIcon.alt} />
-              </Link>
-            </MenuItem>
-            <MenuItem>
-              <a
-                href='mailto:hello@sneyder.dev'
-                target='_blank'
-                rel='noreferrer'
-                className='slideUp duration-3 delay-3'
-              >
-                Contact <img src={arrowIcon.url} alt={arrowIcon.alt} />
-              </a>
-            </MenuItem>
-            <MenuItem>
-              <a href={`${cv}?dl`} className='slideUp duration-3 delay-3'>
+              <a href={`${cv}?dl`} className='slideUp duration-3 delay-4'>
                 Download CV <img src={arrowIcon.url} alt={arrowIcon.alt} />
               </a>
             </MenuItem>
           </Menu>
-          <SocialMenu>
-            <SocialMenuItem>
-              <a
-                href='https://twitter.com/sneyderdev'
-                target='_blank'
-                rel='noreferrer'
-                className='slideUp duration-3 delay-4'
-              >
-                <span>Twitter</span>
-                <SocialMenuIcon>
-                  <img src={linkIcon.url} alt={linkIcon.alt} />
-                  <img src={twitterLogo.url} alt={twitterLogo.alt} />
-                </SocialMenuIcon>
-              </a>
-            </SocialMenuItem>
-            <SocialMenuItem>
-              <a
-                href='https://github.com/sneyderdev'
-                target='_blank'
-                rel='noreferrer'
-                className='slideUp duration-3 delay-5'
-              >
-                <span>GitHub</span>
-                <SocialMenuIcon>
-                  <img src={linkIcon.url} alt={linkIcon.alt} />
-                  <img src={githubLogo.url} alt={githubLogo.alt} />
-                </SocialMenuIcon>
-              </a>
-            </SocialMenuItem>
-            <SocialMenuItem>
-              <a
-                href='https://www.linkedin.com/in/sneyderdev'
-                target='_blank'
-                rel='noreferrer'
-                className='slideUp duration-3 delay-6'
-              >
-                <span>LinkedIn</span>
-                <SocialMenuIcon>
-                  <img src={linkIcon.url} alt={linkIcon.alt} />
-                  <img src={linkedinLogo.url} alt={linkedinLogo.alt} />
-                </SocialMenuIcon>
-              </a>
-            </SocialMenuItem>
-          </SocialMenu>
+          <SocialMenu />
         </MenuContainer>
       </NavbarMenu>
     </>
