@@ -24,7 +24,7 @@ const Window = ({ project, children, isCarousel }) => {
             <circle cx='5' cy='5' r='5' fill='#28CA41' />
           </svg>
         </div>
-        <h4>{name}</h4>
+        <span>{name}</span>
       </WindowBar>
       {isCarousel ? (
         <WindowScreen isCarousel>

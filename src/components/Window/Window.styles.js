@@ -85,8 +85,7 @@ export const WindowBar = styled.div`
     left: 5px;
   }
 
-  h4 {
-    display: inline;
+  span {
     ${setFont(({ theme }) => theme.sizes.xs, 500)};
   }
 `;
