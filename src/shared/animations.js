@@ -37,3 +37,21 @@ export const load = keyframes`
     opacity: 0;
   }
 `;
+
+export const sleepScreen = keyframes`
+  0% {
+    opacity: 0;
+  }
+
+  40% {
+    opacity: 1;
+  }
+
+  60% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+`;
