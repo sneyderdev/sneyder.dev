@@ -8,6 +8,7 @@ const ProjectOptions = styled.div`
   backdrop-filter: blur(3px);
   opacity: 0;
   transition: all 300ms ease-out;
+  cursor: pointer;
   background: ${({ theme }) => theme.colors.blacks[1]};
   ${setFlex('justify-content')};
 

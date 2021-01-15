@@ -86,6 +86,7 @@ export const WindowBar = styled.div`
   }
 
   span {
+    user-select: none;
     ${setFont(({ theme }) => theme.sizes.xs, 500)};
   }
 `;
@@ -93,6 +94,7 @@ export const WindowBar = styled.div`
 export const WindowScreen = styled.div`
   width: 100%;
   height: 200px;
+  cursor: pointer;
 
   img {
     width: 100%;
