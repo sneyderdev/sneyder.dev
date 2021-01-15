@@ -1,10 +1,12 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 
 import SleepScreenContainer from './SleepScreen.styles';
 
 const SleepScreen = () => {
   const sleepScreen = useRef(null);
   const sleepText = useRef(null);
+
+  const [sleep, setSleep] = useState(false);
 
   useEffect(() => {
     const sleepScreenPhrases = [
@@ -21,8 +23,7 @@ const SleepScreen = () => {
 
       if (isVisible) {
         sleepText.current.innerText = sleepScreenPhrases[randomPhrase];
-        sleepScreen.current.classList.add('active');
-        sleepText.current.classList.add('slideUp');
+        setSleep(!sleep);
 
         setTimeout(() => {
           sleepScreen.current.classList.remove('active');
@@ -30,16 +31,18 @@ const SleepScreen = () => {
         }, 2400);
       } else {
         sleepText.current.innerText = '';
-        sleepScreen.current.classList.remove('active');
-        sleepText.current.classList.remove('slideUp');
+        setSleep(false);
       }
     });
   }, []);
 
   return (
-    <SleepScreenContainer ref={sleepScreen}>
+    <SleepScreenContainer
+      ref={sleepScreen}
+      className={`${sleep ? 'active' : ''}`}
+    >
       <div className='overflow--hidden'>
-        <span ref={sleepText} />
+        <span ref={sleepText} className={`${sleep ? 'slideUp' : ''}`} />
       </div>
     </SleepScreenContainer>
   );
