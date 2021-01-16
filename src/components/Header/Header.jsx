@@ -1,5 +1,5 @@
 import React, { useContext, useState, useRef } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
 import AppContext from '../../context/AppContext';
 import MenuContext from '../../context/MenuContext';
 import useScroll from '../../hooks/useScroll';
@@ -37,6 +37,7 @@ const Header = ({ hasArrow }) => {
   goRef.current = goState;
 
   const history = useHistory();
+  const { pathname } = useLocation();
 
   const { header, background } = useScroll();
 
@@ -54,7 +55,13 @@ const Header = ({ hasArrow }) => {
       }
     }, 300);
     setTimeout(() => {
-      history.goBack();
+      const isPortfolio = pathname.includes('/portfolio');
+
+      if (isPortfolio) {
+        history.push('/portfolio');
+      } else {
+        history.push('/blog');
+      }
     }, 600);
     setTimeout(() => {
       setArrowState(!arrowRef.current);
