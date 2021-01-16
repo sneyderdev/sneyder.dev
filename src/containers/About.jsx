@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import PortableText from '@sanity/block-content-to-react';
 import imageUrlBuilder from '@sanity/image-url';
@@ -54,6 +55,20 @@ const About = () => {
       },
     },
     marks: {
+      link: ({ mark, children }) => {
+        const { href } = mark;
+
+        return (
+          <a
+            href={href}
+            target='_blank'
+            rel='noreferrer'
+            className='link--decoration'
+          >
+            {children}
+          </a>
+        );
+      },
       iconLink: ({ mark, children }) => {
         const { href, icon } = mark;
 
@@ -67,18 +82,13 @@ const About = () => {
           </a>
         );
       },
-      link: ({ mark, children }) => {
+      internalUrl: ({ mark, children }) => {
         const { href } = mark;
 
         return (
-          <a
-            href={href}
-            target='_blank'
-            rel='noreferrer'
-            className='link--decoration'
-          >
+          <Link to={href} className='link--decoration'>
             {children}
-          </a>
+          </Link>
         );
       },
     },
