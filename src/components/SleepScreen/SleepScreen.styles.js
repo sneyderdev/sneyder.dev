@@ -3,14 +3,14 @@ import styled from 'styled-components';
 import { setPosition, sleepScreen } from '../../shared';
 
 const SleepScreenContainer = styled.div`
-  display: grid;
+  display: none;
   place-items: center;
   text-align: center;
   font-weight: 500;
   opacity: 0;
   backdrop-filter: blur(20px);
   background: ${({ theme }) => theme.colors.blacks[2]};
-  ${setPosition('fixed', -10)};
+  ${setPosition('fixed', 40)};
 
   span {
     display: inline-block;
@@ -19,7 +19,7 @@ const SleepScreenContainer = styled.div`
   }
 
   &.active {
-    z-index: 40;
+    display: grid;
     animation: ${sleepScreen} 2400ms forwards;
   }
 
