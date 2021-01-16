@@ -8,7 +8,7 @@ import { MenuContextProvider } from '../context/MenuContext';
 import favicon196 from '../assets/favicon-196.png';
 
 import RouteWrapper from './RouteWrapper';
-import { SleepScreen } from '../components';
+import { SleepScreen, ScrollToTop } from '../components';
 import {
   Home,
   Portfolio,
@@ -35,12 +35,13 @@ const App = () => {
       </Helmet>
 
       <ThemeProvider theme={theme}>
-        <GlobalStyle />
-        <Background />
-        <SleepScreen />
         <AppContextProvider>
           <MenuContextProvider>
             <Router>
+              <GlobalStyle />
+              <Background />
+              <SleepScreen />
+              <ScrollToTop />
               <Switch>
                 <RouteWrapper exact path='/' component={Home} isHome />
                 <RouteWrapper exact path='/portfolio' component={Portfolio} />
