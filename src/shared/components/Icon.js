@@ -3,7 +3,6 @@ import styled from 'styled-components';
 const Icon = styled.span`
   display: grid;
   width: 15px;
-  height: 15px;
   margin-left: 10px;
   grid-template-columns: repeat(2, 1fr);
   column-gap: 15px;
