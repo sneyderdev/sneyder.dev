@@ -1,4 +1,5 @@
 import { BiLinkExternal } from 'react-icons/bi';
+import { GoLink } from 'react-icons/go';
 
 import IconLinkRenderer from './components/IconLinkRenderer';
 
@@ -55,6 +56,21 @@ export default {
                 title: 'Icon',
                 name: 'icon',
                 type: 'image',
+              },
+            ],
+          },
+          {
+            title: 'Internal URL',
+            name: 'internalUrl',
+            type: 'object',
+            blockEditor: {
+              icon: GoLink,
+            },
+            fields: [
+              {
+                title: 'URL',
+                name: 'href',
+                type: 'url',
               },
             ],
           },
