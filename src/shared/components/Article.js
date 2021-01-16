@@ -36,6 +36,11 @@ export const Article = styled.article`
     }
   }
 
+  ul {
+    display: grid;
+    row-gap: 5px;
+  }
+
   p {
     margin: 0;
   }
