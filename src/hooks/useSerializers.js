@@ -1,8 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import imageUrlBuilder from '@sanity/image-url';
 import AppContext from '../context/AppContext';
-import sanityClient from '../sanityClient';
+import imageUrlFor from '../utils/imageUrlFor';
 
 import { LinkList, ListItem, Icon } from '../shared';
 
@@ -12,9 +11,6 @@ const useSerializers = () => {
   } = useContext(AppContext);
 
   const linkIcon = icons.find((icon) => icon.alt === 'External Link');
-
-  const builder = imageUrlBuilder(sanityClient);
-  const urlFor = (source) => builder.image(source);
 
   return {
     types: {
@@ -28,7 +24,7 @@ const useSerializers = () => {
                 <a href={item.href} target='_blank' rel='noreferrer'>
                   <Icon>
                     <img src={linkIcon.url} alt={linkIcon.alt} />
-                    <img src={urlFor(item.icon)} alt={item.text} />
+                    <img src={imageUrlFor(item.icon)} alt={item.text} />
                   </Icon>
                   <span className='link--decoration'>{item.text}</span>
                 </a>
@@ -44,7 +40,7 @@ const useSerializers = () => {
           <ul>
             {items.map((item) => (
               <ListItem key={item._key}>
-                <img src={urlFor(item.icon)} alt={item.text} />
+                <img src={imageUrlFor(item.icon)} alt={item.text} />
                 <span>{item.text}</span>
               </ListItem>
             ))}
@@ -75,7 +71,7 @@ const useSerializers = () => {
             <span className='link--decoration'>{children}</span>
             <Icon>
               <img src={linkIcon.url} alt={linkIcon.alt} />
-              <img src={urlFor(icon)} alt={children} />
+              <img src={imageUrlFor(icon)} alt={children} />
             </Icon>
           </a>
         );
