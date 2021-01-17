@@ -24,10 +24,18 @@ const Carousel = ({ images }) => {
           />
         ))}
       </CarouselContent>
-      <CarouselControl className='prev' onClick={prevSlide}>
+      <CarouselControl
+        className='prev'
+        onClick={prevSlide}
+        aria-label='Previous Slide'
+      >
         <Arrow />
       </CarouselControl>
-      <CarouselControl className='next' onClick={nextSlide}>
+      <CarouselControl
+        className='next'
+        onClick={nextSlide}
+        aria-label='Next Slide'
+      >
         <Arrow />
       </CarouselControl>
       <CarouselDots>
@@ -37,7 +45,7 @@ const Carousel = ({ images }) => {
             onClick={() => handleDotClick(index)}
             onKeyPress={() => handleDotClick(index)}
             role='button'
-            tabIndex={index}
+            tabIndex='0'
             aria-label='Change Slide'
             className={slide === index ? 'active' : ''}
           />

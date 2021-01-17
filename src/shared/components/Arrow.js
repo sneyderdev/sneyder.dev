@@ -7,6 +7,7 @@ const Arrow = styled.div`
   width: 25px;
   height: 30px;
   position: relative;
+  outline: none;
   cursor: pointer;
 
   &::before,

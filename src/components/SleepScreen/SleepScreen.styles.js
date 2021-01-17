@@ -7,6 +7,7 @@ const SleepScreenContainer = styled.div`
   place-items: center;
   text-align: center;
   font-weight: 500;
+  user-select: none;
   opacity: 0;
   backdrop-filter: blur(20px);
   background: ${({ theme }) => theme.colors.blacks[2]};

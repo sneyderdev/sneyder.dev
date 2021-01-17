@@ -81,6 +81,9 @@ const Header = ({ hasArrow }) => {
         {hasArrow ? (
           <Arrow
             onClick={handleGoBack}
+            role='button'
+            tabIndex='0'
+            aria-label='Go Back'
             className={`fadeIn ${arrowState ? 'active' : ''} ${
               goState ? 'go-back' : ''
             }`}
@@ -95,6 +98,9 @@ const Header = ({ hasArrow }) => {
         <NavbarButton className={header ? 'header--visible' : ''}>
           <BurgerButton
             onClick={handleClick}
+            role='button'
+            tabIndex='0'
+            aria-label='Toggle Menu'
             className={`fadeIn ${menu ? 'active' : ''}`}
           >
             <i />

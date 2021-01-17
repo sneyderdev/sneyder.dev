@@ -84,6 +84,7 @@ export const BurgerButton = styled.div`
   margin-left: auto;
   position: relative;
   z-index: 30;
+  outline: none;
   cursor: pointer;
 
   i {
