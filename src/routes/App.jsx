@@ -1,11 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
-import { Helmet } from 'react-helmet';
 import { AppContextProvider } from '../context/AppContext';
 import { MenuContextProvider } from '../context/MenuContext';
-
-import favicon196 from '../assets/favicon-196.png';
 
 import RouteWrapper from './RouteWrapper';
 import { SleepScreen, ScrollToTop } from '../components';
@@ -24,16 +21,6 @@ import { theme, GlobalStyle, Background } from '../shared';
 const App = () => {
   return (
     <>
-      <Helmet>
-        <title>Sneyder Barreto</title>
-        <meta
-          name='description'
-          content="📌 I'm Sneyder Barreto. I like creating thing with web technologies."
-        />
-        <meta name='author' content='Sneyder Barreto' />
-        <link rel='icon' href={favicon196} sizes='196x196' />
-      </Helmet>
-
       <ThemeProvider theme={theme}>
         <AppContextProvider>
           <MenuContextProvider>

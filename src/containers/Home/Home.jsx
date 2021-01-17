@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { Helmet } from 'react-helmet';
 import AppContext from '../../context/AppContext';
 
 import {
@@ -22,6 +23,10 @@ const Home = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Sneyder Barreto</title>
+      </Helmet>
+
       <MainSection isHome>
         <Container>
           <Hero>
