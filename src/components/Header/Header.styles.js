@@ -38,7 +38,7 @@ export const LogoContainer = styled.div`
   @media screen and (min-width: 1024px) {
     display: flex;
     justify-content: center;
-    grid-area: auto / margin1-start / auto / margin2-end;
+    grid-area: 1 / margin1-start / 2 / margin2-end;
   }
 `;
 
@@ -54,7 +54,7 @@ export const LogoText = styled(Link)`
 
 export const Navbar = styled.div`
   @media screen and (min-width: 1024px) {
-    grid-area: auto / margin3-start / auto / margin4-end;
+    grid-area: 1 / margin3-start / 2 / margin4-end;
   }
 `;
 

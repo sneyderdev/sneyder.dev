@@ -12,13 +12,12 @@ export const Grid = styled.div`
       ? css`
           display: grid;
           height: 100vh;
-          grid-template-rows: auto 1fr auto;
+          grid-template-rows: 1fr auto;
 
           @media screen and (min-width: 1024px) {
             max-width: 1900px;
             margin: 0 auto;
             position: relative;
-            grid-template-rows: 1fr auto;
             grid-template-columns:
               [margin1-start] 100px [margin1-end margin2-start] 100px [margin2-end main-start] minmax(
                 auto,
@@ -33,13 +32,12 @@ export const Grid = styled.div`
           display: grid;
           width: 100%;
           min-height: 100vh;
-          grid-template-rows: repeat(3, auto) 1fr auto;
+          grid-template-rows: repeat(2, auto) 1fr auto;
 
           @media screen and (min-width: 1024px) {
             max-width: 1900px;
             margin: 0 auto;
             position: relative;
-            grid-template-rows: repeat(2, auto) 1fr auto;
             grid-template-columns:
               [margin1-start] 100px [margin1-end margin2-start] 100px [margin2-end main-start] minmax(
                 auto,

@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 const Message = styled.section`
   margin-bottom: 40px;
+  grid-area: 2 / auto / 3 / auto;
   overflow-y: hidden;
 
   p {

@@ -3,6 +3,8 @@ import styled, { css } from 'styled-components';
 import setFont from '../mixins/setFont';
 
 export const TitleContainer = styled.section`
+  grid-area: 1 / auto / 2 / auto;
+
   ${({ center }) =>
     center &&
     css`
