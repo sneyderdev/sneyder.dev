@@ -1,18 +1,14 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import PortableText from '@sanity/block-content-to-react';
-import imageUrlBuilder from '@sanity/image-url';
-import sanityClient from '../sanityClient';
 import AppContext from '../context/AppContext';
+import useSerializers from '../hooks/useSerializers';
 
 import { PinnedMessage } from '../components';
 
 import {
   ArticleContainer,
   Article,
-  Icon,
-  ListItem,
   Container,
   TitleContainer,
   Title,
@@ -24,75 +20,14 @@ const About = () => {
     state: {
       pinnedMessages,
       author: { bio },
-      icons,
     },
   } = useContext(AppContext);
+
+  const serializers = useSerializers();
 
   const { message } = pinnedMessages.find(
     (pinnedMessage) => pinnedMessage.page === 'About'
   );
-
-  const linkIcon = icons.find((icon) => icon.alt === 'External Link');
-
-  const builder = imageUrlBuilder(sanityClient);
-  const urlFor = (source) => builder.image(source);
-
-  const serializers = {
-    types: {
-      iconList: ({ node }) => {
-        const { items } = node;
-
-        return (
-          <ul>
-            {items.map((item) => (
-              <ListItem key={item._key}>
-                <img src={urlFor(item.icon)} alt={item.text} />
-                <span>{item.text}</span>
-              </ListItem>
-            ))}
-          </ul>
-        );
-      },
-    },
-    marks: {
-      link: ({ mark, children }) => {
-        const { href } = mark;
-
-        return (
-          <a
-            href={href}
-            target='_blank'
-            rel='noreferrer'
-            className='link--decoration'
-          >
-            {children}
-          </a>
-        );
-      },
-      iconLink: ({ mark, children }) => {
-        const { href, icon } = mark;
-
-        return (
-          <a href={href} target='_blank' rel='noreferrer'>
-            <span className='link--decoration'>{children}</span>
-            <Icon>
-              <img src={linkIcon.url} alt={linkIcon.alt} />
-              <img src={urlFor(icon)} alt={children} />
-            </Icon>
-          </a>
-        );
-      },
-      internalUrl: ({ mark, children }) => {
-        const { href } = mark;
-
-        return (
-          <Link to={href} className='link--decoration'>
-            {children}
-          </Link>
-        );
-      },
-    },
-  };
 
   return (
     <>

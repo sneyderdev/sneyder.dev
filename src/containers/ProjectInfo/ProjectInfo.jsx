@@ -2,9 +2,8 @@ import React, { useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import PortableText from '@sanity/block-content-to-react';
-import imageUrlBuilder from '@sanity/image-url';
-import sanityClient from '../../sanityClient';
 import AppContext from '../../context/AppContext';
+import useSerializers from '../../hooks/useSerializers';
 
 import { Window, PinnedMessage } from '../../components';
 import NotFound from '../NotFound';
@@ -18,8 +17,6 @@ import {
   Article,
   ListItem,
   MainSection,
-  LinkList,
-  Icon,
 } from '../../shared';
 
 const ProjectInfo = () => {
@@ -29,53 +26,12 @@ const ProjectInfo = () => {
 
   const { slug } = useParams();
 
+  const serializers = useSerializers();
+
   const singleProject = projects.find((project) => project.slug === slug);
 
   const arrowIcon = icons.find((icon) => icon.alt === 'Arrow');
-  const linkIcon = icons.find((icon) => icon.alt === 'External Link');
   const githubLogo = icons.find((icon) => icon.alt === 'GitHub');
-
-  const builder = imageUrlBuilder(sanityClient);
-  const urlFor = (source) => builder.image(source);
-
-  const serializers = {
-    types: {
-      linkList: ({ node }) => {
-        const { items } = node;
-
-        return (
-          <LinkList>
-            {items.map((item) => (
-              <li key={item._key}>
-                <a href={item.href} target='_blank' rel='noreferrer'>
-                  <Icon>
-                    <img src={linkIcon.url} alt={linkIcon.alt} />
-                    <img src={urlFor(item.icon)} alt={item.text} />
-                  </Icon>
-                  <span className='link--decoration'>{item.text}</span>
-                </a>
-              </li>
-            ))}
-          </LinkList>
-        );
-      },
-    },
-    marks: {
-      iconLink: ({ mark, children }) => {
-        const { href, icon } = mark;
-
-        return (
-          <a href={href} target='_blank' rel='noreferrer'>
-            <span className='link--decoration'>{children}</span>
-            <Icon>
-              <img src={linkIcon.url} alt={linkIcon.alt} />
-              <img src={urlFor(icon)} alt={children} />
-            </Icon>
-          </a>
-        );
-      },
-    },
-  };
 
   return singleProject ? (
     <>
