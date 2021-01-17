@@ -81,6 +81,7 @@ const Header = ({ hasArrow }) => {
         {hasArrow ? (
           <Arrow
             onClick={handleGoBack}
+            onKeyPress={handleGoBack}
             role='button'
             tabIndex='0'
             aria-label='Go Back'
@@ -98,6 +99,7 @@ const Header = ({ hasArrow }) => {
         <NavbarButton className={header ? 'header--visible' : ''}>
           <BurgerButton
             onClick={handleClick}
+            onKeyPress={handleClick}
             role='button'
             tabIndex='0'
             aria-label='Toggle Menu'
