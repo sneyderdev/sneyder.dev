@@ -5,4 +5,4 @@ export { default as Blog } from './Blog';
 export { default as PostInfo } from './PostInfo/PostInfo';
 export { default as TagInfo } from './TagInfo';
 export { default as About } from './About';
-export { default as NotFound } from './NotFound';
+export { default as NotFound } from './NotFound/NotFound';

@@ -6,7 +6,7 @@ import AppContext from '../../context/AppContext';
 import useSerializers from '../../hooks/useSerializers';
 
 import { PinnedMessage } from '../../components';
-import NotFound from '../NotFound';
+import NotFound from '../NotFound/NotFound';
 
 import { PostHeader, PostImage, PostMeta, PostShare } from './PostInfo.styles';
 import {

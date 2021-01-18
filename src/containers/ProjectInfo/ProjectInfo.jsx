@@ -6,7 +6,7 @@ import AppContext from '../../context/AppContext';
 import useSerializers from '../../hooks/useSerializers';
 
 import { Window, PinnedMessage } from '../../components';
-import NotFound from '../NotFound';
+import NotFound from '../NotFound/NotFound';
 
 import { ButtonOptions, CodeButton, PreviewButton } from './ProjectInfo.styles';
 import {

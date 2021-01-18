@@ -9,6 +9,7 @@ import { setFlex, Icon } from '../../shared';
 
 export const FooterContainer = styled.footer`
   padding: 50px 0 20px;
+  grid-area: 4 / auto / -1 / auto;
 
   ${MenuContainer} {
     font-size: ${({ theme }) => theme.sizes.s};
