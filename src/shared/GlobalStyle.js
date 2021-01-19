@@ -3,27 +3,6 @@ import { createGlobalStyle } from 'styled-components';
 import { fadeIn, slideUp } from './animations';
 
 const GlobalStyle = createGlobalStyle`
-  @font-face {
-    font-family: 'Saira';
-    font-weight: 400;
-    font-display: swap;
-    src: url('/static/fonts/Saira-Regular.ttf');
-  }
-
-  @font-face {
-    font-family: 'Saira';
-    font-weight: 500;
-    font-display: swap;
-    src: url('/static/fonts/Saira-Medium.ttf');
-  }
-
-  @font-face {
-    font-family: 'Saira';
-    font-weight: 600;
-    font-display: swap;
-    src: url('/static/fonts/Saira-SemiBold.ttf');
-  }
-
   ::selection {
     background: ${({ theme }) => theme.colors.secondary};
     color: ${({ theme }) => theme.colors.white};

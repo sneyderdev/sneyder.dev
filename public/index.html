@@ -24,6 +24,8 @@
       type="font/ttf"
       crossorigin="anonymous"
     />
+    <link rel="preconnect" href="https://www.google-analytics.com" />
+    <link rel="dns-prefetch" href="https://www.google-analytics.com" />
     <link rel="preconnect" href="https://cdn.sanity.io" />
     <link rel="dns-prefetch" href="https://cdn.sanity.io" />
     <link rel="preconnect" href="https://tljndwv6.apicdn.sanity.io" />
@@ -58,6 +60,39 @@
       name="twitter:image"
       content="https://sneyder.dev/static/images/og-sneyder-dev.jpg"
     />
+    <script>
+      window.ga =
+        window.ga ||
+        function () {
+          (ga.q = ga.q || []).push(arguments);
+        };
+      ga.l = +new Date();
+      ga('create', 'UA-149374826-2', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <style>
+      @font-face {
+        font-family: 'Saira';
+        font-weight: 400;
+        font-display: swap;
+        src: url('/static/fonts/Saira-Regular.ttf');
+      }
+
+      @font-face {
+        font-family: 'Saira';
+        font-weight: 500;
+        font-display: swap;
+        src: url('/static/fonts/Saira-Medium.ttf');
+      }
+
+      @font-face {
+        font-family: 'Saira';
+        font-weight: 600;
+        font-display: swap;
+        src: url('/static/fonts/Saira-SemiBold.ttf');
+      }
+    </style>
+    <script async src="https://www.google-analytics.com/analytics.js"></script>
   </head>
   <body id="body">
     <div id="App"></div>
