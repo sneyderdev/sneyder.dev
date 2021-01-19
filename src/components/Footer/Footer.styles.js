@@ -23,12 +23,12 @@ export const FooterContainer = styled.footer`
 
       ${MenuItem} {
         margin: 0 20px 0 0;
+
+        &:last-child {
+          margin-right: 0;
+        }
       }
     }
-  }
-
-  ${MenuItem}:last-child {
-    margin-bottom: 0;
   }
 
   ${SocialMenuContainer} {
@@ -37,10 +37,13 @@ export const FooterContainer = styled.footer`
 
     @media screen and (min-width: 850px) {
       display: flex;
-      justify-content: flex-end;
 
       ${SocialMenuItem} {
         margin: 0 0 0 20px;
+
+        &:first-child {
+          margin-left: 0;
+        }
       }
     }
   }
@@ -94,9 +97,8 @@ export const FooterContainer = styled.footer`
 
 export const FooterOptions = styled.div`
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, auto);
   justify-content: space-between;
-  column-gap: 50px;
 
   a {
     display: inline-flex;
