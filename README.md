@@ -1,36 +1,34 @@
-# sneyder.dev
+# Welcome to Remix!
 
-📌 My personal website.
+- [Remix Docs](https://remix.run/docs)
 
-## ✨ Preview
+## Deployment
 
-Deploy: [sneyder.dev](https://sneyder.dev)
+After having run the `create-remix` command and selected "Vercel" as a deployment target, you only need to [import your Git repository](https://vercel.com/new) into Vercel, and it will be deployed.
 
-![sneyder.dev](https://cdn.sanity.io/images/tljndwv6/production/197f9e33048979d2b3caf82a2e41b0e8f88ae468-1000x562.gif)
+If you'd like to avoid using a Git repository, you can also deploy the directory by running [Vercel CLI](https://vercel.com/cli):
 
-## 🖥 About
+```sh
+npm i -g vercel
+vercel
+```
 
-This project is my personal website. The main goal was to have a place to showcase my work and where people might know me better.
+It is generally recommended to use a Git repository, because future commits will then automatically be deployed by Vercel, through its [Git Integration](https://vercel.com/docs/concepts/git).
 
-I like to keep improving this project as soon as I learn more advanced technologies.
-From vanilla (HTML, CSS and JavaScript) to **React**, **styled-components** and using **Sanity** as a headless CMS to manage the information of the project.
+## Development
 
-I'm very proud of this project. I've learned a lot while developing it.
+To run your Remix app locally, make sure your project's local dependencies are installed:
 
-Make sure to stay tuned for future improvements. 😉
+```sh
+npm install
+```
 
-## 🛠 Technologies
+Afterwards, start the Remix development server like so:
 
-- **React**
-- **Styled-components**
-- **Webpack**
-- **Sanity**
+```sh
+npm run dev
+```
 
-## 🤝 Contributing
+Open up [http://localhost:3000](http://localhost:3000) and you should be ready to go!
 
-Feel free to send me a DM on **[Twitter](https://twitter.com/sneyderdev)** if you wanna give me some feedback in order to improve the project. I'll appreciate it.
-
-## 📃 License
-
-Copyright © 2021 [Sneyder Barreto](https://github.com/sneyderdev).<br />
-This project is [MIT](https://github.com/sneyderdev/sneyder.dev/blob/master/LICENSE) licensed.
+If you're used to using the `vercel dev` command provided by [Vercel CLI](https://vercel.com/cli) instead, you can also use that, but it's not needed.
