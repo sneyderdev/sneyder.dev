@@ -3,5 +3,8 @@
     "@remix-run/eslint-config",
     "@remix-run/eslint-config/node",
     "prettier"
-  ]
+  ],
+  "rules": {
+    "arrow-body-style": "warn"
+  }
 }
