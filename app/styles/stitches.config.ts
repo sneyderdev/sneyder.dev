@@ -3,7 +3,8 @@ import { createStitches } from "@stitches/react";
 export const { getCssText, styled, globalCss } = createStitches({
   theme: {
     colors: {
-      red: "#ff0000",
+      white: "#ecedee",
+      black: "#1a1a1a",
     },
   },
 });

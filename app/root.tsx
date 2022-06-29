@@ -1,6 +1,6 @@
 import type { MetaFunction } from "@remix-run/node";
 
-import { useContext, useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import {
   Links,
   LiveReload,
@@ -12,6 +12,7 @@ import {
 
 import ClientStyleContext from "./styles/client.context";
 import globalStyles from "./styles/global.styles";
+import { Layout } from "./styles/shared/Layout.styles";
 
 export const meta: MetaFunction = () => ({
   charset: "utf-8",
@@ -19,7 +20,7 @@ export const meta: MetaFunction = () => ({
   viewport: "width=device-width,initial-scale=1",
 });
 
-export default function App() {
+const Document = ({ children }: { children: React.ReactNode }) => {
   const clientStyleData = useContext(ClientStyleContext);
 
   useEffect(() => {
@@ -40,11 +41,21 @@ export default function App() {
         />
       </head>
       <body>
-        <Outlet />
+        {children}
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
       </body>
     </html>
   );
-}
+};
+
+const App = () => (
+  <Document>
+    <Layout>
+      <Outlet />
+    </Layout>
+  </Document>
+);
+
+export default App;
