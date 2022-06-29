@@ -10,17 +10,13 @@ import {
   ScrollRestoration,
 } from "@remix-run/react";
 
-import ClientStyleContext from "~/styles/client.context";
-import { styled } from "~/styles/stitches.config";
+import ClientStyleContext from "./styles/client.context";
+import globalStyles from "./styles/global.styles";
 
 export const meta: MetaFunction = () => ({
   charset: "utf-8",
-  title: "New Remix App",
+  title: "Sneyder Barreto",
   viewport: "width=device-width,initial-scale=1",
-});
-
-const Title = styled("h1", {
-  color: "$red",
 });
 
 export default function App() {
@@ -29,6 +25,8 @@ export default function App() {
   useEffect(() => {
     clientStyleData.reset();
   }, [clientStyleData]);
+
+  globalStyles();
 
   return (
     <html lang="en">
@@ -42,7 +40,6 @@ export default function App() {
         />
       </head>
       <body>
-        <Title>Styling with Stitches</Title>
         <Outlet />
         <ScrollRestoration />
         <Scripts />
