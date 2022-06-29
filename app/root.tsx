@@ -10,6 +10,8 @@ import {
   ScrollRestoration,
 } from "@remix-run/react";
 
+import Navbar from "./components/Navbar";
+
 import ClientStyleContext from "./styles/client.context";
 import globalStyles from "./styles/global.styles";
 import { Layout } from "./styles/shared/Layout.styles";
@@ -53,6 +55,7 @@ const Document = ({ children }: { children: React.ReactNode }) => {
 const App = () => (
   <Document>
     <Layout>
+      <Navbar />
       <Outlet />
     </Layout>
   </Document>
