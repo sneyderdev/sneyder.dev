@@ -6,6 +6,10 @@
     "dev": "remix dev"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.1.1",
+    "@fortawesome/free-brands-svg-icons": "^6.1.1",
+    "@fortawesome/free-solid-svg-icons": "^6.1.1",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "@remix-run/node": "^1.6.1",
     "@remix-run/react": "^1.6.1",
     "@remix-run/vercel": "^1.6.1",
