@@ -1,15 +1,15 @@
-import { Hero } from "~/components";
+import { Hero, Footer } from "~/components";
 
 import { Main, Container } from "~/styles/shared";
 
 const HomePage = () => (
   <>
-    <Main>
-      <Container>
+    <Container>
+      <Main>
         <Hero />
-      </Container>
-    </Main>
-    <footer>Footer</footer>
+      </Main>
+      <Footer />
+    </Container>
   </>
 );
 
