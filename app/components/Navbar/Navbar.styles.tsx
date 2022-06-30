@@ -48,7 +48,6 @@ export const NavbarContainer = styled("div", {
 export const BurgerButton = styled("button", {
   size: "$12",
   position: "relative",
-  border: 0,
 
   "& i": {
     display: "inline-block",
