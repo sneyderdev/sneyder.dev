@@ -7,6 +7,8 @@ export const { getCssText, styled, globalCss } = createStitches({
     colors: {
       white: "#ecedee",
       black: "#1a1a1a",
+      twitter: "#1da1f2",
+      linkedin: "#0077b5",
     },
     fontSizes: {
       lg: "1.125rem",
