@@ -4,4 +4,5 @@ export const Layout = styled("div", {
   height: "100vh",
   display: "grid",
   gridTemplateRows: "1fr auto",
+  paddingTop: "$16",
 });

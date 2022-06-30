@@ -10,11 +10,11 @@ import {
   ScrollRestoration,
 } from "@remix-run/react";
 
-import Navbar from "./components/Navbar";
+import { Navbar } from "./components";
 
 import ClientStyleContext from "./styles/client.context";
 import globalStyles from "./styles/global.styles";
-import { Layout } from "./styles/shared/Layout.styles";
+import { Layout } from "./styles/shared";
 
 export const meta: MetaFunction = () => ({
   charset: "utf-8",
