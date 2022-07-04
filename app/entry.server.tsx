@@ -3,6 +3,8 @@ import type { EntryContext } from "@remix-run/node";
 import { renderToString } from "react-dom/server";
 import { RemixServer } from "@remix-run/react";
 
+import { dom } from "@fortawesome/fontawesome-svg-core";
+
 import { getCssText } from "~/styles/stitches.config";
 
 export default function handleRequest(
@@ -15,9 +17,10 @@ export default function handleRequest(
     <RemixServer context={remixContext} url={request.url} />
   );
 
+  // SSR for icons styles and general styles
   markup = markup.replace(
-    /<style id="stitches">.*<\/style>/g,
-    `<style id="stitches">${getCssText()}</style>`
+    /<style id="fontawesome">.*<\/style><style id="stitches">.*<\/style>/g,
+    `<style id="fontawesome">${dom.css()}</style><style id="stitches">${getCssText()}</style>`
   );
 
   responseHeaders.set("Content-Type", "text/html");

@@ -2,12 +2,14 @@ import { createContext } from "react";
 
 export interface ClientStyleContextData {
   reset: () => void;
-  sheet: string;
+  iconsSheet: string;
+  globalSheet: string;
 }
 
 const ClientStyleContext = createContext<ClientStyleContextData>({
   reset: () => {},
-  sheet: "",
+  iconsSheet: "",
+  globalSheet: "",
 });
 
 export default ClientStyleContext;

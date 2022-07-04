@@ -23,15 +23,26 @@ export const meta: MetaFunction = () => ({
 });
 
 export const links: LinksFunction = () => [
-  { rel: "preconnect", href: "https://fonts.googleapis.com" },
   {
-    rel: "preconnect",
-    href: "https://fonts.gstatic.com",
+    rel: "preload",
+    as: "font",
+    href: "/fonts/Poppins-Regular.woff2",
+    type: "font/woff2",
     crossOrigin: "anonymous",
   },
   {
-    rel: "stylesheet",
-    href: "https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap",
+    rel: "preload",
+    as: "font",
+    href: "/fonts/Poppins-Medium.woff2",
+    type: "font/woff2",
+    crossOrigin: "anonymous",
+  },
+  {
+    rel: "preload",
+    as: "font",
+    href: "/fonts/Poppins-SemiBold.woff2",
+    type: "font/woff2",
+    crossOrigin: "anonymous",
   },
 ];
 
@@ -50,8 +61,13 @@ const Document = ({ children }: { children: React.ReactNode }) => {
         <Meta />
         <Links />
         <style
+          id="fontawesome"
+          dangerouslySetInnerHTML={{ __html: clientStyleData.iconsSheet }}
+          suppressHydrationWarning
+        />
+        <style
           id="stitches"
-          dangerouslySetInnerHTML={{ __html: clientStyleData.sheet }}
+          dangerouslySetInnerHTML={{ __html: clientStyleData.globalSheet }}
           suppressHydrationWarning
         />
       </head>
