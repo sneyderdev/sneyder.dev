@@ -7,4 +7,5 @@ export const Layout = styled("div", {
     "container"
   `,
   paddingTop: "$16",
+  backgroundImage: "linear-gradient($purple800, transparent)",
 });
