@@ -5,8 +5,11 @@ import { createStitches } from "@stitches/react";
 export const { getCssText, styled, globalCss } = createStitches({
   theme: {
     colors: {
-      white: "#ecedee",
-      black: "#1a1a1a",
+      white: "#ececec",
+      gray500: "#adadad",
+      black: "#000",
+      purple500: "#c435e8",
+      purple800: "#4e155d",
       twitter: "#1da1f2",
       linkedin: "#0077b5",
     },
@@ -32,6 +35,7 @@ export const { getCssText, styled, globalCss } = createStitches({
       1: "0.25rem",
       2: "0.5rem",
       3: "0.75rem",
+      4: "1rem",
       5: "1.25rem",
       6: "1.5rem",
       8: "2rem",
@@ -48,6 +52,7 @@ export const { getCssText, styled, globalCss } = createStitches({
       1: "0.25rem",
       2: "0.5rem",
       3: "0.75rem",
+      4: "1rem",
       5: "1.25rem",
       6: "1.5rem",
       8: "2rem",

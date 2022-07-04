@@ -1,3 +1,5 @@
+import { Link } from "@remix-run/react";
+
 import { styled } from "~/styles/stitches.config";
 
 export const HeroContainer = styled("section", {
@@ -21,4 +23,16 @@ export const HeroDescription = styled("p", {
   fontSize: "$lg",
   lineHeight: "$lg",
   margin: "0 0 $8",
+});
+
+export const HeroCTA = styled(Link, {
+  display: "inline-flex",
+  alignItems: "center",
+  justifyContent: "center",
+  color: "$purple500",
+
+  span: {
+    display: "inline-block",
+    marginRight: "$2",
+  },
 });
