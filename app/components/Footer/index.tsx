@@ -4,18 +4,18 @@ import {
   faGithub,
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
-import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
+import { faAt } from "@fortawesome/free-solid-svg-icons";
 
-import { FooterContainer, MediaLink } from "./Footer.styles";
+import { FooterContainer, SocialContainer, SocialLink } from "./Footer.styles";
 
-type SocialMedia = {
+interface SocialMedia {
   name: string;
   url: string;
   icon: React.ReactNode;
-};
+}
 
 const Footer = () => {
-  const mediaLinks: SocialMedia[] = [
+  const socialLinks: SocialMedia[] = [
     {
       name: "Twitter",
       url: "https://twitter.com/sneyderdev",
@@ -34,17 +34,25 @@ const Footer = () => {
     {
       name: "Mail",
       url: "mailto:hello@sneyder.dev",
-      icon: <FontAwesomeIcon icon={faPaperPlane} />,
+      icon: <FontAwesomeIcon icon={faAt} />,
     },
   ];
 
   return (
     <FooterContainer>
-      {mediaLinks.map((link, index) => (
-        <MediaLink key={index} href={link.url} target="_blank" rel="noreferrer">
-          {link.icon}
-        </MediaLink>
-      ))}
+      <p>Get in touch 👇🏻</p>
+      <SocialContainer>
+        {socialLinks.map((link, index) => (
+          <SocialLink
+            key={index}
+            href={link.url}
+            target="_blank"
+            rel="noreferrer"
+          >
+            {link.icon}
+          </SocialLink>
+        ))}
+      </SocialContainer>
     </FooterContainer>
   );
 };

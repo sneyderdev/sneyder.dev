@@ -12,11 +12,13 @@ export const HeroContainer = styled("section", {
 
 export const HeroTitle = styled("h1", {
   fontSize: "$xl",
+  lineHeight: "$xl",
   fontWeight: "$medium",
   margin: "$6 0 $3",
 });
 
 export const HeroDescription = styled("p", {
   fontSize: "$lg",
+  lineHeight: "$lg",
   margin: "0 0 $8",
 });
