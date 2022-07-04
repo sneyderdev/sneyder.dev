@@ -28,7 +28,7 @@ export const LogoContainer = styled("div", {
 
 export const Logo = styled(Link, {
   fontSize: "$lg",
-  fontWeight: "$semibold",
+  fontWeight: "$medium",
 });
 
 export const NavbarContainer = styled("div", {

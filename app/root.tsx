@@ -1,4 +1,4 @@
-import type { MetaFunction } from "@remix-run/node";
+import type { MetaFunction, LinksFunction } from "@remix-run/node";
 
 import React, { useContext, useEffect } from "react";
 import {
@@ -21,6 +21,19 @@ export const meta: MetaFunction = () => ({
   title: "Sneyder Barreto",
   viewport: "width=device-width,initial-scale=1",
 });
+
+export const links: LinksFunction = () => [
+  { rel: "preconnect", href: "https://fonts.googleapis.com" },
+  {
+    rel: "preconnect",
+    href: "https://fonts.gstatic.com",
+    crossOrigin: "anonymous",
+  },
+  {
+    rel: "stylesheet",
+    href: "https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap",
+  },
+];
 
 const Document = ({ children }: { children: React.ReactNode }) => {
   const clientStyleData = useContext(ClientStyleContext);

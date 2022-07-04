@@ -10,6 +10,7 @@ const globalStyles = globalCss({
   body: {
     backgroundColor: "$black",
     color: "$white",
+    fontFamily: "$default",
   },
 
   a: {

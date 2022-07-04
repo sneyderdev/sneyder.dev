@@ -4,10 +4,13 @@ const Hero = () => (
   <HeroContainer>
     <div>Home img</div>
     <HeroTitle>
-      Hi <span>👋🏻</span>, I'm Sneyder Barreto
+      Hi <span>👋🏻</span>!<br />
+      I'm Sneyder
     </HeroTitle>
-    <HeroDescription>Description</HeroDescription>
-    <span>Call to action</span>
+    <HeroDescription>
+      Frontend developer 👨🏻‍💻 building apps with TypeScript and React.
+    </HeroDescription>
+    <span>Check out my work here</span>
   </HeroContainer>
 );
 
