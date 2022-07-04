@@ -5,6 +5,7 @@
     "prettier"
   ],
   "rules": {
-    "arrow-body-style": "warn"
+    "arrow-body-style": "warn",
+    "no-console": "warn"
   }
 }
